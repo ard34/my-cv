@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png?v=13">
+  <title>Side-by-Side Design Presentation: Desktop (1440px) vs Android Mobile (390px) | Riski Ardiansyah</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#050914',
+            cyberNavy: '#0A1222',
+            cyberCard: '#101B2D',
+            cyberBlue: '#0EA5FF',
+            cyberCyan: '#22D3EE',
+            cyberPurple: '#8257FF',
+            cyberText: '#F8FAFC',
+            cyberMuted: '#94A3B8'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Sora', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Custom Frame Containers */
+    .device-shadow {
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(14, 165, 255, 0.15);
+    }
+    .mobile-frame-border {
+      box-shadow: 0 0 0 8px #1e293b, 0 0 0 10px #0f172a, 0 20px 50px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body class="bg-[#03060E] text-[#F8FAFC] font-sans min-h-screen flex flex-col">
+
+  <!-- Presentation Header & Control Center -->
+  <header class="bg-[#070D1A] border-b border-cyan-500/20 px-6 py-4 sticky top-0 z-50 shadow-xl">
+    <div class="max-w-[1920px] mx-auto flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Left: Title & Identity -->
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0EA5FF] to-[#8257FF] p-[1px]">
+            <div class="w-full h-full bg-[#0A1222] rounded-[10px] flex items-center justify-center">
+              <span class="font-heading font-extrabold text-cyan-300 text-sm">RA</span>
+            </div>
+          </div>
+          <div>
+            <h1 class="text-sm font-bold font-heading text-white flex items-center gap-2">
+              Riski Ardiansyah
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">UI/UX Showcase</span>
+            </h1>
+            <p class="text-xs text-slate-400 font-mono">Senior UI/UX Design Presentation • Desktop 1440px vs Android 390px</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center: View Mode Toggles -->
+      <div class="flex items-center gap-2 bg-[#0A1222] p-1.5 rounded-xl border border-slate-800">
+        <button id="btn-dual" onclick="setViewMode('dual')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1.5 transition">
+          <i data-lucide="columns" class="w-3.5 h-3.5"></i>
+          <span>Side-by-Side Dual View</span>
+        </button>
+        <button id="btn-desktop" onclick="setViewMode('desktop')" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+          <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+          <span>Desktop (1440px)</span>
+        </button>
+        <button id="btn-mobile" onclick="setViewMode('mobile')" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+          <span>Android (390px)</span>
+        </button>
+      </div>
+
+      <!-- Right: Actions & Return -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" target="_blank" class="px-4 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center gap-1.5">
+          <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Open Fullscreen</span>
+        </a>
+        <a href="index.html" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-1.5">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Presentation Workspace -->
+  <main class="flex-1 p-6 md:p-8 overflow-x-auto">
+    <div class="max-w-[1920px] mx-auto space-y-6">
+
+      <!-- Design Spec Quick Summary Card -->
+      <div class="p-4 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#050914] border border-cyan-400"></span>
+            <span class="text-slate-400">Primary Bg: <strong class="text-white font-mono">#050914</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#0EA5FF]"></span>
+            <span class="text-slate-400">Primary Blue: <strong class="text-white font-mono">#0EA5FF</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#22D3EE]"></span>
+            <span class="text-slate-400">Neon Cyan: <strong class="text-white font-mono">#22D3EE</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#8257FF]"></span>
+            <span class="text-slate-400">Purple Accent: <strong class="text-white font-mono">#8257FF</strong></span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
+          <span>Typography: Plus Jakarta Sans / Sora</span>
+          <span class="text-cyan-400">• Glassmorphism Blur: 14px</span>
+          <span class="text-emerald-400">• WCAG AAA Compliant</span>
+        </div>
+      </div>
+
+      <!-- Side-by-Side Dual Frames Container -->
+      <div id="frames-wrapper" class="flex flex-col xl:flex-row items-start justify-center gap-10">
+
+        <!-- DESKTOP CONTAINER (1440 × 1000 px Simulation) -->
+        <div id="desktop-section" class="w-full xl:w-[72%] transition-all duration-300">
+          <div class="mb-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-bold text-white font-heading">Desktop Viewport</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800">1440 × 1000 px Spec</span>
+            </div>
+            <div class="text-[11px] font-mono text-slate-500">
+              Whitespace: 32px Grid • Glassmorphic Horizontal Navigation
+            </div>
+          </div>
+
+          <!-- Desktop Device Frame -->
+          <div class="rounded-2xl border border-slate-800 bg-[#0A1222] device-shadow overflow-hidden">
+            <!-- Desktop Browser Header Bar -->
+            <div class="px-4 py-2.5 bg-[#0A1222] border-b border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+              </div>
+              <div class="px-6 py-1 rounded-md bg-[#050914] border border-slate-800 text-[11px] font-mono text-slate-400 flex items-center gap-2 w-80 justify-center">
+                <i data-lucide="lock" class="w-3 h-3 text-cyan-400"></i>
+                <span class="text-cyan-200">https://riskiardiansyah.dev</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-500 text-xs">
+                <i data-lucide="shield" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span class="font-mono text-[10px]">TLS 1.3 SECURE</span>
+              </div>
+            </div>
+
+            <!-- Desktop Viewport iFrame -->
+            <div class="w-full h-[880px] bg-[#050914] relative">
+              <iframe id="iframe-desktop" src="index.html?v=16" class="w-full h-full border-0"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANDROID MOBILE CONTAINER (390 × 844 px Reference) -->
+        <div id="mobile-section" class="w-full xl:w-[28%] flex flex-col items-center xl:items-start transition-all duration-300">
+          <div class="mb-3 w-[390px] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i data-lucide="smartphone" class="w-4 h-4 text-purple-400"></i>
+              <span class="text-xs font-bold text-white font-heading">Android Smartphone</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-slate-800">390 × 844 px Spec</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-500">Touch Friendly</span>
+          </div>
+
+          <!-- Smartphone Device Bezel Mockup -->
+          <div class="w-[390px] h-[844px] rounded-[48px] bg-[#0A1222] mobile-frame-border overflow-hidden relative flex flex-col">
+            
+            <!-- Phone Dynamic Island & Speaker Notch -->
+            <div class="w-full h-8 bg-[#050914] px-7 pt-2 flex items-center justify-between text-[11px] font-mono text-slate-400 shrink-0 z-30 select-none">
+              <span>20:26</span>
+              <div class="w-20 h-4 bg-black rounded-full flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#111827]"></div>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="wifi" class="w-3 h-3 text-cyan-400"></i>
+                <i data-lucide="battery-charging" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </div>
+            </div>
+
+            <!-- Mobile Viewport iFrame -->
+            <div class="flex-1 w-full bg-[#050914] relative overflow-hidden">
+              <iframe id="iframe-mobile" src="index.html?v=16" class="w-full h-full border-0"></iframe>
+            </div>
+
+            <!-- Android Bottom Gesture Bar -->
+            <div class="w-full h-5 bg-[#050914] flex items-center justify-center shrink-0 z-30 select-none">
+              <div class="w-32 h-1 bg-slate-600 rounded-full"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Script for View Mode Switches -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    function setViewMode(mode) {
+      const desktopSec = document.getElementById('desktop-section');
+      const mobileSec = document.getElementById('mobile-section');
+      const btnDual = document.getElementById('btn-dual');
+      const btnDesk = document.getElementById('btn-desktop');
+      const btnMob = document.getElementById('btn-mobile');
+
+      // Reset Active classes
+      [btnDual, btnDesk, btnMob].forEach(b => {
+        b.className = 'px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+      });
+
+      if (mode === 'dual') {
+        desktopSec.classList.remove('hidden');
+        desktopSec.className = 'w-full xl:w-[72%] transition-all duration-300';
+        mobileSec.classList.remove('hidden');
+        mobileSec.className = 'w-full xl:w-[28%] flex flex-col items-center xl:items-start transition-all duration-300';
+        btnDual.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1.5 transition';
+      } else if (mode === 'desktop') {
+        desktopSec.classList.remove('hidden');
+        desktopSec.className = 'w-full max-w-7xl mx-auto transition-all duration-300';
+        mobileSec.classList.add('hidden');
+        btnDesk.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1.5 transition';
+      } else if (mode === 'mobile') {
+        desktopSec.classList.add('hidden');
+        mobileSec.classList.remove('hidden');
+        mobileSec.className = 'w-full flex flex-col items-center justify-center transition-all duration-300';
+        btnMob.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center gap-1.5 transition';
+      }
+    }
+  </script>
+</body>
+</html>

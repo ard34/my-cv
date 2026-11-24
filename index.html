@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Official Favicon & App Icon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png?v=13">
+  <link rel="apple-touch-icon" href="assets/img/logo_symbol.png?v=13">
+  <title>Riski Ardiansyah | Cybersecurity Enthusiast &amp; AI-Assisted Software Development</title>
+  <meta name="description" content="Portfolio pribadi Riski Ardiansyah - Mahasiswa D4 Rekayasa Keamanan Siber di Politeknik Piksi Input Serang (Semester 7). Berfokus pada Web Application Testing, Penetration Testing, dan AI-Assisted Software Development with AI Coding Agents.">
+  <meta name="keywords" content="Riski Ardiansyah, Cybersecurity Enthusiast, AI-Assisted Software Development, AI Coding Agents, Web Application Testing, Penetration Testing, Rekayasa Keamanan Siber, Politeknik Piksi Input Serang, BSSN, CRTOM">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#050914',
+            cyberNavy: '#0A1222',
+            cyberCard: '#101B2D',
+            cyberBlue: '#0EA5FF',
+            cyberCyan: '#22D3EE',
+            cyberPurple: '#8257FF',
+            cyberText: '#F8FAFC',
+            cyberMuted: '#94A3B8'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Sora', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=13">
+</head>
+<body class="bg-[#050914] text-[#F8FAFC] antialiased cyber-grid-bg relative selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Top Reading Scroll Progress Bar -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Interactive Cyber Canvas Backdrop -->
+  <canvas id="cyber-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Personal Brand Watermark Backdrop (Tanda Air Logo Riski Ardiansyah) -->
+  <div class="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden">
+    <div class="w-[700px] sm:w-[900px] lg:w-[1150px] h-[700px] sm:h-[900px] lg:h-[1150px] opacity-[0.045] select-none transform -rotate-12 filter blur-[0.3px] transition-opacity duration-1000">
+      <img src="assets/img/logo_symbol.png?v=13" alt="Riski Ardiansyah Watermark Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_100px_rgba(34,211,238,0.9)]">
+    </div>
+  </div>
+
+  <!-- Top Quick Info & Presentation Switcher -->
+  <div class="relative z-50 bg-[#0A1222]/95 border-b border-cyan-500/20 py-2 px-4 text-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3 text-cyan-300">
+        <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <span class="font-mono text-[11px] font-medium tracking-wide">STATUS: MAHASISWA D4 REKAYASA KEAMANAN SIBER (SEMESTER 7)</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="openCVPreview()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#101B2D] border border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400 transition text-[11px] font-medium">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Lihat CV Lengkap</span>
+        </button>
+        <a href="preview-comparison.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-sm hover:brightness-110 transition text-xs">
+          <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+          <span>Side-by-Side Dual View (Desktop &amp; Mobile)</span>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- A. Navigation Bar -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name (Official Personal Branding) -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-[#0A1222] border border-cyan-500/40 p-1 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:border-cyan-400 group-hover:shadow-cyan-500/50 group-hover:scale-105 transition-all duration-300">
+          <img src="assets/img/logo_symbol.png?v=13" alt="Riski Ardiansyah Monogram Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-base tracking-tight text-white group-hover:text-cyan-400 transition">Riski Ardiansyah</span>
+          <span class="text-[10px] font-mono text-cyan-400/90 tracking-widest uppercase">Cybersecurity Enthusiast</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="nav-link text-cyan-400 font-semibold hover:text-cyan-300 transition">Home</a>
+        <a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition">About</a>
+        <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition">Skills</a>
+        <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition">Projects</a>
+        <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition">Experience</a>
+        <a href="#certificates" class="nav-link text-slate-300 hover:text-cyan-400 transition">Certificates</a>
+        <a href="#blog" class="nav-link text-slate-300 hover:text-cyan-400 transition">Blog</a>
+        <a href="#contact" class="nav-link text-slate-300 hover:text-cyan-400 transition">Contact</a>
+      </nav>
+
+      <!-- Desktop Right Actions -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button id="theme-toggle-btn" title="Cyber Dark Theme Locked" class="p-2 rounded-lg text-slate-400 hover:text-cyan-400 hover:bg-slate-800/50 transition">
+          <i data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+        <button onclick="openCVPreview()" class="px-3.5 py-2 rounded-xl text-xs font-semibold outline-btn flex items-center gap-1.5 hover:border-cyan-400 transition">
+          <i data-lucide="eye" class="w-4 h-4 text-cyan-400"></i>
+          <span>Preview CV</span>
+        </button>
+        <a href="assets/img/cv_riski_ardiansyah.jpg" download="CV_Riski_Ardiansyah.jpg" class="px-4 py-2 rounded-xl text-xs font-semibold gradient-btn text-white flex items-center gap-1.5">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button id="theme-toggle-btn-mobile" class="p-2 rounded-lg text-slate-400 hover:text-cyan-400">
+          <i data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-cyan-400 focus:outline-none" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-50 bg-[#050914]/95 backdrop-blur-xl flex flex-col p-6 animate-fadeIn">
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0A1222] border border-cyan-500/40 p-1 flex items-center justify-center shadow-md">
+            <img src="assets/img/logo_symbol.png?v=13" alt="Riski Ardiansyah Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.4)]">
+          </div>
+          <div>
+            <span class="font-heading font-bold text-white text-base block">Riski Ardiansyah</span>
+            <span class="text-[10px] text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</span>
+          </div>
+        </div>
+        <button id="close-mobile-menu" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-3 py-6 text-sm font-medium overflow-y-auto">
+        <a href="#home" class="mobile-nav-link text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="home" class="w-4 h-4"></i> Home
+        </a>
+        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="user" class="w-4 h-4"></i> Tentang Saya &amp; Pendidikan
+        </a>
+        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="shield" class="w-4 h-4"></i> Keahlian &amp; Tools
+        </a>
+        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="layers" class="w-4 h-4"></i> Proyek Portfolio
+        </a>
+        <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="activity" class="w-4 h-4"></i> Pengalaman &amp; Perjalanan Belajar
+        </a>
+        <a href="#certificates" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="award" class="w-4 h-4"></i> Sertifikasi &amp; Program
+        </a>
+        <a href="#blog" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
+          <i data-lucide="file-text" class="w-4 h-4"></i> Blog &amp; Writeups
+        </a>
+        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2">
+          <i data-lucide="mail" class="w-4 h-4"></i> Kontak
+        </a>
+      </nav>
+
+      <div class="mt-auto flex flex-col gap-2.5 pt-4 border-t border-slate-800">
+        <button onclick="openCVPreview()" class="w-full py-2.5 rounded-xl outline-btn text-cyan-300 text-xs font-semibold text-center flex items-center justify-center gap-2">
+          <i data-lucide="eye" class="w-4 h-4"></i> Preview CV Resmi
+        </button>
+        <a href="assets/img/cv_riski_ardiansyah.jpg" download="CV_Riski_Ardiansyah.jpg" class="w-full py-3 rounded-xl gradient-btn text-white font-semibold text-center flex items-center justify-center gap-2 text-sm">
+          <i data-lucide="download" class="w-4 h-4"></i> Unduh CV (Gambar Asli)
+        </a>
+        <a href="preview-comparison.html" class="w-full py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-[11px] text-center flex items-center justify-center gap-1.5">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> Dual Desktop / Mobile Frame View
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-28">
+
+    <!-- B. Hero Section -->
+    <section id="home" class="min-h-[720px] flex items-center">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Left Column -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-6 order-1" data-aos="fade-right" data-aos-duration="900">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#101B2D] border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-md">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>Cybersecurity Enthusiast • Web App Testing</span>
+          </div>
+
+          <div class="space-y-2">
+            <p class="text-base sm:text-lg font-medium text-slate-400">Hello, I'm</p>
+            <h1 class="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight">
+              Riski <span class="gradient-text">Ardiansyah</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-semibold text-cyan-300 font-mono pt-1">
+              Cybersecurity Enthusiast &amp; AI-Assisted Software Developer
+            </p>
+          </div>
+
+          <!-- Official CV Quote -->
+          <div class="relative p-4 rounded-xl bg-[#0A1222]/80 border-l-4 border-cyan-400 border-y border-r border-slate-800/80 text-sm italic text-slate-200">
+            <i data-lucide="quote" class="w-4 h-4 text-cyan-400 inline-block mr-1 opacity-70"></i>
+            “Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”
+          </div>
+
+          <!-- AI-Assisted Software Development Highlight Box -->
+          <div class="p-4 rounded-2xl bg-[#0A1222]/95 border border-cyan-500/40 space-y-2 relative overflow-hidden shadow-lg shadow-cyan-500/10">
+            <div class="flex items-center gap-2 text-cyan-300 text-xs font-mono font-bold tracking-wide">
+              <i data-lucide="bot" class="w-4 h-4 text-cyan-400"></i>
+              <span>AI-Assisted Software Development with AI Coding Agents</span>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Pengembangan aplikasi dengan memanfaatkan AI Agent, di mana manusia berperan dalam perancangan ide, requirement, arsitektur, dan business logic, sedangkan AI Agent membantu implementasi teknis, coding, debugging, serta testing.
+            </p>
+          </div>
+
+          <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+            Mahasiswa aktif semester 7 Jurusan <strong>D4 Rekayasa Keamanan Siber</strong> di Politeknik Piksi Input Serang. Berfokus pada keamanan aplikasi web, penetration testing, serta perancangan perangkat lunak modern berbasis arsitektur AI coding agent.
+          </p>
+
+          <!-- Action CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
+            <a href="#projects" class="w-full sm:w-auto px-6 py-3.5 rounded-xl gradient-btn text-white font-semibold text-sm flex items-center justify-center gap-2">
+              <span>View My Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <button onclick="openCVPreview()" class="w-full sm:w-auto px-5 py-3.5 rounded-xl outline-btn text-white font-semibold text-sm flex items-center justify-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+              <span>Preview CV</span>
+            </button>
+
+            <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-900/60 text-sm font-semibold flex items-center justify-center gap-2 transition">
+              <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+              <span>WhatsApp Me</span>
+            </a>
+          </div>
+
+          <!-- Social Icons & Direct Contact Links -->
+          <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/80 w-full text-xs">
+            <span class="font-mono text-slate-500 uppercase tracking-widest">Connect:</span>
+            <div class="flex items-center gap-2.5">
+              <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-xl bg-[#101B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:border-slate-400 hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] transition group" title="GitHub: ard34">
+                <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub" class="w-4 h-4 rounded-sm object-contain transition group-hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
+              </a>
+              <a href="mailto:riskiardiansyah51938@gmail.com" class="w-9 h-9 rounded-xl bg-[#101B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:border-red-500/50 hover:shadow-[0_0_12px_rgba(239,68,68,0.25)] transition group" title="Email: riskiardiansyah51938@gmail.com">
+                <img src="https://www.google.com/s2/favicons?domain=gmail.com&sz=128" alt="Email" class="w-4 h-4 rounded-sm object-contain transition group-hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/gmail.png';">
+              </a>
+              <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-xl bg-[#101B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:border-emerald-500/50 hover:shadow-[0_0_12px_rgba(16,185,129,0.25)] transition group" title="WhatsApp: 0838 7564 4210">
+                <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=128" alt="WhatsApp" class="w-4 h-4 rounded-sm object-contain transition group-hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/whatsapp.png';">
+              </a>
+              <a href="https://www.linkedin.com/in/riski-ardiansyah-468626338/" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-xl bg-[#101B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:border-blue-500/50 hover:shadow-[0_0_12px_rgba(14,165,255,0.25)] transition group" title="LinkedIn: Riski Ardiansyah">
+                <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn" class="w-4 h-4 rounded-sm object-contain transition group-hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/linkedin.png';">
+              </a>
+            </div>
+            <div class="text-[11px] font-mono text-slate-400 sm:ml-auto flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Kab. Tangerang, Banten</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Cyber Shield & Real Portrait -->
+        <div class="lg:col-span-5 flex justify-center items-center order-2 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="relative w-[320px] sm:w-[380px] lg:w-[420px] flex items-center justify-center">
+            
+            <!-- Ambient Glowing Orb -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-600/20 to-purple-600/30 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+
+            <!-- Shield SVG Illustration in Background -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none animate-shield-pulse">
+              <svg viewBox="0 0 400 480" class="w-full h-full stroke-cyan-400/40 fill-cyan-950/20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 200 20 L 360 80 L 360 260 Q 360 380 200 450 Q 40 380 40 260 L 40 80 Z" stroke-width="2" stroke-dasharray="6 4" />
+                <path d="M 200 50 L 330 100 L 330 250 Q 330 350 200 410 Q 70 350 70 250 L 70 100 Z" stroke-width="1.5" />
+                <!-- Cyber Circuit Traces -->
+                <line x1="20" y1="200" x2="80" y2="200" stroke="#0EA5FF" stroke-width="1.5" />
+                <circle cx="20" cy="200" r="3" fill="#22D3EE" />
+                <line x1="320" y1="200" x2="380" y2="200" stroke="#8257FF" stroke-width="1.5" />
+                <circle cx="380" cy="200" r="3" fill="#8257FF" />
+                <line x1="310" y1="320" x2="360" y2="350" stroke="#0EA5FF" stroke-width="1.5" />
+                <circle cx="360" cy="350" r="3" fill="#0EA5FF" />
+              </svg>
+            </div>
+
+            <!-- Portrait Frame -->
+            <div class="relative z-10 w-[280px] sm:w-[320px] h-[380px] sm:h-[420px] rounded-3xl overflow-hidden glass-panel border border-cyan-500/30 flex items-center justify-center p-1.5 shadow-2xl">
+              <div class="w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-b from-[#0A1222] via-[#101B2D] to-[#050914] relative flex items-center justify-center">
+                
+                <!-- Portrait Image: Real Riski Hero Image -->
+                <img src="assets/img/riski_hero.jpg?v=16" alt="Riski Ardiansyah - Cybersecurity & Web Developer" class="w-full h-full object-cover object-top filter contrast-105">
+
+                <!-- Inner Gradient Shade for integration -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050914] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+
+                <!-- Floating Cyber Badge with Real Institution -->
+                <div class="absolute bottom-4 left-4 right-4 p-2.5 rounded-xl bg-[#0A1222]/95 backdrop-blur-md border border-cyan-500/40 flex items-center gap-3 shadow-lg">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 shrink-0">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                  </div>
+                  <div class="overflow-hidden">
+                    <p class="text-xs font-bold text-white truncate">D4 Rekayasa Keamanan Siber</p>
+                    <p class="text-[10px] font-mono text-cyan-300">Piksi Input Serang (Sem. 7)</p>
+                  </div>
+                  <div class="ml-auto w-2 h-2 rounded-full bg-emerald-400" title="Active Student"></div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C. About Me & Education Section (CV Aligned) -->
+    <section id="about" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
+          <i data-lucide="fingerprint" class="w-3.5 h-3.5"></i>
+          <span>PROFILE &amp; ACADEMIC BACKGROUND</span>
+        </div>
+        <h2 class="text-3xl font-extrabold font-heading text-white">About Me &amp; Education</h2>
+        <p class="text-slate-400 text-sm mt-1">Latar belakang pendidikan formal, visi kontribusi, dan komitmen profesional.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- About Me Card (Exact from CV) -->
+        <div class="md:col-span-7 glass-panel rounded-2xl p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group" data-aos="fade-up-right" data-aos-duration="850">
+          <div class="absolute -right-12 -top-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/20 transition"></div>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+                <i data-lucide="user-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold font-heading text-white">Tentang Saya</h3>
+                <span class="text-xs font-mono text-cyan-400">Profile Statement</span>
+              </div>
+            </div>
+
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Mahasiswa aktif <strong>Politeknik Piksi Input Serang semester 7 Jurusan Rekayasa Keamanan Siber</strong>. Tertarik mendalam di bidang keamanan siber, khususnya <strong>pengujian web aplikasi (Web Application Security) dan penetration testing</strong>.
+            </p>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Dalam ranah rekayasa perangkat lunak, saya mengedepankan paradigma <strong>AI-Assisted Software Development with AI Coding Agents</strong> — memfokuskan peran pada perancangan ide, requirement, arsitektur, dan business logic, sementara AI Agent mengakselerasi implementasi teknis, coding, debugging, serta testing.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 text-xs text-slate-400 flex items-start gap-2.5">
+              <i data-lucide="book-open" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span>"Saya terus belajar dan mendalami setiap teknologi serta teknik yang relevan di bidang keamanan siber untuk terus berkembang dan memberikan hasil terbaik."</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Kab. Tangerang, Banten, Indonesia</span>
+            </div>
+            <button onclick="openCVPreview()" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+              <span>Buka CV Lengkap</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Education Card (Exact from CV: Piksi Input Serang + SMK Nurul Amin) -->
+        <div class="md:col-span-5 glass-panel rounded-2xl p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group" data-aos="fade-up-left" data-aos-duration="850" data-aos-delay="150">
+          <div class="absolute -right-12 -top-12 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-purple-500/20 transition"></div>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-950/80 border border-purple-500/40 flex items-center justify-center text-purple-400">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold font-heading text-white">Pendidikan</h3>
+                <span class="text-xs font-mono text-purple-400">Formal Academic Path</span>
+              </div>
+            </div>
+
+            <!-- College -->
+            <div class="p-4 rounded-xl bg-[#0A1222] border border-cyan-500/30 space-y-2">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-bold text-white text-base">Politeknik Piksi Input Serang</h4>
+                  <p class="text-xs text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</p>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">
+                  Semester 7
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 pt-1">
+                Fokus Keilmuan: Web Application Security, Network Security, Forensic Analysis, Kriptografi, Ethical Hacking, &amp; Penanganan Insiden.
+              </p>
+            </div>
+
+            <!-- High School (SMK) -->
+            <div class="p-4 rounded-xl bg-[#0A1222] border border-slate-800 space-y-1.5">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="font-bold text-white text-sm">SMK Nurul Amin</h4>
+                  <p class="text-xs text-purple-400 font-mono">Multimedia</p>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-900 text-slate-400 border border-slate-800">
+                  2019 – 2022
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-400">
+                Fondasi teknologi informasi, desain multimedia interaktif, dan komputasi dasar.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-slate-400 flex items-center justify-between">
+            <span>Status: Mahasiswa Aktif</span>
+            <span class="text-cyan-400 font-bold">D4 Rekayasa Keamanan Siber</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- D. Skills & Technologies Section (CV Aligned with Official Tool Icons) -->
+    <section id="skills" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>TECHNICAL CAPABILITIES</span>
+          </div>
+          <h2 class="text-3xl font-extrabold font-heading text-white">Keahlian &amp; Tools</h2>
+          <p class="text-slate-400 text-sm mt-1">Keahlian pengujian keamanan web, security tools resmi, dan stack AI-Assisted Software Development.</p>
+        </div>
+
+        <!-- Capability Legend -->
+        <div class="flex items-center gap-5 px-4 py-2 rounded-xl bg-[#0A1222] border border-slate-800 text-xs font-medium">
+          <div class="flex items-center gap-1.5">
+            <span class="status-dot expert"></span>
+            <span class="text-slate-300">Expert / Primary</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="status-dot proficient"></span>
+            <span class="text-slate-300">Proficient</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="status-dot learning"></span>
+            <span class="text-slate-400">Continuous Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Primary Capability Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 1. Web Application Testing (From CV) -->
+        <div class="glass-panel rounded-2xl p-6 space-y-5" data-aos="fade-up" data-aos-duration="800">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white font-heading text-base">Web Application Testing</h3>
+              <p class="text-xs text-slate-400">Vulnerability Assessment &amp; Pen-Testing</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>OWASP Top 10</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="database" class="w-4 h-4 text-red-400 shrink-0"></i>
+              <span>SQL Injection (SQLi)</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="code" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>XSS (Cross Site Scripting)</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="key" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Authentication Testing</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span>Input Validation Testing</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-cyan-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=portswigger.net&sz=128" alt="Burp Suite" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/burpsuite.svg';">
+              <span>Burp Suite Proxy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Security Tools & Systems (With Official Logos) -->
+        <div class="glass-panel rounded-2xl p-6 space-y-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-purple-950 border border-purple-500/40 flex items-center justify-center text-purple-400">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white font-heading text-base">Tools &amp; Ekosistem</h3>
+              <p class="text-xs text-slate-400">Security Suite &amp; Operating Systems</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=kali.org&sz=128" alt="Kali Linux" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/kalilinux.svg';">
+              <span>Kali Linux</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=portswigger.net&sz=128" alt="Burp Suite" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/burpsuite.svg';">
+              <span>Burp Suite</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=nmap.org&sz=128" alt="Nmap" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/nmap.svg';">
+              <span>Nmap Scanner</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=docker.com&sz=128" alt="Docker" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/docker.svg';">
+              <span>Docker</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=firefox.com&sz=128" alt="Firefox" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/firefox.svg';">
+              <span>Firefox</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=128" alt="VS Code" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/vscode.svg';">
+              <span>VS Code</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=kernel.org&sz=128" alt="Linux" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/linux.svg';">
+              <span>Linux Fundamentals</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-purple-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="network" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Network Fundamentals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AI-Assisted Software Development with AI Coding Agents (With Official Logos) -->
+        <div class="glass-panel rounded-2xl p-6 space-y-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-blue-950 border border-blue-500/40 flex items-center justify-center text-blue-400">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white font-heading text-base leading-snug">AI-Assisted Software Dev</h3>
+              <p class="text-xs text-slate-400">with AI Coding Agents</p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-[#0A1222] border border-cyan-500/20 text-[11px] text-slate-300 leading-relaxed">
+            <strong class="text-cyan-400">Human:</strong> Ide, requirement, arsitektur, &amp; business logic.<br>
+            <strong class="text-purple-400">AI Agent:</strong> Implementasi teknis, coding, debugging, &amp; testing.
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI Codex" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/openai.svg';">
+              <span>Codex / ChatGPT</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude AI" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/claude.svg';">
+              <span>Claude AI</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Google Gemini" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/gemini.svg';">
+              <span>Gemini</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
+              <span>GitHub (ard34)</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=laravel.com&sz=128" alt="Laravel" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/laravel.svg';">
+              <span>PHP &amp; Laravel</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=tailwindcss.com&sz=128" alt="Tailwind CSS" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/tailwindcss.svg';">
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <img src="https://www.google.com/s2/favicons?domain=python.org&sz=128" alt="Python" class="w-4 h-4 rounded-sm shrink-0 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/python.svg';">
+              <span>Python</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-[#0A1222] border border-slate-800 hover:border-blue-500/40 flex items-center gap-2 text-xs text-slate-200 transition">
+              <i data-lucide="lightbulb" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dedicated Visual Showcase: TOOLS YANG DIGUNAKAN (Exact Mirror from CV) -->
+      <div class="mt-8 glass-panel rounded-2xl p-6 sm:p-8 border border-cyan-500/30 relative overflow-hidden" data-aos="zoom-in" data-aos-duration="800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-cyan-950 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <i data-lucide="wrench" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white font-heading text-lg tracking-wide uppercase">TOOLS YANG DIGUNAKAN</h3>
+              <p class="text-xs text-slate-400 font-mono">Tools dan teknologi resmi yang digunakan sehari-hari (sesuai CV)</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono px-3 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 w-fit">
+            Official Tech Stack
+          </span>
+        </div>
+
+                <!-- 9 Core CV Tools Grid with Real Brand Logos (Responsive 3x3 on mobile, 9-col on desktop) -->
+        <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3 sm:gap-4 md:gap-5 text-center">
+          
+          <!-- 1. Kali Linux -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="50">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#557C94] group-hover:shadow-[0_0_20px_rgba(85,124,148,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=kali.org&sz=128" alt="Kali Linux Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/kalilinux.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-cyan-300 transition">Kali Linux</span>
+          </div>
+
+          <!-- 2. Burp Suite -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#FF6633] group-hover:shadow-[0_0_20px_rgba(255,102,51,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=portswigger.net&sz=128" alt="Burp Suite Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/burpsuite.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-orange-400 transition">Burp Suite</span>
+          </div>
+
+          <!-- 3. Firefox -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#FF7139] group-hover:shadow-[0_0_20px_rgba(255,113,57,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=firefox.com&sz=128" alt="Firefox Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/firefox.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-orange-300 transition">Firefox</span>
+          </div>
+
+          <!-- 4. Nmap -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=nmap.org&sz=128" alt="Nmap Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/nmap.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-cyan-300 transition">Nmap</span>
+          </div>
+
+          <!-- 5. Visual Studio Code -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#007ACC] group-hover:shadow-[0_0_20px_rgba(0,122,204,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=128" alt="Visual Studio Code Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/vscode.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-blue-300 transition">VS Code</span>
+          </div>
+
+          <!-- 6. GitHub -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-white transition">GitHub</span>
+          </div>
+
+          <!-- 7. Codex / ChatGPT (OpenAI) -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="350">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#74AA9C] group-hover:shadow-[0_0_20px_rgba(116,170,156,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="OpenAI Codex Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/openai.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-[#74AA9C] transition">Codex</span>
+          </div>
+
+          <!-- 8. Claude AI -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#D97757] group-hover:shadow-[0_0_20px_rgba(217,119,87,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude AI Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/claude.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-[#D97757] transition">Claude AI</span>
+          </div>
+
+          <!-- 9. Google Gemini -->
+          <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="450">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[#8E75B2] group-hover:shadow-[0_0_20px_rgba(142,117,178,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+              <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Google Gemini Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/gemini.svg';">
+            </div>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-[#A78BFA] transition">Gemini</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- E. Projects Portfolio Section -->
+    <section id="projects" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
+            <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+            <span>PORTFOLIO SHOWCASE</span>
+          </div>
+          <h2 class="text-3xl font-extrabold font-heading text-white">Projects Portfolio</h2>
+          <p class="text-slate-400 text-sm mt-1">Implementasi sistem keamanan, pengujian kerentanan web, dan aplikasi modern.</p>
+        </div>
+
+        <div class="text-xs font-mono text-cyan-400 flex items-center gap-1">
+          <span>6 Featured Projects</span>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1. ExamBro CBT -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-category="app">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/exambro.jpg" alt="ExamBro CBT System" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-cyan-500/40 text-cyan-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> CBT &amp; Lock Screen
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-cyan-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Next.js + PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-950/80 backdrop-blur-sm border border-cyan-500/40 text-cyan-400 font-semibold">Android Client</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">ExamBro CBT System</h3>
+                <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Repository">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Platform Computer-Based Test terintegrasi dengan ExamBro Android Client anti-curang untuk Madrasah Aliyah Al Jauharatunnaqiyah.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Next.js</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Android APK</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">Anti-Cheating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('exambro')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Koperasi Santri (SantriWallet) -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100" data-category="app">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/koprasi.jpg" alt="Koperasi Santri Cashless System" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-emerald-500/40 text-emerald-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Cashless &amp; POS
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-emerald-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="wallet" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">SantriWallet</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-950/80 backdrop-blur-sm border border-emerald-500/40 text-emerald-400 font-semibold">Threat Model Certified</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">Koperasi Santri (SantriWallet)</h3>
+                <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Repository">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Ekosistem transaksi nirsentuh (cashless) pesantren dengan POS Kasir, top-up saldo, audit mutasi keuangan, dan SOP penanganan insiden.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">POS Admin</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Android APK</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">REST API</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Financial Audit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('koprasi')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Toko Online BBn Muslim -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200" data-category="app">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/tokoonline.jpg" alt="BBn Muslim Store" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-indigo-500/40 text-indigo-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-indigo-400"></span> E-Commerce &amp; Stock
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-indigo-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Laravel + Alpine.js</span>
+                <span class="px-2 py-0.5 rounded bg-indigo-950/80 backdrop-blur-sm border border-indigo-500/40 text-indigo-300 font-semibold">Auto Stock Hold</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">BBn Muslim (Toko Online)</h3>
+                <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Repository">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Platform e-commerce dengan sistem mutasi stok otomatis, varian produk, keranjang belanja interaktif, dan panel manajemen admin.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-red-950 text-red-300 border border-red-800">Laravel</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Alpine.js</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Inventory Engine</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('tokoonline')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. BBN Digital Forge -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50" data-category="app">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/bbndigital.jpg" alt="BBN Digital Forge Platform" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-purple-500/40 text-purple-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-purple-400"></span> Web Service
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-purple-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="globe" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Full-Stack Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-purple-950/80 backdrop-blur-sm border border-purple-500/40 text-purple-300 font-semibold">Live Production</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">BBN Digital Forge</h3>
+                <a href="https://bbndigitalforge.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Live Site">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Platform layanan digital terintegrasi yang berfokus pada pembuatan website, aplikasi kustom, dan sistem portal manajemen bisnis.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-red-950 text-red-300 border border-red-800">Laravel 11</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-800">Filament 3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('bbndigital')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Wazuh Monitoring -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150" data-category="cyber">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/wazuh.jpg" alt="Wazuh SIEM Monitoring" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-blue-500/40 text-blue-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> SIEM Active
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-blue-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="activity" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Docker Containers</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-950/80 backdrop-blur-sm border border-emerald-500/40 text-emerald-400 font-semibold">Real-time Telemetry</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">Wazuh Monitoring &amp; SIEM</h3>
+                <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Repository">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Implementasi monitoring keamanan menggunakan Wazuh SIEM untuk analisis log, audit integritas file, dan deteksi ancaman real-time.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">Docker</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Wazuh</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Ubuntu Linux</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('wazuh')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Multi-Source Log Analysis -->
+        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200" data-category="cyber">
+          <div>
+            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
+              <img src="assets/img/projects/loganalysis.jpg" alt="Log Analysis Pipeline" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
+              
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-emerald-500/40 text-emerald-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Threat Hunt
+                </span>
+                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-emerald-400 backdrop-blur-md shadow-lg">
+                  <i data-lucide="file-search" class="w-4 h-4"></i>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Apache • Auth • Firewall</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-950/80 backdrop-blur-sm border border-cyan-500/40 text-cyan-400 font-semibold">Automated Pipeline</span>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-white font-heading text-lg">Multi-Source Log Analysis</h3>
+                <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Repository">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+              </div>
+              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                Proyek analisis log lintas sumber untuk mengidentifikasi aktivitas mencurigakan, serangan brute-force, dan melakukan rekonstruksi rantai serangan investigasi insiden.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Linux</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Log Analysis</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Security Investigation</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">Bash / Regex</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <button onclick="openProjectModal('loganalysis')" class="w-full py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- F. Experience & Learning Journey (CV Aligned) -->
+    <section id="experience" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/60 border border-purple-800/50 text-xs font-mono text-purple-400 mb-3">
+          <i data-lucide="milestone" class="w-3.5 h-3.5"></i>
+          <span>TIMELINE &amp; TRAJECTORY</span>
+        </div>
+        <h2 class="text-3xl font-extrabold font-heading text-white">Pengalaman &amp; Perjalanan Belajar</h2>
+        <p class="text-slate-400 text-sm mt-1">Aktivitas resmi, program nasional, dan partisipasi institusional.</p>
+      </div>
+
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 space-y-10 max-w-4xl mx-auto">
+        
+        <!-- Timeline Item 1: BSSN VVIP -->
+        <div class="relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-cyan-400 group-hover:scale-125 group-hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/40"></div>
+          <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-cyan-500/40 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white font-heading">Peserta VVIP BSSN Region Jateng 2026</h3>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">2026</span>
+            </div>
+            <p class="text-xs text-cyan-400 font-mono">Badan Siber dan Sandi Negara (BSSN)</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-1">
+              Mengikuti agenda strategis ketahanan siber nasional bersama stakeholder pemerintah, akademisi, dan profesional keamanan siber dalam penguatan infrastruktur digital.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: CRTOM -->
+        <div class="relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-purple-400 group-hover:scale-125 group-hover:bg-purple-400 transition shadow-lg shadow-purple-500/40"></div>
+          <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-purple-500/40 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white font-heading">Certified Red Team Operations Management (CRTOM)</h3>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-purple-950 text-purple-300 border border-purple-800">Professional Certification</span>
+            </div>
+            <p class="text-xs text-purple-400 font-mono">Red Team Leadership &amp; Operational Defense</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-1">
+              Penguasaan manajemen taktik serangan siber terencana, simulasi adversary emulation, serta evaluasi kesiapsiagaan blue team dalam mendeteksi dan memitigasi insiden.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Coursenet Ethical Hacking -->
+        <div class="relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-blue-400 group-hover:scale-125 group-hover:bg-blue-400 transition shadow-lg shadow-blue-500/40"></div>
+          <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-blue-500/40 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white font-heading">Teknik Ethical Hacking &amp; Cyber Security Specialist</h3>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 border border-blue-800">Course-Net Indonesia</span>
+            </div>
+            <p class="text-xs text-blue-400 font-mono">Specialist, Pentester &amp; White Hat Hacker Track</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-1">
+              Pelatihan intensif mengatasi peretasan IT menggunakan metodologi ethical hacking terstandar, analisis eksploitasi celah web, serta pembuatan rekomendasi remediasi sistem.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4: Cybersecurity Academy & IDNetwork Bootcamp -->
+        <div class="relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-emerald-400 group-hover:scale-125 group-hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/40"></div>
+          <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-emerald-500/40 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white font-heading">Beasiswa Bootcamp Cybersecurity &amp; Academy</h3>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">IDNetwork &amp; Surosowan Cyber</span>
+            </div>
+            <p class="text-xs text-emerald-400 font-mono">Praktik Lab Penetrasi Web &amp; Pertahanan Siber</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-1">
+              Penerima beasiswa prestasi bootcamp cybersecurity yang mendalami network packet analysis, pengujian celah web application, Linux security hardening, dan incident response labs.
+            </p>
+          </div>
+        </div>
+
+      </div>
+          </div>
+</section>
+
+    <!-- G. Certificates & Achievements (CV & Interactive Dynamic Input) -->
+    <section id="certificates" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>CREDENTIALS &amp; CERTIFICATIONS</span>
+          </div>
+          <h2 class="text-3xl font-extrabold font-heading text-white">Sertifikasi &amp; Program</h2>
+          <p class="text-slate-400 text-sm mt-1">Daftar sertifikasi dan program resmi yang tercatat di CV Riski Ardiansyah.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://drive.google.com/drive/folders/1q5YSQc3qumVw2AVJYXxLTuwa-RXmv1vF?usp=sharing" target="_blank" rel="noreferrer" class="px-3.5 py-2 rounded-xl outline-btn text-cyan-300 text-xs font-semibold flex items-center gap-1.5 hover:border-cyan-400 transition" title="Buka Folder Google Drive Semua Sertifikat">
+            <i data-lucide="folder-lock" class="w-4 h-4 text-cyan-400"></i>
+            <span>Buka Folder GDrive Lengkap</span>
+            <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+          </a>
+          <button onclick="openAddCertModal()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/25 hover:scale-105 transition">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>+ Input Sertifikat Baru</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Certificates Grid (Populated by main.js) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificates-grid">
+        <!-- Certificate Card: Peserta VVIP BSSN Region Jateng 2026 -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-red-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1WcczkN4HTN5qz5AVP-gTPsqUIGGAO_wI&sz=w800" alt="Peserta VVIP BSSN Region Jateng 2026" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=National Cyber Defense';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950 text-red-300 border-red-800 border">National Cyber Defense</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Peserta VVIP BSSN Region Jateng 2026</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Badan Siber dan Sandi Negara (BSSN)</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2026</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('bssn-vvip-2026')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1WcczkN4HTN5qz5AVP-gTPsqUIGGAO_wI/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Certified Red Team Operations Management (CRTOM) -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-red-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=181TCznmHXVevOc5-hXuCpDTVOEoccn8S&sz=w800" alt="Certified Red Team Operations Management (CRTOM)" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Red Team Operations';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950 text-red-300 border-red-800 border">Red Team Operations</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Certified Red Team Operations Management (CRTOM)</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Red Team Management Board</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2026</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('crtom-red-team')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/181TCznmHXVevOc5-hXuCpDTVOEoccn8S/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Beasiswa Bootcamp Cyber Security (3 Bulan) -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-emerald-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1OGrzGHWynMCyJewpFAL5lPq6dG_LqARq&sz=w800" alt="Beasiswa Bootcamp Cyber Security (3 Bulan)" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Merit Scholarship Bootcamp';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border-emerald-800 border">Merit Scholarship Bootcamp</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Beasiswa Bootcamp Cyber Security (3 Bulan)</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">IDNetwork / IDNetworkers</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('idnetwork-3bln')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1OGrzGHWynMCyJewpFAL5lPq6dG_LqARq/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Professional SOC & SIEM: Master Wazuh and Splunk -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-blue-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1HOn7Et_9LJqm1SadpXhjucljJiENNc1-&sz=w800" alt="Professional SOC & SIEM: Master Wazuh and Splunk" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=SOC & SIEM Operations';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-950 text-blue-300 border-blue-800 border">SOC & SIEM Operations</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Professional SOC & SIEM: Master Wazuh and Splunk</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">SOC & SIEM Professional Academy</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('soc-siem-wazuh')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1HOn7Et_9LJqm1SadpXhjucljJiENNc1-/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Digital Forensics 101 Event Certification -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-purple-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=19ZpZnegYheKGnWQF2vqblf0deJEjO6yJ&sz=w800" alt="Digital Forensics 101 Event Certification" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Digital Forensics';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950 text-purple-300 border-purple-800 border">Digital Forensics</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Digital Forensics 101 Event Certification</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Digital Forensics Community / JH</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('digital-forensics-101')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/19ZpZnegYheKGnWQF2vqblf0deJEjO6yJ/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Mini Class Certified Ethical Hacker (CEH) -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-cyan-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1KkFeofVC7INfyla8m0K7UohP1Zh9oxNf&sz=w800" alt="Mini Class Certified Ethical Hacker (CEH)" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Ethical Hacking';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border-cyan-800 border">Ethical Hacking</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Mini Class Certified Ethical Hacker (CEH)</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Cyber Security Learning Lab</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('ceh-mini-class')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1KkFeofVC7INfyla8m0K7UohP1Zh9oxNf/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Fundamental IT Security -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-cyan-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1bJVxYuT_L-OoG3mQ8qOSovMtdQDitLTl&sz=w800" alt="Fundamental IT Security" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Security Fundamentals';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border-cyan-800 border">Security Fundamentals</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Fundamental IT Security</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">IT Security Academy</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2024</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('fundamental-it-security')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1bJVxYuT_L-OoG3mQ8qOSovMtdQDitLTl/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Software Tester Certificate (QA & Testing) -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-purple-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1GJ64OjqqIH4s51qNu-qBCmJk4wfD4j5s&sz=w800" alt="Software Tester Certificate (QA & Testing)" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Quality Assurance';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950 text-purple-300 border-purple-800 border">Quality Assurance</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Software Tester Certificate (QA & Testing)</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Growia Academy</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2024</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('growia-software-tester')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1GJ64OjqqIH4s51qNu-qBCmJk4wfD4j5s/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Webinar Red Team Cyber Defense -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-red-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1qNjmOl_hnncyiqRFWBPWG2uHWfkPwypM&sz=w800" alt="Webinar Red Team Cyber Defense" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Red Team Operations';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950 text-red-300 border-red-800 border">Red Team Operations</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Webinar Red Team Cyber Defense</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">Red Team Leaders</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('webinar-red-team')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1qNjmOl_hnncyiqRFWBPWG2uHWfkPwypM/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificate Card: Bootcamp Cyber Security (1 Bulan) -->
+        <div class="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 flex flex-col justify-between space-y-4 hover:border-emerald-500/50 transition relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="space-y-3.5">
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-700/80 bg-[#070D1A] relative group-hover:scale-[1.02] transition flex items-center justify-center">
+              <img src="https://drive.google.com/thumbnail?id=1i3VUmyjFH_PhXdr8jJUuPRNrnXn8cBye&sz=w800" alt="Bootcamp Cyber Security (1 Bulan)" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-top filter contrast-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1222/0EA5FF?text=Intensive Bootcamp';">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222]/90 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-black/80 text-cyan-300 border border-cyan-800/60 flex items-center gap-1 shadow-md">
+                <i data-lucide="shield-check" class="w-3 h-3 text-cyan-400"></i> Verified GDrive
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border-emerald-800 border">Intensive Bootcamp</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 flex items-center gap-1">
+                  <i data-lucide="cloud" class="w-3 h-3"></i> GDrive
+                </span>
+              </div>
+              <h3 class="font-bold text-white text-base mt-2 line-clamp-2 leading-snug group-hover:text-cyan-300 transition">Bootcamp Cyber Security (1 Bulan)</h3>
+              <p class="text-xs text-slate-400 mt-1">Penyelenggara: <strong class="text-slate-300">IDNetworkers</strong></p>
+              <p class="text-[11px] font-mono text-slate-500 mt-0.5">Tahun: 2025</p>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2">
+            <button onclick="openCertModal('idnetwork-1bln')" class="flex-1 py-2 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-2 hover:border-cyan-400 transition">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Lihat Detail</span>
+            </button>
+            <a href="https://drive.google.com/file/d/1i3VUmyjFH_PhXdr8jJUuPRNrnXn8cBye/view?usp=sharing" target="_blank" rel="noreferrer" title="Buka Dokumen Asli di Google Drive" class="p-2 rounded-xl bg-[#0A1222] border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- H. Blog & Technical Writeups Section -->
+    <section id="blog" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
+            <i data-lucide="file-code" class="w-3.5 h-3.5"></i>
+            <span>KNOWLEDGE SHARING &amp; WRITEUPS</span>
+          </div>
+          <h2 class="text-3xl font-extrabold font-heading text-white">Blog &amp; Technical Writeups</h2>
+          <p class="text-slate-400 text-sm mt-1">Dokumentasi teknis, catatan riset kerentanan, dan tutorial arsitektur aman.</p>
+        </div>
+
+        <a href="#contact" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition">
+          <span>Request a Technical Topic</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Article 1: Web App Pentesting & OWASP -->
+        <article class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-cyan-500/40 transition">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Web App Testing</span>
+              <span class="text-slate-500 font-mono text-[11px]">Februari 2026</span>
+            </div>
+            <h3 class="font-bold text-white text-base group-hover:text-cyan-300 transition leading-snug">
+              Analisis OWASP Top 10: Eksploitasi &amp; Mitigasi SQL Injection pada Aplikasi Web
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Membedah teknik identifikasi celah SQL Injection manual via Burp Suite, dampak bypass otentikasi, serta implementasi prepared statement yang tepat.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-800/60 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500">Read Time: 6 min</span>
+            <span class="text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition flex items-center gap-1">Read Article <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </article>
+
+        <!-- Article 2: Cross Site Scripting (XSS) -->
+        <article class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-purple-500/40 transition">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full font-mono bg-purple-950 text-purple-300 border border-purple-800">Penetration Testing</span>
+              <span class="text-slate-500 font-mono text-[11px]">Januari 2026</span>
+            </div>
+            <h3 class="font-bold text-white text-base group-hover:text-purple-300 transition leading-snug">
+              Menguji Ketahanan Input Validation: Studi Kasus Stored &amp; Reflected XSS
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Bagaimana kelemahan sanitasi input dan context-aware encoding dapat dimanfaatkan penyerang untuk mencuri session cookies dan langkah hardening browser CSP.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-800/60 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500">Read Time: 7 min</span>
+            <span class="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition flex items-center gap-1">Read Article <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </article>
+
+        <!-- Article 3: SOC & SIEM Wazuh -->
+        <article class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-blue-500/40 transition">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-0.5 rounded-full font-mono bg-blue-950 text-blue-300 border border-blue-800">SOC &amp; Tools</span>
+              <span class="text-slate-500 font-mono text-[11px]">Desember 2025</span>
+            </div>
+            <h3 class="font-bold text-white text-base group-hover:text-blue-300 transition leading-snug">
+              Membangun Lab Wazuh &amp; Docker untuk Monitoring Log dan Alert Real-Time
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Panduan integrasi agent Wazuh pada server Ubuntu untuk mendeteksi brute-force authentication dan mengirim webhook notifikasi otomatis.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-800/60 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500">Read Time: 5 min</span>
+            <span class="text-xs font-bold text-blue-400 group-hover:translate-x-1 transition flex items-center gap-1">Read Article <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- I. Contact Section (Direct CV Contacts) -->
+    <section id="contact" class="scroll-mt-24">
+      <div data-aos="fade-up" data-aos-duration="700">
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 relative overflow-hidden" data-aos="zoom-in-up" data-aos-duration="900">
+        
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Contact Left Info -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              <span>GET IN TOUCH</span>
+            </div>
+
+            <h2 class="text-3xl font-extrabold font-heading text-white leading-tight">
+              Let's Build Something Secure and Meaningful Together.
+            </h2>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Terbuka untuk diskusi pengujian keamanan aplikasi web, penetration testing, kolaborasi pengembangan website aman, maupun peluang profesional lainnya.
+            </p>
+
+            <div class="space-y-3 pt-2">
+              
+              <!-- WhatsApp / Phone -->
+              <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="p-3.5 rounded-xl bg-[#0A1222] border border-emerald-500/30 flex items-center gap-3.5 hover:border-emerald-400 transition group">
+                <div class="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition">
+                  <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=128" alt="WhatsApp" class="w-5 h-5 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/whatsapp.png';">
+                </div>
+                <div>
+                  <p class="text-xs text-emerald-400 font-mono font-medium">WhatsApp / Telepon</p>
+                  <p class="text-sm font-semibold text-white">0838 7564 4210</p>
+                </div>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:riskiardiansyah51938@gmail.com" class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 flex items-center gap-3.5 hover:border-cyan-500/40 transition group">
+                <div class="w-10 h-10 rounded-lg bg-cyan-950 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition">
+                  <img src="https://www.google.com/s2/favicons?domain=gmail.com&sz=128" alt="Email" class="w-5 h-5 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/gmail.png';">
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-mono">Email Resmi</p>
+                  <p class="text-sm font-semibold text-white">riskiardiansyah51938@gmail.com</p>
+                </div>
+              </a>
+
+              <!-- LinkedIn (Real Profile) -->
+              <a href="https://www.linkedin.com/in/riski-ardiansyah-468626338/" target="_blank" rel="noreferrer" class="p-3.5 rounded-xl bg-[#0A1222] border border-blue-500/30 flex items-center gap-3.5 hover:border-blue-400 transition group">
+                <div class="w-10 h-10 rounded-lg bg-blue-950 flex items-center justify-center text-blue-400 shrink-0 group-hover:scale-105 transition">
+                  <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn" class="w-5 h-5 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/linkedin.png';">
+                </div>
+                <div>
+                  <p class="text-xs text-blue-400 font-mono font-medium">LinkedIn Profile</p>
+                  <p class="text-sm font-semibold text-white">linkedin.com/in/riski-ardiansyah</p>
+                </div>
+              </a>
+
+              <!-- GitHub (Real ard34) -->
+              <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 flex items-center gap-3.5 hover:border-purple-500/40 transition group">
+                <div class="w-10 h-10 rounded-lg bg-purple-950 flex items-center justify-center text-purple-400 shrink-0 group-hover:scale-105 transition">
+                  <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub" class="w-5 h-5 object-contain" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-mono">GitHub Profile</p>
+                  <p class="text-sm font-semibold text-white">github.com/ard34</p>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-lg bg-blue-950 flex items-center justify-center text-blue-400 shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-mono">Domisili &amp; Kampus</p>
+                  <p class="text-sm font-semibold text-white">Kab. Tangerang, Banten • Politeknik Piksi Input Serang</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contact Right Form -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-2xl bg-[#0A1222]/90 border border-slate-800">
+              <h3 class="text-lg font-bold font-heading text-white mb-1">Kirimkan Pesan Langsung</h3>
+              <p class="text-xs text-slate-400 mb-6">Pesan langsung terhubung dan terenkripsi untuk keamanan komunikasi.</p>
+
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono text-slate-300 mb-1.5">Nama Lengkap *</label>
+                    <input type="text" required placeholder="cth. Budi Pratama" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono text-slate-300 mb-1.5">Alamat Email *</label>
+                    <input type="email" required placeholder="cth. budi@company.com" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Subjek Keperluan *</label>
+                  <input type="text" required placeholder="cth. Diskusi Web Security / Project Collab" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Pesan Detail *</label>
+                  <textarea rows="4" required placeholder="Tuliskan pesan Anda untuk Riski Ardiansyah..." class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600 resize-none"></textarea>
+                </div>
+
+                <div id="form-status"></div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl gradient-btn text-white font-bold text-sm flex items-center justify-center gap-2">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Kirim Pesan Sekarang</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- J. Footer -->
+  <footer class="mt-20 border-t border-slate-800/80 bg-[#050914] relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Tagline -->
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#0A1222] border border-cyan-500/40 p-1 flex items-center justify-center shadow-md">
+            <img src="assets/img/logo_symbol.png?v=13" alt="Riski Ardiansyah Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(34,211,238,0.4)]">
+          </div>
+          <span class="font-heading font-bold text-base text-white">Riski Ardiansyah</span>
+        </div>
+        <p class="text-xs text-slate-400 font-mono tracking-wide">
+          Build • Learn • Secure
+        </p>
+      </div>
+
+      <!-- Copyright & Location -->
+      <div class="text-center md:text-left">
+        <p class="text-xs text-slate-400">
+          Riski Ardiansyah &copy; 2026. All Rights Reserved.
+        </p>
+        <p class="text-[11px] text-slate-500 font-mono mt-0.5">
+          D4 Rekayasa Keamanan Siber • Politeknik Piksi Input Serang
+        </p>
+      </div>
+
+      <!-- Social and Made with -->
+      <div class="flex flex-col items-center md:items-end gap-2">
+        <div class="flex items-center gap-4 text-slate-400">
+          <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="hover:scale-110 transition opacity-80 hover:opacity-100" title="GitHub: ard34">
+            <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub" class="w-4 h-4 object-contain inline-block" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
+          </a>
+          <a href="mailto:riskiardiansyah51938@gmail.com" class="hover:scale-110 transition opacity-80 hover:opacity-100" title="Email">
+            <img src="https://www.google.com/s2/favicons?domain=gmail.com&sz=128" alt="Email" class="w-4 h-4 object-contain inline-block" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/gmail.png';">
+          </a>
+          <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="hover:scale-110 transition opacity-80 hover:opacity-100" title="WhatsApp">
+            <img src="https://www.google.com/s2/favicons?domain=whatsapp.com&sz=128" alt="WhatsApp" class="w-4 h-4 object-contain inline-block" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/whatsapp.png';">
+          </a>
+          <a href="https://www.linkedin.com/in/riski-ardiansyah-468626338/" target="_blank" rel="noreferrer" class="hover:scale-110 transition opacity-80 hover:opacity-100" title="LinkedIn: Riski Ardiansyah">
+            <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn" class="w-4 h-4 object-contain inline-block" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/linkedin.png';">
+          </a>
+        </div>
+        <span class="text-[11px] text-slate-500">Made with ❤️ for a better digital world</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- CV Preview Interactive Modal -->
+  <div id="cv-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-3xl rounded-2xl border border-cyan-500/50 p-6 space-y-4 max-h-[92vh] overflow-y-auto relative animate-fadeIn">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="file-text" class="w-5 h-5 text-cyan-400"></i>
+          <div>
+            <h3 class="text-base font-bold font-heading text-white">Curriculum Vitae: Riski Ardiansyah</h3>
+            <p class="text-[11px] font-mono text-cyan-300">D4 Rekayasa Keamanan Siber • Politeknik Piksi Input Serang</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="assets/img/cv_riski_ardiansyah.jpg" download="CV_Riski_Ardiansyah.jpg" class="px-3 py-1.5 rounded-lg gradient-btn text-white text-xs font-semibold flex items-center gap-1.5">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Unduh CV</span>
+          </a>
+          <button onclick="closeCVPreview()" class="p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- CV Image View -->
+      <div class="rounded-xl overflow-hidden border border-slate-800 flex justify-center bg-[#050914] p-2">
+        <img src="assets/img/cv_riski_ardiansyah.jpg" alt="Curriculum Vitae Riski Ardiansyah" class="max-w-full h-auto rounded-lg shadow-2xl">
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details Modal -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-2xl rounded-2xl border border-cyan-500/40 p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto animate-fadeIn relative">
+      <button id="close-modal-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Project Image Preview -->
+      <div class="w-full h-52 sm:h-64 rounded-xl overflow-hidden border border-cyan-500/30 relative bg-slate-950 shadow-inner group">
+        <img id="modal-image" src="assets/img/projects/sentinelai.jpg" alt="Project Preview" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-transparent to-transparent pointer-events-none"></div>
+      </div>
+
+      <div>
+        <span id="modal-category" class="text-xs font-mono px-3 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">Category</span>
+        <h3 id="modal-title" class="text-2xl font-bold font-heading text-white mt-3">Project Title</h3>
+        <p id="modal-subtitle" class="text-sm font-mono text-cyan-400 mt-1">Project Subtitle</p>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Teknologi &amp; Arsitektur</h4>
+        <div id="modal-stack" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Deskripsi Lengkap</h4>
+        <p id="modal-description" class="text-slate-300 text-sm leading-relaxed"></p>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Fitur Utama &amp; Aspek Keamanan</h4>
+        <ul id="modal-features" class="space-y-2"></ul>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30">
+        <div class="text-xs font-mono text-cyan-300">Hasil &amp; Metrik Kinerja:</div>
+        <p id="modal-metrics" class="text-xs text-slate-300 mt-1"></p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
+        <a id="modal-link" href="#" target="_blank" rel="noreferrer" class="px-5 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-2">
+          <span>Kunjungi Repository GitHub (ard34)</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Input Tambah Sertifikat Baru -->
+  <div id="add-cert-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-2xl rounded-2xl border border-cyan-500/50 p-6 sm:p-8 space-y-6 max-h-[92vh] overflow-y-auto relative animate-fadeIn">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">Input Sertifikat Baru</h3>
+            <p class="text-xs font-mono text-cyan-400">Tambahkan pencapaian / sertifikasi resmi Anda</p>
+          </div>
+        </div>
+        <button onclick="closeAddCertModal()" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="add-cert-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1.5">Nama / Judul Sertifikat *</label>
+          <input type="text" id="new-cert-title" required placeholder="cth. Certified Network Security Specialist" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Penyelenggara / Institusi *</label>
+            <input type="text" id="new-cert-issuer" required placeholder="cth. BSSN / Red Team Leaders / Cisco" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Kategori / Topik *</label>
+            <input type="text" id="new-cert-category" placeholder="cth. Red Team Operations / Web Pentest" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Tahun Penerbitan *</label>
+            <input type="text" id="new-cert-date" placeholder="cth. 2026" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">ID Kredensial / No. Seri</label>
+            <input type="text" id="new-cert-credid" placeholder="cth. CERT-2026-081" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Tema Warna Kartu</label>
+            <select id="new-cert-color" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+              <option value="cyan">Neon Cyan</option>
+              <option value="red">Cyber Red</option>
+              <option value="purple">Royal Purple</option>
+              <option value="blue">Deep Blue</option>
+              <option value="emerald">Emerald Green</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1.5">Tautan / Link Verifikasi Online (Opsional)</label>
+          <input type="url" id="new-cert-url" placeholder="https://credential.net/..." class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400">
+        </div>
+
+        <div class="space-y-3 p-4 rounded-xl bg-[#070D1A] border border-cyan-500/20">
+          <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono">
+            <i data-lucide="cloud" class="w-4 h-4"></i>
+            <span class="font-bold">Opsi 1: Link Google Drive (Rekomendasi untuk PDF / Gambar)</span>
+          </div>
+          <div>
+            <label class="block text-[11px] font-mono text-slate-400 mb-1">Paste Link Google Drive Sertifikat:</label>
+            <input type="url" id="new-cert-gdrive" placeholder="https://drive.google.com/file/d/1A2b3C.../view?usp=sharing" class="w-full px-4 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-cyan-400 font-mono placeholder:text-slate-600">
+            <p class="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+              <i data-lucide="info" class="w-3 h-3 text-cyan-400"></i>
+              <span>Pastikan akses Google Drive disetel ke: <strong>"Anyone with the link / Siapa saja yang memiliki link"</strong>.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-2 p-4 rounded-xl bg-[#070D1A] border border-slate-800">
+          <div class="flex items-center gap-2 text-slate-300 text-xs font-mono">
+            <i data-lucide="upload" class="w-4 h-4 text-purple-400"></i>
+            <span>Opsi 2: Atau Upload File Gambar Langsung dari Laptop / HP</span>
+          </div>
+          <input type="file" id="cert-file-input" accept="image/*" class="w-full px-3 py-2 rounded-xl bg-[#0A1222] border border-dashed border-slate-700 text-xs text-slate-300 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:bg-cyan-950 file:text-cyan-300 file:border-cyan-800">
+          <div class="mt-2 flex justify-center">
+            <img id="cert-image-preview" src="#" alt="Preview Gambar Sertifikat" class="hidden max-h-36 rounded-lg border border-cyan-500/40">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1.5">Deskripsi Singkat / Kompetensi yang Diuji</label>
+          <textarea id="new-cert-desc" rows="3" placeholder="Tuliskan ringkasan materi atau keahlian yang divalidasi oleh sertifikasi ini..." class="w-full px-4 py-2 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-800 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeAddCertModal()" class="px-4 py-2.5 rounded-xl outline-btn text-xs font-semibold">Batal</button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-2">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Simpan &amp; Tampilkan di Portfolio</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Detail & Verifikasi Sertifikat (Visual High-Res) -->
+  <div id="cert-detail-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-2xl rounded-2xl border border-cyan-500/50 p-6 sm:p-8 space-y-6 max-h-[92vh] overflow-y-auto relative animate-fadeIn">
+      <button onclick="closeCertModal()" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div>
+        <span id="cert-modal-category" class="text-xs font-mono px-3 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">Category</span>
+        <h3 id="cert-modal-title" class="text-2xl font-bold font-heading text-white mt-3">Certificate Title</h3>
+        <p class="text-sm font-mono text-slate-400 mt-1">
+          Penyelenggara: <strong id="cert-modal-issuer" class="text-cyan-400">Issuer</strong> • Tahun: <span id="cert-modal-date" class="text-white">2026</span>
+        </p>
+      </div>
+
+      <!-- Preview Image Container (if uploaded) -->
+      <div id="cert-modal-img-container" class="hidden"></div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Deskripsi Kredensial</h4>
+        <p id="cert-modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-[#0A1222] border border-cyan-500/30 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-mono text-slate-400 block uppercase">Nomor ID Verifikasi</span>
+          <span id="cert-modal-credid" class="text-xs font-mono text-cyan-300 font-bold">VERIFIED-RECORD</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Verified Official</span>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+        <span class="text-xs text-slate-500 font-mono">Riski Ardiansyah Portfolio Credential</span>
+        <a id="cert-modal-verify-btn" href="#" target="_blank" rel="noreferrer" class="px-5 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-2">
+          <span>Buka Tautan Verifikasi</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/cyber-background.js"></script>
+  <!-- AOS (Animate On Scroll) & Vanilla Tilt Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="assets/js/main.js?v=16"></script>
+  <!-- Floating Classy Back to Top Button -->
+  <button id="back-to-top-btn" class="w-12 h-12 rounded-2xl gradient-btn text-white flex items-center justify-center shadow-xl shadow-cyan-500/30 border border-cyan-400/50 cursor-pointer" title="Kembali ke Atas" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+</body>
+</html>
