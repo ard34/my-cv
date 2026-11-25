@@ -79,28 +79,34 @@
 
       <!-- Desktop Navigation Menu -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
-        <a href="#home" class="nav-link text-cyan-400 font-semibold hover:text-cyan-300 transition">Home</a>
-        <a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition">About</a>
-        <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition">Skills</a>
-        <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition">Projects</a>
-        <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition">Experience</a>
-        <a href="#certificates" class="nav-link text-slate-300 hover:text-cyan-400 transition">Certificates</a>
-        <a href="#blog" class="nav-link text-slate-300 hover:text-cyan-400 transition">Blog</a>
-        <a href="#contact" class="nav-link text-slate-300 hover:text-cyan-400 transition">Contact</a>
+        <a href="#home" data-i18n="nav.home" class="nav-link text-cyan-400 font-semibold hover:text-cyan-300 transition">Home</a>
+        <a href="#about" data-i18n="nav.about" class="nav-link text-slate-300 hover:text-cyan-400 transition">About</a>
+        <a href="#skills" data-i18n="nav.skills" class="nav-link text-slate-300 hover:text-cyan-400 transition">Skills</a>
+        <a href="#projects" data-i18n="nav.projects" class="nav-link text-slate-300 hover:text-cyan-400 transition">Projects</a>
+        <a href="#experience" data-i18n="nav.experience" class="nav-link text-slate-300 hover:text-cyan-400 transition">Experience</a>
+        <a href="#certificates" data-i18n="nav.certificates" class="nav-link text-slate-300 hover:text-cyan-400 transition">Certificates</a>
+        <a href="#blog" data-i18n="nav.blog" class="nav-link text-slate-300 hover:text-cyan-400 transition">Blog</a>
+        <a href="#contact" data-i18n="nav.contact" class="nav-link text-slate-300 hover:text-cyan-400 transition">Contact</a>
       </nav>
 
       <!-- Desktop Right Actions -->
       <div class="hidden lg:flex items-center gap-3">
+        <!-- Language Switcher Pill -->
+        <div class="lang-switch flex items-center bg-[#0A1222] border border-slate-800 rounded-xl p-1 text-xs font-mono shadow-inner" title="Ganti Bahasa / Change Language">
+          <button id="lang-id-btn" onclick="setLanguage('id')" class="px-2.5 py-1 rounded-lg transition font-bold text-cyan-400 bg-cyan-950/80 border border-cyan-800">ID</button>
+          <button id="lang-en-btn" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white">EN</button>
+        </div>
+
         <button id="theme-toggle-btn" title="Cyber Dark Theme Locked" class="p-2 rounded-lg text-slate-400 hover:text-cyan-400 hover:bg-slate-800/50 transition">
           <i data-lucide="moon" class="w-5 h-5"></i>
         </button>
         <button onclick="openCVPreview()" class="px-3.5 py-2 rounded-xl text-xs font-semibold outline-btn flex items-center gap-1.5 hover:border-cyan-400 transition">
           <i data-lucide="eye" class="w-4 h-4 text-cyan-400"></i>
-          <span>Preview CV</span>
+          <span data-i18n="nav.preview_cv">Preview CV</span>
         </button>
         <a href="assets/img/cv_riski_ardiansyah.jpg" download="CV_Riski_Ardiansyah.jpg" class="px-4 py-2 rounded-xl text-xs font-semibold gradient-btn text-white flex items-center gap-1.5">
           <i data-lucide="download" class="w-4 h-4"></i>
-          <span>Download CV</span>
+          <span data-i18n="nav.download_cv">Download CV</span>
         </a>
       </div>
 
@@ -125,50 +131,57 @@
           </div>
           <div>
             <span class="font-heading font-bold text-white text-base block">Riski Ardiansyah</span>
-            <span class="text-[10px] text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</span>
+            <span data-i18n="mobile.title_role" class="text-[10px] text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</span>
           </div>
         </div>
-        <button id="close-mobile-menu" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <!-- Mobile Language Switcher Pill -->
+          <div class="lang-switch flex items-center bg-[#0A1222] border border-slate-800 rounded-xl p-1 text-xs font-mono">
+            <button id="mobile-lang-id-btn" onclick="setLanguage('id')" class="px-2 py-0.5 rounded-lg transition font-bold text-cyan-400 bg-cyan-950/80 border border-cyan-800">ID</button>
+            <button id="mobile-lang-en-btn" onclick="setLanguage('en')" class="px-2 py-0.5 rounded-lg transition text-slate-400 hover:text-white">EN</button>
+          </div>
+          <button id="close-mobile-menu" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white" aria-label="Close Menu">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
       </div>
 
       <nav class="flex flex-col gap-3 py-6 text-sm font-medium overflow-y-auto">
         <a href="#home" class="mobile-nav-link text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="home" class="w-4 h-4"></i> Home
+          <i data-lucide="home" class="w-4 h-4"></i> <span data-i18n="mobile.home">Home</span>
         </a>
         <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="user" class="w-4 h-4"></i> Tentang Saya &amp; Pendidikan
+          <i data-lucide="user" class="w-4 h-4"></i> <span data-i18n="mobile.about">Tentang Saya &amp; Pendidikan</span>
         </a>
         <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="shield" class="w-4 h-4"></i> Keahlian &amp; Tools
+          <i data-lucide="shield" class="w-4 h-4"></i> <span data-i18n="mobile.skills">Keahlian &amp; Tools</span>
         </a>
         <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="layers" class="w-4 h-4"></i> Proyek Portfolio
+          <i data-lucide="layers" class="w-4 h-4"></i> <span data-i18n="mobile.projects">Proyek Portfolio</span>
         </a>
         <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="activity" class="w-4 h-4"></i> Pengalaman &amp; Perjalanan Belajar
+          <i data-lucide="activity" class="w-4 h-4"></i> <span data-i18n="mobile.experience">Pengalaman &amp; Perjalanan Belajar</span>
         </a>
         <a href="#certificates" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="award" class="w-4 h-4"></i> Sertifikasi &amp; Program
+          <i data-lucide="award" class="w-4 h-4"></i> <span data-i18n="mobile.certificates">Sertifikasi &amp; Program</span>
         </a>
         <a href="#blog" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2 border-b border-slate-800/40">
-          <i data-lucide="file-text" class="w-4 h-4"></i> Blog &amp; Writeups
+          <i data-lucide="file-text" class="w-4 h-4"></i> <span data-i18n="mobile.blog">Blog &amp; Writeups</span>
         </a>
         <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 flex items-center gap-3 py-2">
-          <i data-lucide="mail" class="w-4 h-4"></i> Kontak
+          <i data-lucide="mail" class="w-4 h-4"></i> <span data-i18n="mobile.contact">Kontak</span>
         </a>
       </nav>
 
       <div class="mt-auto flex flex-col gap-2.5 pt-4 border-t border-slate-800">
         <button onclick="openCVPreview()" class="w-full py-2.5 rounded-xl outline-btn text-cyan-300 text-xs font-semibold text-center flex items-center justify-center gap-2">
-          <i data-lucide="eye" class="w-4 h-4"></i> Preview CV Resmi
+          <i data-lucide="eye" class="w-4 h-4"></i> <span data-i18n="mobile.preview_cv">Preview CV Resmi</span>
         </button>
         <a href="assets/img/cv_riski_ardiansyah.jpg" download="CV_Riski_Ardiansyah.jpg" class="w-full py-3 rounded-xl gradient-btn text-white font-semibold text-center flex items-center justify-center gap-2 text-sm">
-          <i data-lucide="download" class="w-4 h-4"></i> Unduh CV (Gambar Asli)
+          <i data-lucide="download" class="w-4 h-4"></i> <span data-i18n="mobile.download_cv">Unduh CV (Gambar Asli)</span>
         </a>
         <a href="preview-comparison.html" class="w-full py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 text-[11px] text-center flex items-center justify-center gap-1.5">
-          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> Dual Desktop / Mobile Frame View
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i> <span data-i18n="mobile.dual_view">Dual Desktop / Mobile Frame View</span>
         </a>
       </div>
     </div>
@@ -184,15 +197,15 @@
         <div class="lg:col-span-7 flex flex-col items-start space-y-6 order-1" data-aos="fade-right" data-aos-duration="900">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#101B2D] border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-md">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>Cybersecurity Enthusiast • Web App Testing</span>
+            <span data-i18n="hero.badge">Cybersecurity Enthusiast • Web App Testing</span>
           </div>
 
           <div class="space-y-2">
-            <p class="text-base sm:text-lg font-medium text-slate-400">Hello, I'm</p>
+            <p data-i18n="hero.greeting" class="text-base sm:text-lg font-medium text-slate-400">Hello, I'm</p>
             <h1 class="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight">
               Riski <span class="gradient-text">Ardiansyah</span>
             </h1>
-            <p class="text-lg sm:text-xl font-semibold text-cyan-300 font-mono pt-1">
+            <p data-i18n="hero.role" class="text-lg sm:text-xl font-semibold text-cyan-300 font-mono pt-1">
               Cybersecurity Enthusiast &amp; AI-Assisted Software Developer
             </p>
           </div>
@@ -200,45 +213,45 @@
           <!-- Official CV Quote -->
           <div class="relative p-4 rounded-xl bg-[#0A1222]/80 border-l-4 border-cyan-400 border-y border-r border-slate-800/80 text-sm italic text-slate-200">
             <i data-lucide="quote" class="w-4 h-4 text-cyan-400 inline-block mr-1 opacity-70"></i>
-            “Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”
+            <span data-i18n="hero.quote">“Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”</span>
           </div>
 
           <!-- AI-Assisted Software Development Highlight Box -->
           <div class="p-4 rounded-2xl bg-[#0A1222]/95 border border-cyan-500/40 space-y-2 relative overflow-hidden shadow-lg shadow-cyan-500/10">
             <div class="flex items-center gap-2 text-cyan-300 text-xs font-mono font-bold tracking-wide">
               <i data-lucide="bot" class="w-4 h-4 text-cyan-400"></i>
-              <span>AI-Assisted Software Development with AI Coding Agents</span>
+              <span data-i18n="hero.ai_title">AI-Assisted Software Development with AI Coding Agents</span>
             </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <p data-i18n="hero.ai_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Pengembangan aplikasi dengan memanfaatkan AI Agent, di mana manusia berperan dalam perancangan ide, requirement, arsitektur, dan business logic, sedangkan AI Agent membantu implementasi teknis, coding, debugging, serta testing.
             </p>
           </div>
 
-          <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+          <p data-i18n-html="hero.bio" class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
             Mahasiswa aktif semester 7 Jurusan <strong>D4 Rekayasa Keamanan Siber</strong> di Politeknik Piksi Input Serang. Berfokus pada keamanan aplikasi web, penetration testing, serta perancangan perangkat lunak modern berbasis arsitektur AI coding agent.
           </p>
 
           <!-- Action CTA Buttons -->
           <div class="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
             <a href="#projects" class="w-full sm:w-auto px-6 py-3.5 rounded-xl gradient-btn text-white font-semibold text-sm flex items-center justify-center gap-2">
-              <span>View My Projects</span>
+              <span data-i18n="hero.btn_projects">View My Projects</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
 
             <button onclick="openCVPreview()" class="w-full sm:w-auto px-5 py-3.5 rounded-xl outline-btn text-white font-semibold text-sm flex items-center justify-center gap-2">
               <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
-              <span>Preview CV</span>
+              <span data-i18n="hero.btn_cv">Preview CV</span>
             </button>
 
             <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-900/60 text-sm font-semibold flex items-center justify-center gap-2 transition">
               <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
-              <span>WhatsApp Me</span>
+              <span data-i18n="hero.btn_wa">WhatsApp Me</span>
             </a>
           </div>
 
           <!-- Social Icons & Direct Contact Links -->
           <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/80 w-full text-xs">
-            <span class="font-mono text-slate-500 uppercase tracking-widest">Connect:</span>
+            <span data-i18n="hero.connect" class="font-mono text-slate-500 uppercase tracking-widest">Connect:</span>
             <div class="flex items-center gap-2.5">
               <a href="https://github.com/ard34" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-xl bg-[#101B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:border-slate-400 hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] transition group" title="GitHub: ard34">
                 <img src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt="GitHub" class="w-4 h-4 rounded-sm object-contain transition group-hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='assets/img/icons/github.svg';">
@@ -255,7 +268,7 @@
             </div>
             <div class="text-[11px] font-mono text-slate-400 sm:ml-auto flex items-center gap-1.5">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
-              <span>Kab. Tangerang, Banten</span>
+              <span data-i18n="hero.location">Kab. Tangerang, Banten</span>
             </div>
           </div>
         </div>
@@ -298,8 +311,8 @@
                     <i data-lucide="shield-check" class="w-5 h-5"></i>
                   </div>
                   <div class="overflow-hidden">
-                    <p class="text-xs font-bold text-white truncate">D4 Rekayasa Keamanan Siber</p>
-                    <p class="text-[10px] font-mono text-cyan-300">Piksi Input Serang (Sem. 7)</p>
+                    <p data-i18n="hero.badge_degree" class="text-xs font-bold text-white truncate">D4 Rekayasa Keamanan Siber</p>
+                    <p data-i18n="hero.badge_campus" class="text-[10px] font-mono text-cyan-300">Piksi Input Serang (Sem. 7)</p>
                   </div>
                   <div class="ml-auto w-2 h-2 rounded-full bg-emerald-400" title="Active Student"></div>
                 </div>
@@ -319,10 +332,10 @@
       <div class="mb-10 text-center md:text-left">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
           <i data-lucide="fingerprint" class="w-3.5 h-3.5"></i>
-          <span>PROFILE &amp; ACADEMIC BACKGROUND</span>
+          <span data-i18n="about.badge">PROFILE &amp; ACADEMIC BACKGROUND</span>
         </div>
-        <h2 class="text-3xl font-extrabold font-heading text-white">About Me &amp; Education</h2>
-        <p class="text-slate-400 text-sm mt-1">Latar belakang pendidikan formal, visi kontribusi, dan komitmen profesional.</p>
+        <h2 data-i18n="about.title" class="text-3xl font-extrabold font-heading text-white">About Me &amp; Education</h2>
+        <p data-i18n="about.subtitle" class="text-slate-400 text-sm mt-1">Latar belakang pendidikan formal, visi kontribusi, dan komitmen profesional.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -337,16 +350,16 @@
                 <i data-lucide="user-check" class="w-5 h-5"></i>
               </div>
               <div>
-                <h3 class="text-xl font-bold font-heading text-white">Tentang Saya</h3>
+                <h3 data-i18n="about.badge" class="text-xl font-bold font-heading text-white">Tentang Saya</h3>
                 <span class="text-xs font-mono text-cyan-400">Profile Statement</span>
               </div>
             </div>
 
-            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-              Mahasiswa aktif <strong>Politeknik Piksi Input Serang semester 7 Jurusan Rekayasa Keamanan Siber</strong>. Tertarik mendalam di bidang keamanan siber, khususnya <strong>pengujian web aplikasi (Web Application Security) dan penetration testing</strong>.
+            <p data-i18n="about.bio1" class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Saya adalah mahasiswa tingkat akhir di Politeknik Piksi Input Serang pada program studi D4 Rekayasa Keamanan Siber. Memiliki ketertarikan mendalam dan pengalaman hands-on dalam menguji keamanan sistem informasi, menelusuri kerentanan (vulnerability assessment), serta memahami alur eksploitasi web application berstandar OWASP Top 10.
             </p>
-            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-              Dalam ranah rekayasa perangkat lunak, saya mengedepankan paradigma <strong>AI-Assisted Software Development with AI Coding Agents</strong> — memfokuskan peran pada perancangan ide, requirement, arsitektur, dan business logic, sementara AI Agent mengakselerasi implementasi teknis, coding, debugging, serta testing.
+            <p data-i18n="about.bio2" class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              Selain berfokus pada ranah offensive security, saya juga aktif merancang dan mengembangkan sistem web fungsional menggunakan Laravel, Tailwind CSS, dan Next.js dengan pendekatan AI-Assisted Software Development—mengorkestrasi AI Coding Agent untuk menghasilkan kode yang bersih, terdokumentasi, dan tangguh terhadap celah keamanan.
             </p>
 
             <div class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 text-xs text-slate-400 flex items-start gap-2.5">
@@ -361,7 +374,7 @@
               <span>Kab. Tangerang, Banten, Indonesia</span>
             </div>
             <button onclick="openCVPreview()" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
-              <span>Buka CV Lengkap</span>
+              <span data-i18n="nav.preview_cv">Buka CV Lengkap</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
@@ -377,7 +390,7 @@
                 <i data-lucide="graduation-cap" class="w-5 h-5"></i>
               </div>
               <div>
-                <h3 class="text-xl font-bold font-heading text-white">Pendidikan</h3>
+                <h3 data-i18n="about.edu_heading" class="text-xl font-bold font-heading text-white">Pendidikan</h3>
                 <span class="text-xs font-mono text-purple-400">Formal Academic Path</span>
               </div>
             </div>
@@ -386,15 +399,15 @@
             <div class="p-4 rounded-xl bg-[#0A1222] border border-cyan-500/30 space-y-2">
               <div class="flex items-start justify-between">
                 <div>
-                  <h4 class="font-bold text-white text-base">Politeknik Piksi Input Serang</h4>
-                  <p class="text-xs text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</p>
+                  <h4 data-i18n="about.edu_institution" class="font-bold text-white text-base">Politeknik Piksi Input Serang</h4>
+                  <p data-i18n="about.edu_degree" class="text-xs text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</p>
                 </div>
                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">
                   Semester 7
                 </span>
               </div>
-              <p class="text-xs text-slate-400 pt-1">
-                Fokus Keilmuan: Web Application Security, Network Security, Forensic Analysis, Kriptografi, Ethical Hacking, &amp; Penanganan Insiden.
+              <p data-i18n="about.edu_desc" class="text-xs text-slate-400 pt-1">
+                Mempelajari fundamental dan praktik lanjutan network defense, ethical hacking, digital forensics, reverse engineering, cryptography, serta perancangan sistem informasi berstandar keamanan enterprise.
               </p>
             </div>
 
@@ -431,10 +444,10 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
             <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-            <span>TECHNICAL CAPABILITIES</span>
+            <span data-i18n="skills.badge">TECHNICAL CAPABILITIES</span>
           </div>
-          <h2 class="text-3xl font-extrabold font-heading text-white">Keahlian &amp; Tools</h2>
-          <p class="text-slate-400 text-sm mt-1">Keahlian pengujian keamanan web, security tools resmi, dan stack AI-Assisted Software Development.</p>
+          <h2 data-i18n="skills.title" class="text-3xl font-extrabold font-heading text-white">Keahlian &amp; Tools</h2>
+          <p data-i18n="skills.subtitle" class="text-slate-400 text-sm mt-1">Keahlian pengujian keamanan web, security tools resmi, dan stack AI-Assisted Software Development.</p>
         </div>
 
         <!-- Capability Legend -->
@@ -608,8 +621,8 @@
               <i data-lucide="wrench" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="font-bold text-white font-heading text-lg tracking-wide uppercase">TOOLS YANG DIGUNAKAN</h3>
-              <p class="text-xs text-slate-400 font-mono">Tools dan teknologi resmi yang digunakan sehari-hari (sesuai CV)</p>
+              <h3 data-i18n="skills.matrix_title" class="font-bold text-white font-heading text-lg tracking-wide uppercase">TOOLS YANG DIGUNAKAN</h3>
+              <p data-i18n="skills.matrix_subtitle" class="text-xs text-slate-400 font-mono">Tools dan teknologi resmi yang digunakan sehari-hari (sesuai CV)</p>
             </div>
           </div>
           <span class="text-xs font-mono px-3 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 w-fit">
@@ -704,16 +717,16 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
             <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
-            <span>PORTFOLIO SHOWCASE</span>
+            <span data-i18n="projects.badge">PORTFOLIO SHOWCASE</span>
           </div>
-          <h2 class="text-3xl font-extrabold font-heading text-white">Projects Portfolio</h2>
-          <p class="text-slate-400 text-sm mt-1">Implementasi sistem keamanan, pengujian kerentanan web, dan aplikasi modern yang sudah jadi.</p>
+          <h2 data-i18n="projects.title" class="text-3xl font-extrabold font-heading text-white">Projects Portfolio</h2>
+          <p data-i18n="projects.subtitle" class="text-slate-400 text-sm mt-1">Implementasi sistem keamanan, pengujian kerentanan web, dan aplikasi modern yang sudah jadi.</p>
         </div>
 
         <div class="flex items-center gap-3">
           <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-bold shadow-lg shadow-cyan-500/20 hover:scale-105 transition">
             <i data-lucide="globe" class="w-4 h-4"></i>
-            <span>Buka Portofolio Lengkap (Live)</span>
+            <span data-i18n="projects.cta_box_btn">Buka Portofolio Lengkap (Live)</span>
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           </a>
         </div>
@@ -764,7 +777,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('exambro')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -816,7 +829,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('koprasi')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -868,7 +881,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('tokoonline')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -919,7 +932,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('bbndigital')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -970,7 +983,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('wazuh')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -1022,7 +1035,7 @@
 
           <div class="p-6 pt-0 flex items-center gap-2.5">
             <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
-              <span>Buka Hasil Karya</span>
+              <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
             <button onclick="openProjectModal('loganalysis')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
@@ -1040,10 +1053,10 @@
       <div class="mb-10 text-center md:text-left">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/60 border border-purple-800/50 text-xs font-mono text-purple-400 mb-3">
           <i data-lucide="milestone" class="w-3.5 h-3.5"></i>
-          <span>TIMELINE &amp; TRAJECTORY</span>
+          <span data-i18n="experience.badge">TIMELINE &amp; TRAJECTORY</span>
         </div>
-        <h2 class="text-3xl font-extrabold font-heading text-white">Pengalaman &amp; Perjalanan Belajar</h2>
-        <p class="text-slate-400 text-sm mt-1">Aktivitas resmi, program nasional, dan partisipasi institusional.</p>
+        <h2 data-i18n="experience.title" class="text-3xl font-extrabold font-heading text-white">Pengalaman &amp; Perjalanan Belajar</h2>
+        <p data-i18n="experience.subtitle" class="text-slate-400 text-sm mt-1">Aktivitas resmi, program nasional, dan partisipasi institusional.</p>
       </div>
 
       <div class="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 space-y-10 max-w-4xl mx-auto">
@@ -1053,12 +1066,12 @@
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-cyan-400 group-hover:scale-125 group-hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/40"></div>
           <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-cyan-500/40 transition">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="text-lg font-bold text-white font-heading">Peserta VVIP BSSN Region Jateng 2026</h3>
+              <h3 data-i18n="exp.e1_role" class="text-lg font-bold text-white font-heading">Peserta VVIP BSSN Region Jateng 2026</h3>
               <span class="text-xs font-mono px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">2026</span>
             </div>
-            <p class="text-xs text-cyan-400 font-mono">Badan Siber dan Sandi Negara (BSSN)</p>
-            <p class="text-sm text-slate-300 leading-relaxed pt-1">
-              Mengikuti agenda strategis ketahanan siber nasional bersama stakeholder pemerintah, akademisi, dan profesional keamanan siber dalam penguatan infrastruktur digital.
+            <p data-i18n="exp.e1_inst" class="text-xs text-cyan-400 font-mono">Badan Siber dan Sandi Negara (BSSN)</p>
+            <p data-i18n="exp.e1_desc" class="text-sm text-slate-300 leading-relaxed pt-1">
+              Terpilih sebagai peserta VVIP dalam forum strategis Badan Siber dan Sandi Negara (BSSN) Region Jawa Tengah, berdiskusi mengenai pengamanan infrastruktur kritis dan kesiapan regulasi nasional.
             </p>
           </div>
         </div>
@@ -1068,12 +1081,12 @@
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-purple-400 group-hover:scale-125 group-hover:bg-purple-400 transition shadow-lg shadow-purple-500/40"></div>
           <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-purple-500/40 transition">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="text-lg font-bold text-white font-heading">Certified Red Team Operations Management (CRTOM)</h3>
+              <h3 data-i18n="exp.e2_role" class="text-lg font-bold text-white font-heading">Certified Red Team Operations Management (CRTOM)</h3>
               <span class="text-xs font-mono px-2.5 py-1 rounded bg-purple-950 text-purple-300 border border-purple-800">Professional Certification</span>
             </div>
-            <p class="text-xs text-purple-400 font-mono">Red Team Leadership &amp; Operational Defense</p>
-            <p class="text-sm text-slate-300 leading-relaxed pt-1">
-              Penguasaan manajemen taktik serangan siber terencana, simulasi adversary emulation, serta evaluasi kesiapsiagaan blue team dalam mendeteksi dan memitigasi insiden.
+            <p data-i18n="exp.e2_inst" class="text-xs text-purple-400 font-mono">Red Team Leadership &amp; Operational Defense</p>
+            <p data-i18n="exp.e2_desc" class="text-sm text-slate-300 leading-relaxed pt-1">
+              Menyelesaikan program sertifikasi CRTOM yang menguji kapabilitas perancangan adversary emulation, taktik red teaming terkoordinasi, dan strategi bypass pertahanan terukur.
             </p>
           </div>
         </div>
@@ -1083,12 +1096,12 @@
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-blue-400 group-hover:scale-125 group-hover:bg-blue-400 transition shadow-lg shadow-blue-500/40"></div>
           <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-blue-500/40 transition">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="text-lg font-bold text-white font-heading">Teknik Ethical Hacking &amp; Cyber Security Specialist</h3>
+              <h3 data-i18n="exp.e3_role" class="text-lg font-bold text-white font-heading">Teknik Ethical Hacking &amp; Cyber Security Specialist</h3>
               <span class="text-xs font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 border border-blue-800">Course-Net Indonesia</span>
             </div>
-            <p class="text-xs text-blue-400 font-mono">Specialist, Pentester &amp; White Hat Hacker Track</p>
-            <p class="text-sm text-slate-300 leading-relaxed pt-1">
-              Pelatihan intensif mengatasi peretasan IT menggunakan metodologi ethical hacking terstandar, analisis eksploitasi celah web, serta pembuatan rekomendasi remediasi sistem.
+            <p data-i18n="exp.e3_inst" class="text-xs text-blue-400 font-mono">Specialist, Pentester &amp; White Hat Hacker Track</p>
+            <p data-i18n="exp.e3_desc" class="text-sm text-slate-300 leading-relaxed pt-1">
+              Mengikuti pelatihan komprehensif selama 3 bulan penuh mencakup packet analysis, network defense, Linux server hardening, dan simulasi penyerangan web aplikasi.
             </p>
           </div>
         </div>
@@ -1119,10 +1132,10 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
             <i data-lucide="award" class="w-3.5 h-3.5"></i>
-            <span>CREDENTIALS &amp; CERTIFICATIONS</span>
+            <span data-i18n="certs.badge">CREDENTIALS &amp; CERTIFICATIONS</span>
           </div>
-          <h2 class="text-3xl font-extrabold font-heading text-white">Sertifikasi &amp; Program</h2>
-          <p class="text-slate-400 text-sm mt-1">Daftar sertifikasi dan program resmi yang tercatat di CV Riski Ardiansyah.</p>
+          <h2 data-i18n="certs.title" class="text-3xl font-extrabold font-heading text-white">Sertifikasi &amp; Program</h2>
+          <p data-i18n="certs.subtitle" class="text-slate-400 text-sm mt-1">Daftar sertifikasi dan program resmi yang tercatat di CV Riski Ardiansyah.</p>
         </div>
 
         <div class="flex flex-wrap items-center gap-3">
@@ -1133,7 +1146,7 @@
           </a>
           <button onclick="openAddCertModal()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/25 hover:scale-105 transition">
             <i data-lucide="plus-circle" class="w-4 h-4"></i>
-            <span>+ Input Sertifikat Baru</span>
+            <span data-i18n="certs.btn_add">+ Input Sertifikat Baru</span>
           </button>
         </div>
       </div>
@@ -1499,10 +1512,10 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400 mb-3">
             <i data-lucide="file-code" class="w-3.5 h-3.5"></i>
-            <span>KNOWLEDGE SHARING &amp; WRITEUPS</span>
+            <span data-i18n="blog.badge">KNOWLEDGE SHARING &amp; WRITEUPS</span>
           </div>
-          <h2 class="text-3xl font-extrabold font-heading text-white">Blog &amp; Technical Writeups</h2>
-          <p class="text-slate-400 text-sm mt-1">Dokumentasi teknis, catatan riset kerentanan, dan tutorial arsitektur aman.</p>
+          <h2 data-i18n="blog.title" class="text-3xl font-extrabold font-heading text-white">Blog &amp; Technical Writeups</h2>
+          <p data-i18n="blog.subtitle" class="text-slate-400 text-sm mt-1">Dokumentasi teknis, catatan riset kerentanan, dan tutorial arsitektur aman.</p>
         </div>
 
         <a href="#contact" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition">
@@ -1589,15 +1602,15 @@
           <div class="lg:col-span-5 space-y-6">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/50 text-xs font-mono text-cyan-400">
               <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-              <span>GET IN TOUCH</span>
+              <span data-i18n="contact.badge">GET IN TOUCH</span>
             </div>
 
-            <h2 class="text-3xl font-extrabold font-heading text-white leading-tight">
-              Let's Build Something Secure and Meaningful Together.
+            <h2 data-i18n="contact.title" class="text-3xl font-extrabold font-heading text-white leading-tight">
+              Mari Berkolaborasi &amp; Berdiskusi
             </h2>
 
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Terbuka untuk diskusi pengujian keamanan aplikasi web, penetration testing, kolaborasi pengembangan website aman, maupun peluang profesional lainnya.
+            <p data-i18n="contact.subtitle" class="text-slate-300 text-sm leading-relaxed">
+              Terbuka untuk peluang karir di bidang penetration testing, konsultasi keamanan sistem, atau kolaborasi proyek perangkat lunak.
             </p>
 
             <div class="space-y-3 pt-2">
@@ -1663,28 +1676,28 @@
           <!-- Contact Right Form -->
           <div class="lg:col-span-7">
             <div class="p-6 sm:p-8 rounded-2xl bg-[#0A1222]/90 border border-slate-800">
-              <h3 class="text-lg font-bold font-heading text-white mb-1">Kirimkan Pesan Langsung</h3>
+              <h3 data-i18n="contact.form_title" class="text-lg font-bold font-heading text-white mb-1">Kirimkan Pesan Langsung</h3>
               <p class="text-xs text-slate-400 mb-6">Pesan langsung terhubung dan terenkripsi untuk keamanan komunikasi.</p>
 
               <form id="contact-form" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1.5">Nama Lengkap *</label>
+                    <label data-i18n="contact.form_name" class="block text-xs font-mono text-slate-300 mb-1.5">Nama Lengkap *</label>
                     <input type="text" required placeholder="cth. Budi Pratama" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
                   </div>
                   <div>
-                    <label class="block text-xs font-mono text-slate-300 mb-1.5">Alamat Email *</label>
+                    <label data-i18n="contact.form_email" class="block text-xs font-mono text-slate-300 mb-1.5">Alamat Email *</label>
                     <input type="email" required placeholder="cth. budi@company.com" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Subjek Keperluan *</label>
+                  <label data-i18n="contact.form_subject" class="block text-xs font-mono text-slate-300 mb-1.5">Subjek Keperluan *</label>
                   <input type="text" required placeholder="cth. Diskusi Web Security / Project Collab" class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600">
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Pesan Detail *</label>
+                  <label data-i18n="contact.form_message" class="block text-xs font-mono text-slate-300 mb-1.5">Pesan Detail *</label>
                   <textarea rows="4" required placeholder="Tuliskan pesan Anda untuk Riski Ardiansyah..." class="w-full px-4 py-3 rounded-xl bg-[#101B2D] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-cyan-400 transition placeholder:text-slate-600 resize-none"></textarea>
                 </div>
 
@@ -1692,7 +1705,7 @@
 
                 <button type="submit" class="w-full py-3.5 rounded-xl gradient-btn text-white font-bold text-sm flex items-center justify-center gap-2">
                   <i data-lucide="send" class="w-4 h-4"></i>
-                  <span>Kirim Pesan Sekarang</span>
+                  <span data-i18n="contact.btn_send">Kirim Pesan Sekarang</span>
                 </button>
               </form>
             </div>
@@ -1727,7 +1740,7 @@
         <p class="text-xs text-slate-400">
           Riski Ardiansyah &copy; 2026. All Rights Reserved.
         </p>
-        <p class="text-[11px] text-slate-500 font-mono mt-0.5">
+        <p data-i18n="footer.role" class="text-[11px] text-slate-500 font-mono mt-0.5">
           D4 Rekayasa Keamanan Siber • Politeknik Piksi Input Serang
         </p>
       </div>
@@ -1803,7 +1816,7 @@
       </div>
 
       <div class="space-y-2">
-        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Teknologi &amp; Arsitektur</h4>
+        <h4 data-i18n="modal.project_features" class="text-xs font-mono uppercase tracking-wider text-slate-400">Teknologi &amp; Arsitektur</h4>
         <div id="modal-stack" class="flex flex-wrap gap-2"></div>
       </div>
 
@@ -1824,7 +1837,7 @@
 
       <div class="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
         <a id="modal-link" href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="px-5 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/20 hover:scale-105 transition">
-          <span>Buka Hasil Karya di BBN Digital Forge</span>
+          <span data-i18n="modal.project_view">Buka Hasil Karya di BBN Digital Forge</span>
           <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
@@ -1983,7 +1996,8 @@
   <!-- AOS (Animate On Scroll) & Vanilla Tilt Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="assets/js/main.js?v=18"></script>
+  <script src="assets/js/i18n.js?v=1"></script>
+  <script src="assets/js/main.js?v=19"></script>
   <!-- Floating Classy Back to Top Button -->
   <button id="back-to-top-btn" class="w-12 h-12 rounded-2xl gradient-btn text-white flex items-center justify-center shadow-xl shadow-cyan-500/30 border border-cyan-400/50 cursor-pointer" title="Kembali ke Atas" aria-label="Back to top">
     <i data-lucide="arrow-up" class="w-5 h-5"></i>

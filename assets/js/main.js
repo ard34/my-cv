@@ -202,8 +202,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Open Project Modal
   window.openProjectModal = function(key) {
-    const data = projectsData[key];
-    if (!data || !modal) return;
+    window.currentProjectKey = key;
+    const baseData = projectsData[key];
+    if (!baseData || !modal) return;
+
+    const lang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'id';
+    const localized = (window.bilingualProjects && window.bilingualProjects[lang] && window.bilingualProjects[lang][key]) 
+      ? window.bilingualProjects[lang][key] 
+      : baseData;
+
+    const data = { ...baseData, ...localized };
 
     if (modalImage && data.image) { modalImage.src = data.image; }
     modalTitle.textContent = data.title;
