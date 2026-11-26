@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Real-time token validation dan automated exam timer lock"
       ],
       metrics: "Mampu melayani sesi ujian digital sekolah dengan response time di bawah 200ms secara stabil.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/exambro.jpg"
     },
     koprasi: {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Laporan mutasi keuangan real-time dan rekonsiliasi kas terintegrasi"
       ],
       metrics: "Mampu memproses transaksi kasir POS secara instan dengan verifikasi PIN dan zero double-spend error.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/koprasi.jpg"
     },
     tokoonline: {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Role-Based Access Control (RBAC) untuk manajemen operasional admin"
       ],
       metrics: "Arsitektur database teroptimasi dengan query indexing untuk menangani ribuan SKU produk.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/tokoonline.jpg"
     },
     bbndigital: {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Dashboard analitik performa proyek berbasis Filament"
       ],
       metrics: "Telah melayani 15+ klien UMKM & korporasi dengan uptime 99.9%.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/bbndigital.jpg"
     },
     wazuh: {
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Visualisasi dashboard log terpusat dengan filter timeline mendalam"
       ],
       metrics: "Berhasil mengidentifikasi dan memitigasi lebih dari 1.200 upaya unauthorized SSH probe per minggu.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/wazuh.jpg"
     },
     loganalysis: {
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Dokumentasi laporan incident response berstandar NIST SP 800-61"
       ],
       metrics: "Mampu membedah 500.000 baris log hanya dalam waktu 45 detik menggunakan pipeline CLI teroptimasi.",
-      link: "https://www.bbndigitalforge.web.id/portofolio",
+      link: "https://github.com/ard34",
       image: "assets/img/projects/loganalysis.jpg"
     }
   };

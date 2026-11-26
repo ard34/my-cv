@@ -89,8 +89,9 @@ const translations = {
     "projects.badge": "03 // PORTOFOLIO KARYA",
     "projects.title": "Proyek Pilihan & Hasil Karya Digital",
     "projects.subtitle": "Sistem aplikasi web nyata, platform CBT sekolah, POS pesantren, dan arsitektur pengujian keamanan yang telah berhasil dibangun.",
-    "projects.btn_view_live": "Buka Hasil Karya",
-    "projects.btn_details": "Detail Teknis",
+    "projects.btn_github": "GitHub",
+    "projects.btn_view_live": "GitHub Repository",
+    "projects.btn_details": "Detail Teknis & Spesifikasi",
     "projects.cta_box_title": "Kunjungi Etalase Portofolio Lengkap",
     "projects.cta_box_desc": "Seluruh hasil karya sistem digital, aplikasi web production, dan rilis proyek terbaru saya dirangkum secara lengkap di portal BBN Digital Forge.",
     "projects.p1_badge": "#01 • CBT & Lock Screen",
@@ -122,7 +123,7 @@ const translations = {
     "projects.p6_title": "Multi-Source Log Analysis",
     "projects.p6_cat": "Security Investigation & Logs",
     "projects.p6_desc": "Proyek analisis log lintas sumber untuk mengidentifikasi aktivitas mencurigakan, serangan brute-force, dan rekonstruksi rantai serangan investigasi insiden.",
-    "projects.cta_box_btn": "Buka Semua Portofolio di BBN Digital Forge",
+    "projects.cta_box_btn": "Kunjungi GitHub (ard34)",
 
     // Experience Section
     "experience.badge": "04 // PERJALANAN & PENGALAMAN",
@@ -203,7 +204,7 @@ const translations = {
     // Modals
     "modal.project_features": "Fitur & Keunggulan Utama",
     "modal.project_impact": "Dampak & Metrik Kinerja",
-    "modal.project_view": "Buka Hasil Karya di BBN Digital Forge",
+    "modal.project_view": "Kunjungi GitHub Repository (ard34)",
     "modal.project_close": "Tutup",
     "modal.cert_organizer": "Penyelenggara:",
     "modal.cert_date": "Tanggal / Tahun:",
@@ -315,8 +316,9 @@ const translations = {
     "projects.badge": "03 // FEATURED PROJECTS",
     "projects.title": "Featured Projects & Digital Creations",
     "projects.subtitle": "Real-world web systems, high-integrity school CBT platforms, cashless Islamic boarding school POS, and security monitoring setups.",
-    "projects.btn_view_live": "View Live Project",
-    "projects.btn_details": "Technical Specs",
+    "projects.btn_github": "GitHub",
+    "projects.btn_view_live": "GitHub Repository",
+    "projects.btn_details": "Technical Specs & Architecture",
     "projects.cta_box_title": "Explore Full Portfolio Showcase",
     "projects.cta_box_desc": "All my completed digital systems, production web applications, and newest software releases are hosted live on the BBN Digital Forge portal.",
     "projects.p1_badge": "#01 • CBT & Lock Screen",
@@ -348,7 +350,7 @@ const translations = {
     "projects.p6_title": "Multi-Source Log Analysis",
     "projects.p6_cat": "Security Investigation & Logs",
     "projects.p6_desc": "Cross-platform forensic log investigation project to identify anomalous brute-force probes and reconstruct adversary kill-chains.",
-    "projects.cta_box_btn": "Open All Projects on BBN Digital Forge",
+    "projects.cta_box_btn": "Visit GitHub Profile (ard34)",
 
     // Experience Section
     "experience.badge": "04 // JOURNEY & EXPERIENCE",
@@ -429,7 +431,7 @@ const translations = {
     // Modals
     "modal.project_features": "Key Features & Architecture",
     "modal.project_impact": "Performance & Security Impact",
-    "modal.project_view": "View Project on BBN Digital Forge",
+    "modal.project_view": "Visit GitHub Repository (ard34)",
     "modal.project_close": "Close",
     "modal.cert_organizer": "Issuer / Organizer:",
     "modal.cert_date": "Date / Year:",
