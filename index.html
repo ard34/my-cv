@@ -339,16 +339,16 @@
               </div>
             </div>
 
-            <p data-i18n="about.bio1" class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p id="about-bio1-text" data-i18n="about.bio1" class="text-slate-300 leading-relaxed text-sm sm:text-base">
               Saya adalah mahasiswa tingkat akhir di Politeknik Piksi Input Serang pada program studi D4 Rekayasa Keamanan Siber. Memiliki ketertarikan mendalam dan pengalaman hands-on dalam menguji keamanan sistem informasi, menelusuri kerentanan (vulnerability assessment), serta memahami alur eksploitasi web application berstandar OWASP Top 10.
             </p>
-            <p data-i18n="about.bio2" class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p id="about-bio2-text" data-i18n="about.bio2" class="text-slate-300 leading-relaxed text-sm sm:text-base">
               Selain berfokus pada ranah offensive security, saya juga aktif merancang dan mengembangkan sistem web fungsional menggunakan Laravel, Tailwind CSS, dan Next.js dengan pendekatan AI-Assisted Software Development—mengorkestrasi AI Coding Agent untuk menghasilkan kode yang bersih, terdokumentasi, dan tangguh terhadap celah keamanan.
             </p>
 
             <div class="p-3.5 rounded-xl bg-[#0A1222] border border-slate-800 text-xs text-slate-400 flex items-start gap-2.5">
               <i data-lucide="book-open" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span>"Saya terus belajar dan mendalami setiap teknologi serta teknik yang relevan di bidang keamanan siber untuk terus berkembang dan memberikan hasil terbaik."</span>
+              <span id="about-quote-text">"Saya terus belajar dan mendalami setiap teknologi serta teknik yang relevan di bidang keamanan siber untuk terus berkembang dan memberikan hasil terbaik."</span>
             </div>
           </div>
 
@@ -383,14 +383,14 @@
             <div class="p-4 rounded-xl bg-[#0A1222] border border-cyan-500/30 space-y-2">
               <div class="flex items-start justify-between">
                 <div>
-                  <h4 data-i18n="about.edu_institution" class="font-bold text-white text-base">Politeknik Piksi Input Serang</h4>
-                  <p data-i18n="about.edu_degree" class="text-xs text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</p>
+                  <h4 id="about-edu-inst" data-i18n="about.edu_institution" class="font-bold text-white text-base">Politeknik Piksi Input Serang</h4>
+                  <p id="about-edu-degree" data-i18n="about.edu_degree" class="text-xs text-cyan-400 font-mono">D4 Rekayasa Keamanan Siber</p>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">
+                <span id="about-edu-status" class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">
                   Semester 7
                 </span>
               </div>
-              <p data-i18n="about.edu_desc" class="text-xs text-slate-400 pt-1">
+              <p id="about-edu-desc" data-i18n="about.edu_desc" class="text-xs text-slate-400 pt-1">
                 Mempelajari fundamental dan praktik lanjutan network defense, ethical hacking, digital forensics, reverse engineering, cryptography, serta perancangan sistem informasi berstandar keamanan enterprise.
               </p>
             </div>
@@ -414,7 +414,7 @@
 
           <div class="pt-4 border-t border-slate-800/80 text-xs font-mono text-slate-400 flex items-center justify-between">
             <span>Status: Mahasiswa Aktif</span>
-            <span class="text-cyan-400 font-bold">D4 Rekayasa Keamanan Siber</span>
+            <span id="about-edu-focus" class="text-cyan-400 font-bold">D4 Rekayasa Keamanan Siber</span>
           </div>
         </div>
 
@@ -615,7 +615,7 @@
         </div>
 
                 <!-- 9 Core CV Tools Grid with Real Brand Logos (Responsive 3x3 on mobile, 9-col on desktop) -->
-        <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3 sm:gap-4 md:gap-5 text-center">
+        <div id="tools-grid-container" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3 sm:gap-4 md:gap-5 text-center">
           
           <!-- 1. Kali Linux -->
           <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="50">
@@ -1024,6 +1024,7 @@
       </div>
 
       <div class="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 space-y-10 max-w-4xl mx-auto">
+        <div id="experience-timeline-container" class="space-y-10">
         
         <!-- Timeline Item 1: BSSN VVIP -->
         <div class="relative group" data-aos="fade-up" data-aos-duration="750">
@@ -1085,9 +1086,10 @@
           </div>
         </div>
 
+        </div>
       </div>
-          </div>
-</section>
+    </div>
+    </section>
 
     <!-- G. Certificates & Achievements (CV & Interactive Dynamic Input) -->
     <section id="certificates" class="scroll-mt-24">
@@ -1670,29 +1672,28 @@
 
   <!-- Master Content Management & Admin Panel Modal -->
   <div id="master-admin-panel-modal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden">
-    <div class="glass-panel w-full max-w-5xl rounded-2xl border border-cyan-500/60 bg-[#070D1A] flex flex-col h-[94vh] max-h-[880px] shadow-[0_0_60px_rgba(34,211,238,0.25)] relative overflow-hidden animate-fadeIn">
+    <div class="glass-panel w-full max-w-4xl rounded-2xl border border-cyan-500/60 bg-[#070D1A] flex flex-col h-[94vh] max-h-[850px] shadow-[0_0_60px_rgba(34,211,238,0.25)] relative overflow-hidden animate-fadeIn">
       
       <!-- Modal Header -->
-      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between shrink-0 bg-[#0A1222]/80">
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between shrink-0 bg-[#0A1222]/90">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
-            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <i data-lucide="sliders" class="w-5 h-5"></i>
           </div>
           <div>
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-500/50 text-cyan-300">
-                MASTER ADMIN PANEL • OWNER MODE
+                PANEL OWNER • EDIT KONTEN
               </span>
             </div>
-            <h3 class="text-base sm:text-lg font-bold font-heading text-white">Kelola &amp; Edit Seluruh Konten Website</h3>
+            <h3 class="text-base sm:text-lg font-bold font-heading text-white">Kelola: About, Pengalaman, Tools &amp; Sertifikat</h3>
           </div>
         </div>
 
         <div class="flex items-center gap-2">
           <button type="button" onclick="handleMasterAdminSave()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-cyan-500/25 hover:brightness-110 transition">
             <i data-lucide="save" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Simpan Semua Perubahan</span>
-            <span class="sm:hidden">Simpan</span>
+            <span>Simpan Perubahan</span>
           </button>
           <button type="button" onclick="closeMasterAdminModal()" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition">
             <i data-lucide="x" class="w-5 h-5"></i>
@@ -1700,150 +1701,73 @@
         </div>
       </div>
 
-      <!-- Modal Body (Sidebar + Content) -->
+      <!-- Modal Body (Sidebar Tabs + Content) -->
       <div class="flex flex-col md:flex-row flex-1 overflow-hidden">
         
         <!-- Sidebar Navigation Tabs -->
-        <div class="w-full md:w-60 border-b md:border-b-0 md:border-r border-slate-800 bg-[#0A1222]/50 p-2 sm:p-3 flex md:flex-col gap-1.5 overflow-x-auto md:overflow-y-auto shrink-0">
-          <button type="button" onclick="switchAdminTab('hero')" id="tab-btn-hero" class="admin-tab-btn active-tab w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap">
+        <div class="w-full md:w-56 border-b md:border-b-0 md:border-r border-slate-800 bg-[#0A1222]/50 p-2 sm:p-3 flex md:flex-col gap-1.5 overflow-x-auto md:overflow-y-auto shrink-0">
+          <button type="button" onclick="switchAdminTab('about')" id="tab-btn-about" class="admin-tab-btn active-tab w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-bold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap bg-cyan-950/80 text-cyan-300 border border-cyan-500/50">
             <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
-            <span>1. Profil &amp; Hero</span>
+            <span>1. Tentang Saya (About)</span>
           </button>
-          <button type="button" onclick="switchAdminTab('about')" id="tab-btn-about" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
-            <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
-            <span>2. Tentang Saya</span>
+
+          <button type="button" onclick="switchAdminTab('experience')" id="tab-btn-experience" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="milestone" class="w-4 h-4 text-purple-400"></i>
+            <span>2. Pengalaman</span>
           </button>
-          <button type="button" onclick="switchAdminTab('projects')" id="tab-btn-projects" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
-            <i data-lucide="folder-git-2" class="w-4 h-4 text-emerald-400"></i>
-            <span>3. Proyek &amp; Portofolio</span>
+
+          <button type="button" onclick="switchAdminTab('tools')" id="tab-btn-tools" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i>
+            <span>3. Tools &amp; Software</span>
           </button>
-          <button type="button" onclick="switchAdminTab('skills')" id="tab-btn-skills" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
-            <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
-            <span>4. Keahlian &amp; Pilar</span>
-          </button>
-          <button type="button" onclick="switchAdminTab('contact')" id="tab-btn-contact" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
-            <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
-            <span>5. Kontak &amp; Medsos</span>
-          </button>
+
           <button type="button" onclick="switchAdminTab('certs')" id="tab-btn-certs" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
             <i data-lucide="award" class="w-4 h-4 text-pink-400"></i>
-            <span>6. Sertifikasi (31+)</span>
+            <span>4. Sertifikat (31+)</span>
           </button>
+
           <button type="button" onclick="switchAdminTab('backup')" id="tab-btn-backup" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
-            <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i>
-            <span>7. Backup &amp; Reset</span>
+            <i data-lucide="database" class="w-4 h-4 text-blue-400"></i>
+            <span>5. Backup &amp; Reset</span>
           </button>
         </div>
 
-        <!-- Tab Content Panes -->
+        <!-- Content Panes -->
         <div class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-6 bg-[#070D1A]/95 text-slate-300">
           
-          <!-- PANE 1: HERO & PROFILE -->
-          <div id="pane-hero" class="admin-pane space-y-5">
+          <!-- ============================================== -->
+          <!-- PANE 1: TENTANG SAYA & PENDIDIKAN (ABOUT) -->
+          <!-- ============================================== -->
+          <div id="pane-about" class="admin-pane space-y-5">
             <div class="border-b border-slate-800/80 pb-3">
               <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
                 <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
-                <span>Pengaturan Profil Utama &amp; Tampilan Hero</span>
+                <span>Edit Bagian Tentang Saya &amp; Pendidikan Formal</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1">Ubah nama, peran, quote, bio singkat, dan foto header di halaman paling atas website.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Nama Depan *</label>
-                <input type="text" id="adm-hero-first-name" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
-              </div>
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Nama Belakang (Gradient Text) *</label>
-                <input type="text" id="adm-hero-last-name" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
-              </div>
+              <p class="text-xs text-slate-400 mt-1">Ubah narasi profil, etos kerja, serta data kampus dan status semester.</p>
             </div>
 
             <div>
-              <label class="block text-xs font-mono text-cyan-300 mb-1">Headline / Role Utama *</label>
-              <input type="text" id="adm-hero-role" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Paragraf 1: Profil &amp; Minat Keamanan Siber *</label>
+              <textarea id="adm-about-bio1" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
             </div>
 
             <div>
-              <label class="block text-xs font-mono text-cyan-300 mb-1">Kutipan Utama (Hero Quote) *</label>
-              <textarea id="adm-hero-quote" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Paragraf 2: Offensive Security &amp; Rekayasa AI Agent *</label>
+              <textarea id="adm-about-bio2" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Kutipan Inspiratif Belajar (Quote)</label>
+              <input type="text" id="adm-about-quote" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-cyan-400">
             </div>
 
             <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-cyan-500/20 space-y-3">
-              <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold">
-                <i data-lucide="bot" class="w-4 h-4"></i>
-                <span>Kotak Sorotan: AI-Assisted Software Development</span>
-              </div>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Kotak AI</label>
-                <input type="text" id="adm-hero-ai-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
-              </div>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Kotak AI</label>
-                <textarea id="adm-hero-ai-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-cyan-300 mb-1">Deskripsi Paragraf Bio Hero *</label>
-              <textarea id="adm-hero-bio" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Path / URL Foto Hero</label>
-                <input type="text" id="adm-hero-photo" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-cyan-400">
-                <p class="text-[10px] text-slate-500 mt-1">Bisa gunakan path lokal seperti <code>assets/img/riski_hero.jpg</code> atau URL gambar online.</p>
-              </div>
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Domisili Singkat</label>
-                <input type="text" id="adm-hero-location" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Badge Program Studi (di Foto)</label>
-                <input type="text" id="adm-hero-degree" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
-              </div>
-              <div>
-                <label class="block text-xs font-mono text-cyan-300 mb-1">Badge Kampus &amp; Semester (di Foto)</label>
-                <input type="text" id="adm-hero-campus" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
-              </div>
-            </div>
-          </div>
-
-          <!-- PANE 2: ABOUT ME & EDUCATION -->
-          <div id="pane-about" class="admin-pane hidden space-y-5">
-            <div class="border-b border-slate-800/80 pb-3">
-              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
-                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
-                <span>Pengaturan Bagian Tentang Saya &amp; Pendidikan</span>
-              </h4>
-              <p class="text-xs text-slate-400 mt-1">Ubah narasi profil diri, etos kerja, serta detail riwayat perguruan tinggi.</p>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-purple-300 mb-1">Bio Paragraf 1 (Fokus Keamanan &amp; Analisis) *</label>
-              <textarea id="adm-about-bio1" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400 resize-none"></textarea>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-purple-300 mb-1">Bio Paragraf 2 (Offensive Security &amp; AI Engineering) *</label>
-              <textarea id="adm-about-bio2" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400 resize-none"></textarea>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-purple-300 mb-1">Quote Etos Belajar</label>
-              <input type="text" id="adm-about-quote" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400">
-            </div>
-
-            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-purple-500/20 space-y-3">
-              <div class="text-purple-300 text-xs font-mono font-bold">Detail Pendidikan Formal (Perguruan Tinggi)</div>
+              <span class="text-cyan-400 text-xs font-mono font-bold block">Riwayat Pendidikan Formal (Kuliah)</span>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Nama Perguruan Tinggi</label>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Nama Kampus / Institusi</label>
                   <input type="text" id="adm-about-institution" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
                 </div>
                 <div>
@@ -1854,210 +1778,163 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Status / Semester Aktif</label>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Status Akademik / Semester</label>
                   <input type="text" id="adm-about-status" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
                 </div>
                 <div>
-                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Fokus Studi Akademik</label>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Fokus Studi</label>
                   <input type="text" id="adm-about-focus" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
                 </div>
               </div>
 
               <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Ringkasan Kurikulum &amp; Studi</label>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Ringkasan Materi &amp; Studi</label>
                 <textarea id="adm-about-edudesc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
               </div>
             </div>
           </div>
 
-          <!-- PANE 3: PROJECTS -->
-          <div id="pane-projects" class="admin-pane hidden space-y-5">
+          <!-- ============================================== -->
+          <!-- PANE 2: PENGALAMAN & TIMELINE (EXPERIENCE) -->
+          <!-- ============================================== -->
+          <div id="pane-experience" class="admin-pane hidden space-y-5">
             <div class="border-b border-slate-800/80 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
-                  <i data-lucide="folder-git-2" class="w-4 h-4 text-emerald-400"></i>
-                  <span>Pengaturan Proyek &amp; Portofolio Karya</span>
+                  <i data-lucide="milestone" class="w-4 h-4 text-purple-400"></i>
+                  <span>Edit Bagian Pengalaman &amp; Perjalanan Belajar</span>
                 </h4>
-                <p class="text-xs text-slate-400 mt-1">Pilih proyek untuk di-edit, tambahkan proyek baru, atau sesuaikan data teknis.</p>
+                <p class="text-xs text-slate-400 mt-1">Ubah atau tambah riwayat forum, program nasional, sertifikasi, dan bootcamp.</p>
               </div>
-              <button type="button" onclick="addNewProjectPrompt()" class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-1.5 hover:bg-emerald-900 transition self-start sm:self-auto">
+              <button type="button" onclick="addNewExperiencePrompt()" class="px-3 py-1.5 rounded-lg bg-purple-950 border border-purple-500/40 text-purple-300 text-xs font-bold flex items-center gap-1.5 hover:bg-purple-900 transition self-start sm:self-auto">
                 <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                <span>Tambah Proyek Baru</span>
+                <span>Tambah Pengalaman</span>
               </button>
             </div>
 
-            <!-- Project Selector Dropdown -->
+            <!-- Experience Selector Dropdown -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-3 rounded-xl bg-[#0A1222] border border-slate-800">
-              <label class="text-xs font-mono text-emerald-400 shrink-0">Pilih Proyek:</label>
-              <select id="adm-project-selector" onchange="loadSelectedProjectForm()" class="flex-1 px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs focus:outline-none focus:border-emerald-400">
-                <!-- Populated dynamically via JS -->
+              <label class="text-xs font-mono text-purple-400 shrink-0">Pilih Pengalaman:</label>
+              <select id="adm-exp-selector" onchange="loadSelectedExperienceForm()" class="flex-1 px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs focus:outline-none focus:border-purple-400">
+                <!-- Dynamically populated via JS -->
               </select>
-              <button type="button" onclick="deleteCurrentProject()" class="px-3 py-2 rounded-lg bg-red-950/80 border border-red-500/40 text-red-400 text-xs font-semibold hover:bg-red-900 transition flex items-center justify-center gap-1" title="Hapus proyek terpilih">
+              <button type="button" onclick="deleteCurrentExperience()" class="px-3 py-2 rounded-lg bg-red-950/80 border border-red-500/40 text-red-400 text-xs font-semibold hover:bg-red-900 transition flex items-center justify-center gap-1">
                 <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                 <span>Hapus</span>
               </button>
             </div>
 
-            <!-- Selected Project Edit Form -->
-            <div id="adm-project-fields" class="space-y-4 p-4 rounded-xl bg-[#0A1222]/80 border border-emerald-500/20">
+            <!-- Form Edit Selected Experience -->
+            <div class="space-y-4 p-4 rounded-xl bg-[#0A1222]/80 border border-purple-500/20">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-1">Judul Proyek *</label>
-                  <input type="text" id="adm-proj-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Peran / Judul Kegiatan *</label>
+                  <input type="text" id="adm-exp-role" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
                 </div>
                 <div>
-                  <label class="block text-xs font-mono text-slate-300 mb-1">Kategori / Badge Ringkas</label>
-                  <input type="text" id="adm-proj-category" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Penyelenggara / Institusi *</label>
+                  <input type="text" id="adm-exp-institution" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Tahun / Periode *</label>
+                  <input type="text" id="adm-exp-period" placeholder="2026, 3 Bulan, dll." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Warna Badge Aksen</label>
+                  <select id="adm-exp-color" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                    <option value="cyan">Cyan (Cyber Blue)</option>
+                    <option value="purple">Purple (Royal Violet)</option>
+                    <option value="blue">Blue (Electric)</option>
+                    <option value="emerald">Emerald (Green)</option>
+                  </select>
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-mono text-slate-300 mb-1">Subjudul / Spesifikasi Singkat</label>
-                <input type="text" id="adm-proj-subtitle" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
-              </div>
-
-              <div>
-                <label class="block text-xs font-mono text-slate-300 mb-1">Tech Stack (pisahkan dengan koma) *</label>
-                <input type="text" id="adm-proj-stack" placeholder="Laravel, MySQL, Tailwind CSS..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
-              </div>
-
-              <div>
-                <label class="block text-xs font-mono text-slate-300 mb-1">Deskripsi Proyek *</label>
-                <textarea id="adm-proj-desc" rows="3" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
-              </div>
-
-              <div>
-                <label class="block text-xs font-mono text-slate-300 mb-1">Tautan Repository GitHub / Live Demo</label>
-                <input type="url" id="adm-proj-link" placeholder="https://github.com/ard34..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs font-mono">
-              </div>
-
-              <div>
-                <label class="block text-xs font-mono text-slate-300 mb-1">Fitur Utama Teknis (Satu per baris)</label>
-                <textarea id="adm-proj-features" rows="3" placeholder="Anti-Cheating Lock Browser&#10;RBAC Multi-Role&#10;Real-time Token Validation" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Deskripsi Kegiatan &amp; Hasil *</label>
+                <textarea id="adm-exp-desc" rows="3" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
               </div>
 
               <div class="flex justify-end pt-2">
-                <button type="button" onclick="saveCurrentProjectDraft()" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                <button type="button" onclick="saveCurrentExperienceDraft()" class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center gap-1.5 transition">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
-                  <span>Terapkan pada Proyek Ini</span>
+                  <span>Terapkan pada Pengalaman Ini</span>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- PANE 4: SKILLS & PILLARS -->
-          <div id="pane-skills" class="admin-pane hidden space-y-5">
-            <div class="border-b border-slate-800/80 pb-3">
-              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
-                <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
-                <span>Pengaturan Pilar Keahlian (Skills)</span>
-              </h4>
-              <p class="text-xs text-slate-400 mt-1">Ubah judul dan ringkasan 3 pilar kapabilitas utama Anda.</p>
+          <!-- ============================================== -->
+          <!-- PANE 3: TOOLS & SOFTWARE (TECH STACK) -->
+          <!-- ============================================== -->
+          <div id="pane-tools" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                  <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Edit Bagian Tools &amp; Perangkat Kerja</span>
+                </h4>
+                <p class="text-xs text-slate-400 mt-1">Kelola software, OS, dan tools yang tampil di grid matriks keahlian Anda.</p>
+              </div>
+              <button type="button" onclick="addNewToolPrompt()" class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-1.5 hover:bg-emerald-900 transition self-start sm:self-auto">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                <span>Tambah Tool Baru</span>
+              </button>
             </div>
 
-            <!-- Pillar 1 -->
-            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
-              <span class="text-xs font-mono text-cyan-400 font-bold block">Pilar 1: Web Application Testing</span>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 1</label>
-                <input type="text" id="adm-skill-p1-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+            <!-- Tools Grid Preview with Quick Action -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                <span id="adm-tools-count">Daftar Tools Aktif (9)</span>
+                <span>Klik kartu untuk edit atau hapus</span>
               </div>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 1</label>
-                <textarea id="adm-skill-p1-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
-              </div>
-            </div>
 
-            <!-- Pillar 2 -->
-            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
-              <span class="text-xs font-mono text-purple-400 font-bold block">Pilar 2: Tools, Linux &amp; SIEM</span>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 2</label>
-                <input type="text" id="adm-skill-p2-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
-              </div>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 2</label>
-                <textarea id="adm-skill-p2-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              <div id="adm-tools-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-96 overflow-y-auto pr-1">
+                <!-- Dynamically populated via JS -->
               </div>
             </div>
 
-            <!-- Pillar 3 -->
-            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
-              <span class="text-xs font-mono text-emerald-400 font-bold block">Pilar 3: AI-Assisted Dev &amp; Frameworks</span>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 3</label>
-                <input type="text" id="adm-skill-p3-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+            <!-- Tool Quick Editor Subform -->
+            <div id="adm-tool-editor" class="hidden p-4 rounded-xl bg-[#0A1222]/90 border border-emerald-500/30 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-emerald-400 flex items-center gap-1.5">
+                  <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                  <span>Edit Tool: <span id="adm-tool-editing-name" class="text-white"></span></span>
+                </span>
+                <button type="button" onclick="closeToolEditor()" class="text-slate-400 hover:text-white text-xs">Batal</button>
               </div>
-              <div>
-                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 3</label>
-                <textarea id="adm-skill-p3-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Nama Software / Tool</label>
+                  <input type="text" id="adm-tool-name" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Website Resmi (Domain Icon)</label>
+                  <input type="text" id="adm-tool-domain" placeholder="kali.org, nmap.org..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs font-mono">
+                </div>
               </div>
-            </div>
-          </div>
-
-          <!-- PANE 5: CONTACT & SOCIALS -->
-          <div id="pane-contact" class="admin-pane hidden space-y-5">
-            <div class="border-b border-slate-800/80 pb-3">
-              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
-                <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
-                <span>Pengaturan Kontak &amp; Tautan Sosial Media</span>
-              </h4>
-              <p class="text-xs text-slate-400 mt-1">Ubah nomor WhatsApp, email, link GitHub, dan link profil LinkedIn resmi.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">Nomor WhatsApp (Kode Negara 62...) *</label>
-                <input type="text" id="adm-contact-wa" placeholder="6283875644210" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
+              <div class="flex justify-end gap-2">
+                <button type="button" onclick="saveEditedTool()" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition">
+                  Simpan Tool
+                </button>
               </div>
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">Format Teks WhatsApp yang Tampil</label>
-                <input type="text" id="adm-contact-wa-display" placeholder="0838 7564 4210" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-amber-300 mb-1">Email Resmi *</label>
-              <input type="email" id="adm-contact-email" placeholder="riskiardiansyah51938@gmail.com" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">URL GitHub Profile *</label>
-                <input type="url" id="adm-contact-github" placeholder="https://github.com/ard34" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
-              </div>
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">Teks Tampilan GitHub</label>
-                <input type="text" id="adm-contact-github-display" placeholder="github.com/ard34" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">URL LinkedIn Profile *</label>
-                <input type="url" id="adm-contact-linkedin" placeholder="https://www.linkedin.com/in/..." class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
-              </div>
-              <div>
-                <label class="block text-xs font-mono text-amber-300 mb-1">Teks Tampilan LinkedIn</label>
-                <input type="text" id="adm-contact-linkedin-display" placeholder="linkedin.com/in/riski-ardiansyah" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono text-amber-300 mb-1">Alamat / Domisili Kontak</label>
-              <input type="text" id="adm-contact-location" placeholder="Kab. Tangerang, Banten • Politeknik Piksi Input Serang" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
             </div>
           </div>
 
-          <!-- PANE 6: CERTIFICATES -->
+          <!-- ============================================== -->
+          <!-- PANE 4: SERTIFIKAT (31+ GOOGLE DRIVE) -->
+          <!-- ============================================== -->
           <div id="pane-certs" class="admin-pane hidden space-y-5">
             <div class="border-b border-slate-800/80 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
                   <i data-lucide="award" class="w-4 h-4 text-pink-400"></i>
-                  <span>Manajemen Sertifikasi &amp; Penghargaan</span>
+                  <span>Edit &amp; Kelola Bagian Sertifikat</span>
                 </h4>
-                <p class="text-xs text-slate-400 mt-1">Kelola 31+ sertifikat resmi dari Google Drive atau tambahkan sertifikat baru.</p>
+                <p class="text-xs text-slate-400 mt-1">Kelola 31+ sertifikat resmi dari Google Drive Anda atau tambahkan sertifikat baru.</p>
               </div>
               <button type="button" onclick="closeMasterAdminModal(); openAddCertModal();" class="px-3 py-1.5 rounded-lg bg-pink-950 border border-pink-500/40 text-pink-300 text-xs font-bold flex items-center gap-1.5 hover:bg-pink-900 transition self-start sm:self-auto">
                 <i data-lucide="plus" class="w-3.5 h-3.5"></i>
@@ -2067,8 +1944,8 @@
 
             <div class="space-y-2">
               <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-                <span id="adm-certs-count">Total Sertifikat: 31</span>
-                <span>Tindakan Cepat</span>
+                <span id="adm-certs-count">Total Terpasang: 31 Sertifikat</span>
+                <span>Tindakan Langsung</span>
               </div>
               <div id="adm-certs-list" class="max-h-96 overflow-y-auto space-y-2 pr-1">
                 <!-- Dynamically populated via JS -->
@@ -2076,14 +1953,16 @@
             </div>
           </div>
 
-          <!-- PANE 7: BACKUP, RESTORE & RESET -->
+          <!-- ============================================== -->
+          <!-- PANE 5: BACKUP & RESET -->
+          <!-- ============================================== -->
           <div id="pane-backup" class="admin-pane hidden space-y-5">
             <div class="border-b border-slate-800/80 pb-3">
               <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
-                <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i>
-                <span>Backup, Export &amp; Reset Data Website</span>
+                <i data-lucide="database" class="w-4 h-4 text-blue-400"></i>
+                <span>Backup &amp; Reset Data Website</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1">Unduh seluruh konfigurasi dan editan Anda sebagai file JSON atau pulihkan dari cadangan.</p>
+              <p class="text-xs text-slate-400 mt-1">Unduh cadangan data editan Anda atau pulihkan sewaktu-waktu.</p>
             </div>
 
             <!-- Export -->
@@ -2093,7 +1972,7 @@
                   <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
                   <span>Unduh File Cadangan Lengkap (.json)</span>
                 </div>
-                <p class="text-[11px] text-slate-400 mt-0.5">Ekspor seluruh data profil, proyek, keahlian, dan 31+ sertifikat ke komputer Anda.</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Simpan salinan cadangan About, Pengalaman, Tools, dan 31+ Sertifikat ke laptop Anda.</p>
               </div>
               <button type="button" onclick="exportSiteDataJSON()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold shrink-0 flex items-center gap-1.5 shadow">
                 <i data-lucide="download" class="w-3.5 h-3.5"></i>
@@ -2106,9 +1985,9 @@
               <div>
                 <div class="text-xs font-bold text-white font-mono flex items-center gap-1.5">
                   <i data-lucide="upload" class="w-4 h-4 text-purple-400"></i>
-                  <span>Pulihkan / Import dari File Cadangan (.json)</span>
+                  <span>Pulihkan dari File Cadangan (.json)</span>
                 </div>
-                <p class="text-[11px] text-slate-400 mt-0.5">Muat kembali editan sebelumnya dari file backup JSON.</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Muat kembali data cadangan yang pernah Anda unduh.</p>
               </div>
               <div class="shrink-0 flex items-center gap-2">
                 <input type="file" id="adm-import-file" accept=".json" class="hidden" onchange="importSiteDataJSON(this.files[0])">
@@ -2119,14 +1998,14 @@
               </div>
             </div>
 
-            <!-- Reset to Default -->
+            <!-- Reset -->
             <div class="p-4 rounded-xl bg-red-950/20 border border-red-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <div class="text-xs font-bold text-red-400 font-mono flex items-center gap-1.5">
                   <i data-lucide="alert-triangle" class="w-4 h-4"></i>
-                  <span>Reset ke Pengaturan Awal Pabrik (Default)</span>
+                  <span>Reset ke Pengaturan Awal (Default)</span>
                 </div>
-                <p class="text-[11px] text-slate-400 mt-0.5">Menghapus semua perubahan lokal di browser ini dan mengembalikan ke teks awal asli.</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Hapus perubahan lokal di browser dan kembalikan ke konten bawaan asli.</p>
               </div>
               <button type="button" onclick="resetSiteDataDefault()" class="px-4 py-2 rounded-xl bg-red-950/80 border border-red-500/50 text-red-300 hover:text-white hover:bg-red-900 text-xs font-bold shrink-0 flex items-center gap-1.5 transition">
                 <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
@@ -2142,7 +2021,7 @@
       <div class="p-3 sm:p-4 border-t border-slate-800 bg-[#0A1222]/80 flex items-center justify-between text-xs font-mono text-slate-400">
         <span class="flex items-center gap-1.5">
           <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400"></i>
-          <span>Perubahan disimpan secara lokal dan langsung tampil real-time di website.</span>
+          <span>Perubahan disimpan lokal dan langsung tampil real-time di web.</span>
         </span>
         <button type="button" onclick="handleMasterAdminSave()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5">
           <i data-lucide="check" class="w-3.5 h-3.5"></i>
@@ -2152,14 +2031,13 @@
 
     </div>
   </div>
-
   <!-- Scripts -->
   <script src="assets/js/cyber-background.js"></script>
   <!-- AOS (Animate On Scroll) & Vanilla Tilt Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="assets/js/i18n.js?v=1"></script>
-  <script src="assets/js/main.js?v=25"></script>
+  <script src="assets/js/main.js?v=26"></script>
   <!-- Floating Classy Back to Top Button -->
   <button id="back-to-top-btn" class="w-12 h-12 rounded-2xl gradient-btn text-white flex items-center justify-center shadow-xl shadow-cyan-500/30 border border-cyan-400/50 cursor-pointer" title="Kembali ke Atas" aria-label="Back to top">
     <i data-lucide="arrow-up" class="w-5 h-5"></i>

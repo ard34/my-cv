@@ -1149,22 +1149,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========================================================
   // MASTER SITE CONTENT & ADMIN CMS ENGINE (REAL-TIME EDIT)
+  // Dedicated to: About, Pengalaman, Tools, and Sertifikat
   // ========================================================
 
   const DEFAULT_SITE_DATA = {
-    hero: {
-      firstName: "Riski",
-      lastName: "Ardiansyah",
-      role: "Cybersecurity Enthusiast & AI-Assisted Software Developer",
-      quote: "“Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”",
-      aiTitle: "AI-Assisted Software Development with AI Coding Agents",
-      aiDesc: "Pengembangan aplikasi dengan memanfaatkan AI Agent, di mana manusia berperan dalam perancangan ide, requirement, arsitektur, dan business logic, sedangkan AI Agent membantu implementasi teknis, coding, debugging, serta testing.",
-      bio: "Mahasiswa aktif semester 7 Jurusan <strong>D4 Rekayasa Keamanan Siber</strong> di Politeknik Piksi Input Serang. Berfokus pada keamanan aplikasi web, penetration testing, serta perancangan perangkat lunak modern berbasis arsitektur AI coding agent.",
-      photoUrl: "assets/img/riski_hero.jpg?v=16",
-      campusBadge: "Piksi Input Serang (Sem. 7)",
-      degreeBadge: "D4 Rekayasa Keamanan Siber",
-      location: "Kab. Tangerang, Banten"
-    },
     about: {
       bio1: "Saya adalah mahasiswa tingkat akhir di Politeknik Piksi Input Serang pada program studi D4 Rekayasa Keamanan Siber. Memiliki ketertarikan mendalam dan pengalaman hands-on dalam menguji keamanan sistem informasi, menelusuri kerentanan (vulnerability assessment), serta memahami alur eksploitasi web application berstandar OWASP Top 10.",
       bio2: "Selain berfokus pada ranah offensive security, saya juga aktif merancang dan mengembangkan sistem web fungsional menggunakan Laravel, Tailwind CSS, dan Next.js dengan pendekatan AI-Assisted Software Development—mengorkestrasi AI Coding Agent untuk menghasilkan kode yang bersih, terdokumentasi, dan tangguh terhadap celah keamanan.",
@@ -1174,28 +1162,67 @@ document.addEventListener('DOMContentLoaded', () => {
       status: "2023 — Sekarang (Semester 7 Aktif)",
       focus: "Web App Pentesting & Cloud Security",
       eduDesc: "Mempelajari fundamental dan praktik lanjutan network defense, ethical hacking, digital forensics, reverse engineering, cryptography, serta perancangan sistem informasi berstandar keamanan enterprise."
-    },
-    skills: {
-      p1Title: "Web App Pentesting & Assessment",
-      p1Desc: "Identifikasi dan verifikasi kerentanan OWASP Top 10 (SQL Injection, XSS, CSRF, IDOR, Broken Authentication) menggunakan Burp Suite, Nmap, dan manual payload injection.",
-      p2Title: "Tools, Linux & Security Monitoring",
-      p2Desc: "Pengoperasian intensif Kali Linux, Ubuntu Server, monitoring SIEM berbasis Wazuh, analisis paket jaringan dengan Wireshark, dan containerization dengan Docker.",
-      p3Title: "AI-Assisted Dev & Frameworks",
-      p3Desc: "Pengembangan aplikasi web modern menggunakan Laravel, Tailwind CSS, Next.js, dan Python dengan workflow akselerasi AI Coding Agent untuk clean architecture."
-    },
-    contact: {
-      whatsapp: "6283875644210",
-      whatsappDisplay: "0838 7564 4210",
-      email: "riskiardiansyah51938@gmail.com",
-      github: "https://github.com/ard34",
-      githubDisplay: "github.com/ard34",
-      linkedin: "https://www.linkedin.com/in/riski-ardiansyah-468626338/",
-      linkedinDisplay: "linkedin.com/in/riski-ardiansyah",
-      location: "Kab. Tangerang, Banten • Politeknik Piksi Input Serang"
     }
   };
 
-  // 1. Storage Accessors
+  const DEFAULT_EXPERIENCES = [
+    {
+      id: "exp-bssn",
+      role: "Peserta VVIP BSSN Region Jateng 2026",
+      institution: "Badan Siber dan Sandi Negara (BSSN)",
+      period: "2026",
+      color: "cyan",
+      desc: "Terpilih sebagai peserta VVIP dalam forum strategis Badan Siber dan Sandi Negara (BSSN) Region Jawa Tengah, berdiskusi mengenai pengamanan infrastruktur kritis dan kesiapan regulasi nasional."
+    },
+    {
+      id: "exp-crtom",
+      role: "Certified Red Team Operations Management (CRTOM)",
+      institution: "Red Team Leadership & Operational Defense",
+      period: "Professional Certification",
+      color: "purple",
+      desc: "Menyelesaikan program sertifikasi CRTOM yang menguji kapabilitas perancangan adversary emulation, taktik red teaming terkoordinasi, dan strategi bypass pertahanan terukur."
+    },
+    {
+      id: "exp-coursenet",
+      role: "Teknik Ethical Hacking & Cyber Security Specialist",
+      institution: "Course-Net Indonesia",
+      period: "Specialist Certification",
+      color: "blue",
+      desc: "Mengikuti pelatihan komprehensif selama 3 bulan penuh mencakup packet analysis, network defense, Linux server hardening, dan simulasi penyerangan web aplikasi."
+    },
+    {
+      id: "exp-idnetwork",
+      role: "Beasiswa Bootcamp Cybersecurity & Academy",
+      institution: "IDNetwork & Surosowan Cyber",
+      period: "Bootcamp Scholarship",
+      color: "emerald",
+      desc: "Penerima beasiswa prestasi bootcamp cybersecurity yang mendalami network packet analysis, pengujian celah web application, Linux security hardening, dan incident response labs."
+    }
+  ];
+
+  const DEFAULT_TOOLS_LIST = [
+    { name: "Kali Linux", domain: "kali.org", color: "#557C94", fallback: "assets/img/icons/kalilinux.svg" },
+    { name: "Burp Suite", domain: "portswigger.net", color: "#FF6633", fallback: "assets/img/icons/burpsuite.svg" },
+    { name: "Firefox", domain: "firefox.com", color: "#FF7139", fallback: "assets/img/icons/firefox.svg" },
+    { name: "Nmap", domain: "nmap.org", color: "#22D3EE", fallback: "assets/img/icons/nmap.svg" },
+    { name: "VS Code", domain: "code.visualstudio.com", color: "#007ACC", fallback: "assets/img/icons/vscode.svg" },
+    { name: "GitHub", domain: "github.com", color: "#FFFFFF", fallback: "assets/img/icons/github.svg" },
+    { name: "Codex", domain: "openai.com", color: "#74AA9C", fallback: "assets/img/icons/openai.svg" },
+    { name: "Claude AI", domain: "claude.ai", color: "#D97757", fallback: "assets/img/icons/claude.svg" },
+    { name: "Gemini", domain: "gemini.google.com", color: "#A78BFA", fallback: "assets/img/icons/gemini.svg" }
+  ];
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // 1. Data Accessors
   function getSiteData() {
     try {
       const stored = localStorage.getItem('portfolio_site_custom');
@@ -1212,225 +1239,92 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       localStorage.setItem('portfolio_site_custom', JSON.stringify(data));
     } catch (e) {
-      console.error("Failed to save site data to localStorage", e);
+      console.error("Failed to save site data", e);
     }
   }
 
-  function getProjectsData() {
+  function getExperienceData() {
     try {
-      const stored = localStorage.getItem('portfolio_projects_custom');
-      if (stored) {
-        return JSON.parse(stored);
-      }
+      const stored = localStorage.getItem('portfolio_experiences_custom');
+      if (stored) return JSON.parse(stored);
     } catch (e) {
-      console.warn("Using default projects data", e);
+      console.warn("Using default experiences", e);
     }
-    return projectsData;
+    return JSON.parse(JSON.stringify(DEFAULT_EXPERIENCES));
   }
 
-  function saveProjectsData(data) {
+  function saveExperienceData(data) {
     try {
-      localStorage.setItem('portfolio_projects_custom', JSON.stringify(data));
+      localStorage.setItem('portfolio_experiences_custom', JSON.stringify(data));
     } catch (e) {
-      console.error("Failed to save projects data", e);
+      console.error("Failed to save experience data", e);
     }
   }
 
-  function escapeHTML(str) {
-    if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+  function getToolsData() {
+    try {
+      const stored = localStorage.getItem('portfolio_tools_custom');
+      if (stored) return JSON.parse(stored);
+    } catch (e) {
+      console.warn("Using default tools", e);
+    }
+    return JSON.parse(JSON.stringify(DEFAULT_TOOLS_LIST));
   }
 
-  // 2. DOM Hydration & Live Application
+  function saveToolsData(data) {
+    try {
+      localStorage.setItem('portfolio_tools_custom', JSON.stringify(data));
+    } catch (e) {
+      console.error("Failed to save tools data", e);
+    }
+  }
+
+  // 2. DOM Renderers: About, Pengalaman, Tools
   function applySiteDataToDOM() {
     const data = getSiteData();
+    if (!data.about) return;
 
-    // Hero
-    const heroName = document.getElementById('hero-display-name');
-    if (heroName) {
-      heroName.innerHTML = `${data.hero.firstName || 'Riski'} <span class="gradient-text">${data.hero.lastName || 'Ardiansyah'}</span>`;
-    }
-    const heroRole = document.getElementById('hero-display-role');
-    if (heroRole) heroRole.textContent = data.hero.role;
+    const setElText = (id, text) => {
+      const el = document.getElementById(id);
+      if (el && text) el.textContent = text;
+    };
 
-    const heroQuote = document.getElementById('hero-display-quote');
-    if (heroQuote) heroQuote.textContent = data.hero.quote;
-
-    const heroAiTitle = document.getElementById('hero-display-ai-title');
-    if (heroAiTitle) heroAiTitle.textContent = data.hero.aiTitle;
-
-    const heroAiDesc = document.getElementById('hero-display-ai-desc');
-    if (heroAiDesc) heroAiDesc.textContent = data.hero.aiDesc;
-
-    const heroBio = document.getElementById('hero-display-bio');
-    if (heroBio) heroBio.innerHTML = data.hero.bio;
-
-    const heroAvatar = document.getElementById('hero-avatar-img');
-    if (heroAvatar && data.hero.photoUrl) heroAvatar.src = data.hero.photoUrl;
-
-    const heroDegree = document.getElementById('hero-badge-degree');
-    if (heroDegree) heroDegree.textContent = data.hero.degreeBadge;
-
-    const heroCampus = document.getElementById('hero-badge-campus');
-    if (heroCampus) heroCampus.textContent = data.hero.campusBadge;
-
-    const heroWaBtn = document.getElementById('hero-wa-btn');
-    if (heroWaBtn && data.contact.whatsapp) {
-      heroWaBtn.href = `https://wa.me/${data.contact.whatsapp}`;
-    }
-
-    // About
-    const aboutBio1 = document.getElementById('about-bio1-text');
-    if (aboutBio1) aboutBio1.textContent = data.about.bio1;
-
-    const aboutBio2 = document.getElementById('about-bio2-text');
-    if (aboutBio2) aboutBio2.textContent = data.about.bio2;
-
-    const aboutQuote = document.getElementById('about-quote-text');
-    if (aboutQuote) aboutQuote.textContent = data.about.quote;
-
-    const aboutInst = document.getElementById('about-edu-inst');
-    if (aboutInst) aboutInst.textContent = data.about.institution;
-
-    const aboutDegree = document.getElementById('about-edu-degree');
-    if (aboutDegree) aboutDegree.textContent = data.about.degree;
-
-    const aboutStatus = document.getElementById('about-edu-status');
-    if (aboutStatus) aboutStatus.textContent = data.about.status;
-
-    const aboutFocus = document.getElementById('about-edu-focus');
-    if (aboutFocus) aboutFocus.textContent = data.about.focus;
-
-    const aboutEduDesc = document.getElementById('about-edu-desc');
-    if (aboutEduDesc) aboutEduDesc.textContent = data.about.eduDesc;
-
-    // Contact
-    const contactWa = document.getElementById('contact-display-wa');
-    if (contactWa && data.contact.whatsapp) {
-      contactWa.href = `https://wa.me/${data.contact.whatsapp}`;
-    }
-    const contactWaText = document.getElementById('contact-display-wa-text');
-    if (contactWaText) {
-      contactWaText.textContent = data.contact.whatsappDisplay || data.contact.whatsapp;
-    }
-
-    const contactEmail = document.getElementById('contact-display-email');
-    if (contactEmail && data.contact.email) {
-      contactEmail.href = `mailto:${data.contact.email}`;
-    }
-    const contactEmailText = document.getElementById('contact-display-email-text');
-    if (contactEmailText) contactEmailText.textContent = data.contact.email;
-
-    const contactGh = document.getElementById('contact-display-github');
-    if (contactGh && data.contact.github) {
-      contactGh.href = data.contact.github;
-    }
-    const contactGhText = document.getElementById('contact-display-github-text');
-    if (contactGhText) contactGhText.textContent = data.contact.githubDisplay || data.contact.github;
-
-    const contactLi = document.getElementById('contact-display-linkedin');
-    if (contactLi && data.contact.linkedin) {
-      contactLi.href = data.contact.linkedin;
-    }
-    const contactLiText = document.getElementById('contact-display-linkedin-text');
-    if (contactLiText) contactLiText.textContent = data.contact.linkedinDisplay || data.contact.linkedin;
-
-    const contactLoc = document.getElementById('contact-display-location');
-    if (contactLoc) contactLoc.textContent = data.contact.location;
+    setElText('about-bio1-text', data.about.bio1);
+    setElText('about-bio2-text', data.about.bio2);
+    setElText('about-quote-text', data.about.quote);
+    setElText('about-edu-inst', data.about.institution);
+    setElText('about-edu-degree', data.about.degree);
+    setElText('about-edu-status', data.about.status);
+    setElText('about-edu-focus', data.about.focus);
+    setElText('about-edu-desc', data.about.eduDesc);
 
     if (window.lucide) lucide.createIcons();
   }
 
-  // 3. Dynamic Projects List Renderer
-  function renderProjectsList() {
-    const container = document.getElementById('projects-list-container');
+  function renderExperienceList() {
+    const container = document.getElementById('experience-timeline-container');
     if (!container) return;
 
-    const projects = getProjectsData();
-    const keys = Object.keys(projects);
-
-    if (keys.length === 0) {
-      container.innerHTML = `
-        <div class="glass-panel p-8 text-center text-slate-400 rounded-2xl border border-slate-800">
-          <p class="text-sm">Belum ada proyek yang ditampilkan.</p>
-        </div>`;
+    const list = getExperienceData();
+    if (list.length === 0) {
+      container.innerHTML = '<p class="text-xs text-slate-400">Belum ada riwayat pengalaman.</p>';
       return;
     }
 
-    const iconsMap = {
-      exambro: 'shield-check',
-      koprasi: 'wallet',
-      tokoonline: 'shopping-bag',
-      bbndigital: 'layers',
-      wazuh: 'server',
-      loganalysis: 'terminal'
-    };
-
-    const colorsMap = {
-      exambro: 'cyan',
-      koprasi: 'emerald',
-      tokoonline: 'purple',
-      bbndigital: 'blue',
-      wazuh: 'amber',
-      loganalysis: 'rose'
-    };
-
-    container.innerHTML = keys.map((key, index) => {
-      const p = projects[key];
-      const icon = iconsMap[key] || 'folder';
-      const color = colorsMap[key] || 'cyan';
-      const orderNum = String(index + 1).padStart(2, '0');
-      const stackList = Array.isArray(p.stack) ? p.stack : (p.stack || '').split(',').map(s => s.trim()).filter(Boolean);
-
+    container.innerHTML = list.map((exp, idx) => {
+      const color = exp.color || 'cyan';
       return `
-        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-${color}-500/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700">
-          <!-- Left: Icon & Title info -->
-          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
-            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-${color}-500/40 flex items-center justify-center text-${color}-400 shrink-0 group-hover:scale-105 group-hover:border-${color}-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition">
-              <i data-lucide="${icon}" class="w-6 h-6"></i>
+        <div class="relative group" data-aos="fade-up" data-aos-duration="750">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#050914] border-2 border-${color}-400 group-hover:scale-125 group-hover:bg-${color}-400 transition shadow-lg shadow-${color}-500/40"></div>
+          <div class="glass-panel p-6 rounded-2xl space-y-2 border border-slate-800 group-hover:border-${color}-500/40 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white font-heading">${escapeHTML(exp.role)}</h3>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-${color}-950 text-${color}-300 border border-${color}-800">${escapeHTML(exp.period || '')}</span>
             </div>
-            <div class="space-y-1 overflow-hidden">
-              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#0A1222] text-${color}-300 border border-${color}-800/80">
-                <span class="w-1.5 h-1.5 rounded-full bg-${color}-400"></span>
-                #${orderNum} • ${escapeHTML(p.category || 'Featured Project')}
-              </span>
-              <h3 class="font-bold text-white font-heading text-lg group-hover:text-${color}-300 transition truncate">
-                ${escapeHTML(p.title || key)}
-              </h3>
-              <p class="text-xs text-slate-400 font-mono truncate">
-                ${escapeHTML(p.subtitle || p.category || '')}
-              </p>
-            </div>
-          </div>
-
-          <!-- Middle: Description & Tech Stack -->
-          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-              ${escapeHTML(p.description || '')}
+            <p class="text-xs text-${color}-400 font-mono">${escapeHTML(exp.institution || '')}</p>
+            <p class="text-sm text-slate-300 leading-relaxed pt-1">
+              ${escapeHTML(exp.desc || '')}
             </p>
-            <div class="flex flex-wrap items-center gap-1.5">
-              ${stackList.map(st => `
-                <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-${color}-300 border border-${color}-900/60">${escapeHTML(st)}</span>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Right: Action Buttons -->
-          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
-            <button onclick="openProjectModal('${key}')" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
-              <i data-lucide="info" class="w-4 h-4"></i>
-              <span>Detail Teknis &amp; Spesifikasi</span>
-            </button>
-            <a href="${p.link || 'https://github.com/ard34'}" target="_blank" rel="noreferrer" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Buka Repository GitHub">
-              <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i>
-              <span class="hidden sm:inline">GitHub</span>
-              <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
-            </a>
           </div>
         </div>
       `;
@@ -1439,8 +1333,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   }
 
-  // 4. Master Admin Modal Tabs & Handlers
-  window.openMasterAdminModal = function(initialTab = 'hero') {
+  function renderToolsGrid() {
+    const container = document.getElementById('tools-grid-container');
+    if (!container) return;
+
+    const tools = getToolsData();
+    container.innerHTML = tools.map((t, idx) => {
+      const domain = t.domain || 'github.com';
+      const iconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+      const fallback = t.fallback || 'assets/img/icons/github.svg';
+      const color = t.color || '#22D3EE';
+
+      return `
+        <div class="flex flex-col items-center gap-2 group cursor-pointer" data-aos="fade-up" data-aos-delay="${50 * (idx % 10)}">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A1222]/90 border border-slate-800/80 flex items-center justify-center p-3 shadow-lg group-hover:border-[${color}] group-hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] group-hover:-translate-y-1 transition-all duration-300">
+            <img src="${iconUrl}" alt="${escapeHTML(t.name)} Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain" loading="lazy" onerror="this.onerror=null; this.src='${fallback}';">
+          </div>
+          <span class="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-cyan-300 transition">${escapeHTML(t.name)}</span>
+        </div>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 3. Admin Panel Modal Controls
+  window.openMasterAdminModal = function(initialTab = 'about') {
     if (!isOwnerLoggedIn()) {
       window.openAdminLoginModal();
       return;
@@ -1449,57 +1367,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('master-admin-panel-modal');
     if (!modal) return;
 
-    // Populate Hero Pane
+    // 1. Populate About Inputs
     const siteData = getSiteData();
     const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
 
-    setVal('adm-hero-first-name', siteData.hero.firstName);
-    setVal('adm-hero-last-name', siteData.hero.lastName);
-    setVal('adm-hero-role', siteData.hero.role);
-    setVal('adm-hero-quote', siteData.hero.quote);
-    setVal('adm-hero-ai-title', siteData.hero.aiTitle);
-    setVal('adm-hero-ai-desc', siteData.hero.aiDesc);
-    setVal('adm-hero-bio', siteData.hero.bio);
-    setVal('adm-hero-photo', siteData.hero.photoUrl);
-    setVal('adm-hero-location', siteData.hero.location);
-    setVal('adm-hero-degree', siteData.hero.degreeBadge);
-    setVal('adm-hero-campus', siteData.hero.campusBadge);
+    if (siteData.about) {
+      setVal('adm-about-bio1', siteData.about.bio1);
+      setVal('adm-about-bio2', siteData.about.bio2);
+      setVal('adm-about-quote', siteData.about.quote);
+      setVal('adm-about-institution', siteData.about.institution);
+      setVal('adm-about-degree', siteData.about.degree);
+      setVal('adm-about-status', siteData.about.status);
+      setVal('adm-about-focus', siteData.about.focus);
+      setVal('adm-about-edudesc', siteData.about.eduDesc);
+    }
 
-    // Populate About Pane
-    setVal('adm-about-bio1', siteData.about.bio1);
-    setVal('adm-about-bio2', siteData.about.bio2);
-    setVal('adm-about-quote', siteData.about.quote);
-    setVal('adm-about-institution', siteData.about.institution);
-    setVal('adm-about-degree', siteData.about.degree);
-    setVal('adm-about-status', siteData.about.status);
-    setVal('adm-about-focus', siteData.about.focus);
-    setVal('adm-about-edudesc', siteData.about.eduDesc);
+    // 2. Populate Experience Sub-Editor
+    populateExperienceSelector();
 
-    // Populate Skills Pane
-    setVal('adm-skill-p1-title', siteData.skills.p1Title);
-    setVal('adm-skill-p1-desc', siteData.skills.p1Desc);
-    setVal('adm-skill-p2-title', siteData.skills.p2Title);
-    setVal('adm-skill-p2-desc', siteData.skills.p2Desc);
-    setVal('adm-skill-p3-title', siteData.skills.p3Title);
-    setVal('adm-skill-p3-desc', siteData.skills.p3Desc);
+    // 3. Populate Tools Grid Sub-Editor
+    populateToolsAdminList();
 
-    // Populate Contact Pane
-    setVal('adm-contact-wa', siteData.contact.whatsapp);
-    setVal('adm-contact-wa-display', siteData.contact.whatsappDisplay);
-    setVal('adm-contact-email', siteData.contact.email);
-    setVal('adm-contact-github', siteData.contact.github);
-    setVal('adm-contact-github-display', siteData.contact.githubDisplay);
-    setVal('adm-contact-linkedin', siteData.contact.linkedin);
-    setVal('adm-contact-linkedin-display', siteData.contact.linkedinDisplay);
-    setVal('adm-contact-location', siteData.contact.location);
-
-    // Populate Projects Dropdown
-    populateProjectSelector();
-
-    // Populate Certs List in Pane 6
+    // 4. Populate Certs List
     populateAdminCertsList();
 
-    // Show modal & switch to initial tab
+    // Open Modal
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.classList.add('overflow-hidden');
@@ -1518,7 +1410,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.switchAdminTab = function(tabName) {
-    const panes = ['hero', 'about', 'projects', 'skills', 'contact', 'certs', 'backup'];
+    const panes = ['about', 'experience', 'tools', 'certs', 'backup'];
     panes.forEach(p => {
       const paneEl = document.getElementById(`pane-${p}`);
       const btnEl = document.getElementById(`tab-btn-${p}`);
@@ -1540,114 +1432,200 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   };
 
-  // 5. Projects Sub-Editor
-  function populateProjectSelector(selectKey) {
-    const selector = document.getElementById('adm-project-selector');
+  // --- Sub-editor: Experience ---
+  function populateExperienceSelector(selectId) {
+    const selector = document.getElementById('adm-exp-selector');
     if (!selector) return;
 
-    const projects = getProjectsData();
-    const keys = Object.keys(projects);
-    selector.innerHTML = keys.map(k => {
-      const p = projects[k];
-      return `<option value="${k}" ${k === selectKey ? 'selected' : ''}>${escapeHTML(p.title || k)} (${k})</option>`;
-    }).join('');
+    const list = getExperienceData();
+    selector.innerHTML = list.map((exp, idx) => `
+      <option value="${exp.id}" ${exp.id === selectId ? 'selected' : ''}>${idx + 1}. ${escapeHTML(exp.role)} (${escapeHTML(exp.period)})</option>
+    `).join('');
 
-    loadSelectedProjectForm();
+    loadSelectedExperienceForm();
   }
 
-  window.loadSelectedProjectForm = function() {
-    const selector = document.getElementById('adm-project-selector');
+  window.loadSelectedExperienceForm = function() {
+    const selector = document.getElementById('adm-exp-selector');
     if (!selector) return;
-    const key = selector.value;
-    const projects = getProjectsData();
-    const p = projects[key];
-    if (!p) return;
+    const expId = selector.value;
+    const list = getExperienceData();
+    const exp = list.find(e => e.id === expId);
+    if (!exp) return;
 
     const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
-    setVal('adm-proj-title', p.title);
-    setVal('adm-proj-subtitle', p.subtitle);
-    setVal('adm-proj-category', p.category);
-    setVal('adm-proj-stack', Array.isArray(p.stack) ? p.stack.join(', ') : p.stack);
-    setVal('adm-proj-desc', p.description);
-    setVal('adm-proj-link', p.link);
-    setVal('adm-proj-features', Array.isArray(p.features) ? p.features.join('\n') : (p.features || ''));
+    setVal('adm-exp-role', exp.role);
+    setVal('adm-exp-institution', exp.institution);
+    setVal('adm-exp-period', exp.period);
+    setVal('adm-exp-color', exp.color || 'cyan');
+    setVal('adm-exp-desc', exp.desc);
   };
 
-  window.saveCurrentProjectDraft = function() {
-    const selector = document.getElementById('adm-project-selector');
+  window.saveCurrentExperienceDraft = function() {
+    const selector = document.getElementById('adm-exp-selector');
     if (!selector || !selector.value) return;
-    const key = selector.value;
-    const projects = Object.assign({}, getProjectsData());
+    const expId = selector.value;
+    const list = getExperienceData();
+    const exp = list.find(e => e.id === expId);
+    if (!exp) return;
 
     const getVal = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
-    const stackRaw = getVal('adm-proj-stack');
-    const featuresRaw = getVal('adm-proj-features');
+    exp.role = getVal('adm-exp-role') || exp.role;
+    exp.institution = getVal('adm-exp-institution');
+    exp.period = getVal('adm-exp-period');
+    exp.color = getVal('adm-exp-color') || 'cyan';
+    exp.desc = getVal('adm-exp-desc');
 
-    projects[key] = {
-      title: getVal('adm-proj-title') || key,
-      subtitle: getVal('adm-proj-subtitle'),
-      category: getVal('adm-proj-category'),
-      stack: stackRaw.split(',').map(s => s.trim()).filter(Boolean),
-      description: getVal('adm-proj-desc'),
-      link: getVal('adm-proj-link') || 'https://github.com/ard34',
-      features: featuresRaw.split('\n').map(s => s.trim()).filter(Boolean),
-      metrics: (projects[key] && projects[key].metrics) || 'Optimal response time & verified security architecture.',
-      image: (projects[key] && projects[key].image) || 'assets/img/projects/bbndigital.jpg'
-    };
-
-    saveProjectsData(projects);
-    renderProjectsList();
-    showToast(`Data proyek "${projects[key].title}" berhasil diperbarui!`, 'success');
+    saveExperienceData(list);
+    renderExperienceList();
+    populateExperienceSelector(expId);
+    showToast(`Data pengalaman "${exp.role}" berhasil diperbarui!`, "success");
   };
 
-  window.addNewProjectPrompt = function() {
-    const projName = prompt("Masukkan ID unik untuk proyek baru (contoh: pentest-audit atau mobile-app):");
-    if (!projName) return;
-    const key = projName.toLowerCase().replace(/[^a-z0-9_-]/g, '');
-    if (!key) {
-      alert("ID proyek tidak valid!");
-      return;
-    }
+  window.addNewExperiencePrompt = function() {
+    const roleName = prompt("Masukkan Judul Peran / Program Baru:");
+    if (!roleName) return;
 
-    const projects = Object.assign({}, getProjectsData());
-    if (projects[key]) {
-      alert("Proyek dengan ID ini sudah ada!");
-      return;
-    }
+    const list = getExperienceData();
+    const newId = 'exp-' + Date.now();
+    list.unshift({
+      id: newId,
+      role: roleName,
+      institution: "Institusi / Organisasi Resmi",
+      period: "2026",
+      color: "cyan",
+      desc: "Deskripsi kegiatan, pencapaian dan kompetensi yang dipelajari."
+    });
 
-    projects[key] = {
-      title: projName,
-      subtitle: "Web Application & Security System",
-      category: "Cyber Defense & Web Development",
-      stack: ["Next.js", "Tailwind CSS", "PostgreSQL"],
-      description: "Deskripsi ringkas sistem baru yang telah selesai dibangun dan teruji keamanannya.",
-      features: ["Sistem Autentikasi Modern", "Proteksi OWASP Top 10", "Database Query Optimized"],
-      metrics: "Stabilitas tinggi dengan response time optimal.",
-      link: "https://github.com/ard34",
-      image: "assets/img/projects/bbndigital.jpg"
-    };
-
-    saveProjectsData(projects);
-    populateProjectSelector(key);
-    renderProjectsList();
-    showToast(`Proyek baru "${key}" berhasil ditambahkan! Silakan lengkapi detailnya.`, 'success');
+    saveExperienceData(list);
+    renderExperienceList();
+    populateExperienceSelector(newId);
+    showToast("Pengalaman baru berhasil ditambahkan! Silakan lengkapi detailnya.", "success");
   };
 
-  window.deleteCurrentProject = function() {
-    const selector = document.getElementById('adm-project-selector');
+  window.deleteCurrentExperience = function() {
+    const selector = document.getElementById('adm-exp-selector');
     if (!selector || !selector.value) return;
-    const key = selector.value;
-    if (confirm(`Apakah Anda yakin ingin menghapus proyek "${key}" dari daftar portofolio?`)) {
-      const projects = Object.assign({}, getProjectsData());
-      delete projects[key];
-      saveProjectsData(projects);
-      populateProjectSelector();
-      renderProjectsList();
-      showToast(`Proyek "${key}" telah dihapus.`, 'info');
+    const expId = selector.value;
+
+    if (confirm("Hapus item pengalaman ini dari timeline?")) {
+      let list = getExperienceData();
+      list = list.filter(e => e.id !== expId);
+      saveExperienceData(list);
+      renderExperienceList();
+      populateExperienceSelector();
+      showToast("Item pengalaman telah dihapus.", "info");
     }
   };
 
-  // 6. Certs Sub-List in Admin Panel
+  // --- Sub-editor: Tools ---
+  let editingToolIndex = -1;
+
+  function populateToolsAdminList() {
+    const container = document.getElementById('adm-tools-list');
+    const countEl = document.getElementById('adm-tools-count');
+    if (!container) return;
+
+    const tools = getToolsData();
+    if (countEl) countEl.textContent = `Daftar Tools Aktif (${tools.length})`;
+
+    container.innerHTML = tools.map((t, idx) => `
+      <div class="p-2.5 rounded-xl bg-[#0A1222] border border-slate-800 flex items-center justify-between gap-2 text-xs hover:border-emerald-500/40 transition">
+        <div class="flex items-center gap-2 overflow-hidden">
+          <img src="https://www.google.com/s2/favicons?domain=${t.domain}&sz=128" alt="${escapeHTML(t.name)}" class="w-6 h-6 object-contain rounded bg-slate-900 shrink-0">
+          <div class="overflow-hidden">
+            <h5 class="font-bold text-white truncate">${escapeHTML(t.name)}</h5>
+            <p class="text-[10px] text-slate-400 font-mono truncate">${escapeHTML(t.domain)}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1 shrink-0">
+          <button type="button" onclick="editToolAt(${idx})" class="p-1 rounded bg-slate-900 text-cyan-400 hover:text-white" title="Edit Tool">
+            <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
+          </button>
+          <button type="button" onclick="deleteToolAt(${idx})" class="p-1 rounded bg-red-950/60 text-red-400 hover:text-white" title="Hapus Tool">
+            <i data-lucide="trash" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  window.editToolAt = function(idx) {
+    const tools = getToolsData();
+    if (!tools[idx]) return;
+    editingToolIndex = idx;
+
+    const editor = document.getElementById('adm-tool-editor');
+    const nameEl = document.getElementById('adm-tool-editing-name');
+    const inputName = document.getElementById('adm-tool-name');
+    const inputDomain = document.getElementById('adm-tool-domain');
+
+    if (editor) editor.classList.remove('hidden');
+    if (nameEl) nameEl.textContent = tools[idx].name;
+    if (inputName) inputName.value = tools[idx].name;
+    if (inputDomain) inputDomain.value = tools[idx].domain;
+  };
+
+  window.closeToolEditor = function() {
+    editingToolIndex = -1;
+    const editor = document.getElementById('adm-tool-editor');
+    if (editor) editor.classList.add('hidden');
+  };
+
+  window.saveEditedTool = function() {
+    if (editingToolIndex < 0) return;
+    const tools = getToolsData();
+    const inputName = document.getElementById('adm-tool-name');
+    const inputDomain = document.getElementById('adm-tool-domain');
+
+    if (inputName && inputName.value.trim()) {
+      tools[editingToolIndex].name = inputName.value.trim();
+    }
+    if (inputDomain && inputDomain.value.trim()) {
+      tools[editingToolIndex].domain = inputDomain.value.trim();
+    }
+
+    saveToolsData(tools);
+    renderToolsGrid();
+    populateToolsAdminList();
+    closeToolEditor();
+    showToast("Tool berhasil diperbarui!", "success");
+  };
+
+  window.addNewToolPrompt = function() {
+    const name = prompt("Masukkan Nama Software / Tool Baru (contoh: Python, Docker, Wazuh):");
+    if (!name) return;
+    const domain = prompt("Masukkan domain resmi untuk logonya (contoh: python.org, docker.com):", "github.com");
+
+    const tools = getToolsData();
+    tools.push({
+      name: name.trim(),
+      domain: (domain || 'github.com').trim(),
+      color: "#22D3EE"
+    });
+
+    saveToolsData(tools);
+    renderToolsGrid();
+    populateToolsAdminList();
+    showToast(`Tool "${name}" berhasil ditambahkan ke matriks!`, "success");
+  };
+
+  window.deleteToolAt = function(idx) {
+    const tools = getToolsData();
+    if (!tools[idx]) return;
+    if (confirm(`Hapus "${tools[idx].name}" dari daftar tools?`)) {
+      tools.splice(idx, 1);
+      saveToolsData(tools);
+      renderToolsGrid();
+      populateToolsAdminList();
+      closeToolEditor();
+      showToast("Tool telah dihapus.", "info");
+    }
+  };
+
+  // --- Sub-editor: Certs ---
   function populateAdminCertsList() {
     const listEl = document.getElementById('adm-certs-list');
     const countEl = document.getElementById('adm-certs-count');
@@ -1682,7 +1660,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteCertificateFromAdmin = function(certId) {
     if (confirm("Hapus sertifikat ini dari tampilan website?")) {
       const allCerts = getCertificates().filter(c => c.id !== certId);
-      // Save
       localStorage.setItem('portfolio_user_certificates', JSON.stringify(allCerts));
       renderCertificates();
       populateAdminCertsList();
@@ -1690,24 +1667,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 7. Master Admin Save All Handler
+  // --- Main Save Handler ---
   window.handleMasterAdminSave = function() {
     const getVal = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
 
     const siteData = {
-      hero: {
-        firstName: getVal('adm-hero-first-name') || 'Riski',
-        lastName: getVal('adm-hero-last-name') || 'Ardiansyah',
-        role: getVal('adm-hero-role') || 'Cybersecurity Enthusiast & AI-Assisted Software Developer',
-        quote: getVal('adm-hero-quote'),
-        aiTitle: getVal('adm-hero-ai-title'),
-        aiDesc: getVal('adm-hero-ai-desc'),
-        bio: getVal('adm-hero-bio'),
-        photoUrl: getVal('adm-hero-photo') || 'assets/img/riski_hero.jpg?v=16',
-        location: getVal('adm-hero-location'),
-        degreeBadge: getVal('adm-hero-degree') || 'D4 Rekayasa Keamanan Siber',
-        campusBadge: getVal('adm-hero-campus') || 'Piksi Input Serang (Sem. 7)'
-      },
       about: {
         bio1: getVal('adm-about-bio1'),
         bio2: getVal('adm-about-bio2'),
@@ -1717,48 +1681,32 @@ document.addEventListener('DOMContentLoaded', () => {
         status: getVal('adm-about-status'),
         focus: getVal('adm-about-focus'),
         eduDesc: getVal('adm-about-edudesc')
-      },
-      skills: {
-        p1Title: getVal('adm-skill-p1-title'),
-        p1Desc: getVal('adm-skill-p1-desc'),
-        p2Title: getVal('adm-skill-p2-title'),
-        p2Desc: getVal('adm-skill-p2-desc'),
-        p3Title: getVal('adm-skill-p3-title'),
-        p3Desc: getVal('adm-skill-p3-desc')
-      },
-      contact: {
-        whatsapp: getVal('adm-contact-wa') || '6283875644210',
-        whatsappDisplay: getVal('adm-contact-wa-display') || '0838 7564 4210',
-        email: getVal('adm-contact-email') || 'riskiardiansyah51938@gmail.com',
-        github: getVal('adm-contact-github') || 'https://github.com/ard34',
-        githubDisplay: getVal('adm-contact-github-display') || 'github.com/ard34',
-        linkedin: getVal('adm-contact-linkedin') || 'https://www.linkedin.com/in/riski-ardiansyah-468626338/',
-        linkedinDisplay: getVal('adm-contact-linkedin-display') || 'linkedin.com/in/riski-ardiansyah',
-        location: getVal('adm-contact-location') || 'Kab. Tangerang, Banten • Politeknik Piksi Input Serang'
       }
     };
 
-    // Save project draft currently open
-    saveCurrentProjectDraft();
-
-    // Save site data
+    // Save site data (About)
     saveSiteData(siteData);
 
-    // Apply live to DOM
-    applySiteDataToDOM();
-    renderProjectsList();
+    // Save current experience draft if open
+    saveCurrentExperienceDraft();
 
-    showToast("✅ Berhasil! Seluruh isi website telah diperbarui secara langsung.", "success");
+    // Re-apply to DOM
+    applySiteDataToDOM();
+    renderExperienceList();
+    renderToolsGrid();
+
+    showToast("✅ Berhasil! Bagian About, Pengalaman, dan Tools telah diperbarui secara langsung.", "success");
     setTimeout(() => {
       closeMasterAdminModal();
     }, 600);
   };
 
-  // 8. Export, Import & Reset
+  // --- Backup, Export & Reset ---
   window.exportSiteDataJSON = function() {
     const fullBackup = {
-      siteData: getSiteData(),
-      projects: getProjectsData(),
+      about: getSiteData().about,
+      experiences: getExperienceData(),
+      tools: getToolsData(),
       certificates: getCertificates(),
       exportedAt: new Date().toISOString(),
       owner: "Riski Ardiansyah"
@@ -1767,7 +1715,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(fullBackup, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `riski_portfolio_backup_${new Date().toISOString().slice(0,10)}.json`);
+    downloadAnchor.setAttribute("download", `riski_portfolio_data_${new Date().toISOString().slice(0,10)}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -1781,40 +1729,46 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.onload = function(e) {
       try {
         const parsed = JSON.parse(e.target.result);
-        if (parsed.siteData) {
-          saveSiteData(parsed.siteData);
+        if (parsed.about) {
+          saveSiteData({ about: parsed.about });
         }
-        if (parsed.projects) {
-          saveProjectsData(parsed.projects);
+        if (parsed.experiences) {
+          saveExperienceData(parsed.experiences);
+        }
+        if (parsed.tools) {
+          saveToolsData(parsed.tools);
         }
         if (parsed.certificates && Array.isArray(parsed.certificates)) {
           localStorage.setItem('portfolio_user_certificates', JSON.stringify(parsed.certificates));
         }
 
         applySiteDataToDOM();
-        renderProjectsList();
+        renderExperienceList();
+        renderToolsGrid();
         renderCertificates();
-        openMasterAdminModal('hero');
+        openMasterAdminModal('about');
         showToast("Data cadangan berhasil dipulihkan secara penuh!", "success");
       } catch (err) {
-        alert("Gagal membaca file JSON cadangan: Format file tidak valid.");
+        alert("Gagal membaca file JSON: Format tidak valid.");
       }
     };
     reader.readAsText(file);
   };
 
   window.resetSiteDataDefault = function() {
-    if (confirm("PERINGATAN: Apakah Anda yakin ingin menghapus semua kustomisasi lokal dan kembali ke setelan default awal?")) {
+    if (confirm("PERINGATAN: Apakah Anda yakin ingin menghapus semua editan lokal dan kembali ke setelan default awal?")) {
       localStorage.removeItem('portfolio_site_custom');
-      localStorage.removeItem('portfolio_projects_custom');
+      localStorage.removeItem('portfolio_experiences_custom');
+      localStorage.removeItem('portfolio_tools_custom');
       applySiteDataToDOM();
-      renderProjectsList();
-      openMasterAdminModal('hero');
+      renderExperienceList();
+      renderToolsGrid();
+      openMasterAdminModal('about');
       showToast("Seluruh pengaturan telah dikembalikan ke kondisi default awal.", "info");
     }
   };
 
-  // Hook into updateAdminUI to manage floating bar visibility
+  // Hook floating bar
   const oldUpdateAdminUI = updateAdminUI;
   updateAdminUI = function() {
     if (typeof oldUpdateAdminUI === 'function') oldUpdateAdminUI();
@@ -1832,22 +1786,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   };
 
-  // Modify admin login success to open master admin panel directly
-  if (adminLoginForm) {
-    // Already has submit listener, let's make sure updateAdminUI is triggered and openMasterAdminModal is called
-  }
-
   // Initial boots
   applySiteDataToDOM();
-  renderProjectsList();
+  renderExperienceList();
+  renderToolsGrid();
 
-  // Expose globally for external modules (i18n, etc.)
+  // Expose globally
   window.applySiteDataToDOM = applySiteDataToDOM;
-  window.renderProjectsList = renderProjectsList;
+  window.renderExperienceList = renderExperienceList;
+  window.renderToolsGrid = renderToolsGrid;
   window.getSiteData = getSiteData;
-  window.saveSiteData = saveSiteData;
-  window.getProjectsData = getProjectsData;
-  window.saveProjectsData = saveProjectsData;
+  window.getExperienceData = getExperienceData;
+  window.getToolsData = getToolsData;
   window.escapeHTML = escapeHTML;
 
   // Initial render of certificates
