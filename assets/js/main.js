@@ -1115,9 +1115,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         window.closeAdminLoginModal();
         updateAdminUI();
-        showToast("Akses Diberikan: Selamat datang Riski! Mode Kelola Sertifikat Aktif.", "success");
+        showToast("Akses Owner Terverifikasi: Selamat datang Riski! Membuka Panel Admin...", "success");
         setTimeout(() => {
-          window.openAddCertModal();
+          window.openMasterAdminModal('hero');
         }, 300);
       } else {
         if (errorEl) errorEl.classList.remove('hidden');
@@ -1145,6 +1145,710 @@ document.addEventListener('DOMContentLoaded', () => {
       window.openAdminLoginModal();
     }, 600);
   }
+
+
+  // ========================================================
+  // MASTER SITE CONTENT & ADMIN CMS ENGINE (REAL-TIME EDIT)
+  // ========================================================
+
+  const DEFAULT_SITE_DATA = {
+    hero: {
+      firstName: "Riski",
+      lastName: "Ardiansyah",
+      role: "Cybersecurity Enthusiast & AI-Assisted Software Developer",
+      quote: "“Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”",
+      aiTitle: "AI-Assisted Software Development with AI Coding Agents",
+      aiDesc: "Pengembangan aplikasi dengan memanfaatkan AI Agent, di mana manusia berperan dalam perancangan ide, requirement, arsitektur, dan business logic, sedangkan AI Agent membantu implementasi teknis, coding, debugging, serta testing.",
+      bio: "Mahasiswa aktif semester 7 Jurusan <strong>D4 Rekayasa Keamanan Siber</strong> di Politeknik Piksi Input Serang. Berfokus pada keamanan aplikasi web, penetration testing, serta perancangan perangkat lunak modern berbasis arsitektur AI coding agent.",
+      photoUrl: "assets/img/riski_hero.jpg?v=16",
+      campusBadge: "Piksi Input Serang (Sem. 7)",
+      degreeBadge: "D4 Rekayasa Keamanan Siber",
+      location: "Kab. Tangerang, Banten"
+    },
+    about: {
+      bio1: "Saya adalah mahasiswa tingkat akhir di Politeknik Piksi Input Serang pada program studi D4 Rekayasa Keamanan Siber. Memiliki ketertarikan mendalam dan pengalaman hands-on dalam menguji keamanan sistem informasi, menelusuri kerentanan (vulnerability assessment), serta memahami alur eksploitasi web application berstandar OWASP Top 10.",
+      bio2: "Selain berfokus pada ranah offensive security, saya juga aktif merancang dan mengembangkan sistem web fungsional menggunakan Laravel, Tailwind CSS, dan Next.js dengan pendekatan AI-Assisted Software Development—mengorkestrasi AI Coding Agent untuk menghasilkan kode yang bersih, terdokumentasi, dan tangguh terhadap celah keamanan.",
+      quote: "\"Saya terus belajar dan mendalami setiap teknologi serta teknik yang relevan di bidang keamanan siber untuk terus berkembang dan memberikan hasil terbaik.\"",
+      institution: "Politeknik Piksi Input Serang",
+      degree: "D4 — Rekayasa Keamanan Siber",
+      status: "2023 — Sekarang (Semester 7 Aktif)",
+      focus: "Web App Pentesting & Cloud Security",
+      eduDesc: "Mempelajari fundamental dan praktik lanjutan network defense, ethical hacking, digital forensics, reverse engineering, cryptography, serta perancangan sistem informasi berstandar keamanan enterprise."
+    },
+    skills: {
+      p1Title: "Web App Pentesting & Assessment",
+      p1Desc: "Identifikasi dan verifikasi kerentanan OWASP Top 10 (SQL Injection, XSS, CSRF, IDOR, Broken Authentication) menggunakan Burp Suite, Nmap, dan manual payload injection.",
+      p2Title: "Tools, Linux & Security Monitoring",
+      p2Desc: "Pengoperasian intensif Kali Linux, Ubuntu Server, monitoring SIEM berbasis Wazuh, analisis paket jaringan dengan Wireshark, dan containerization dengan Docker.",
+      p3Title: "AI-Assisted Dev & Frameworks",
+      p3Desc: "Pengembangan aplikasi web modern menggunakan Laravel, Tailwind CSS, Next.js, dan Python dengan workflow akselerasi AI Coding Agent untuk clean architecture."
+    },
+    contact: {
+      whatsapp: "6283875644210",
+      whatsappDisplay: "0838 7564 4210",
+      email: "riskiardiansyah51938@gmail.com",
+      github: "https://github.com/ard34",
+      githubDisplay: "github.com/ard34",
+      linkedin: "https://www.linkedin.com/in/riski-ardiansyah-468626338/",
+      linkedinDisplay: "linkedin.com/in/riski-ardiansyah",
+      location: "Kab. Tangerang, Banten • Politeknik Piksi Input Serang"
+    }
+  };
+
+  // 1. Storage Accessors
+  function getSiteData() {
+    try {
+      const stored = localStorage.getItem('portfolio_site_custom');
+      if (stored) {
+        return Object.assign({}, DEFAULT_SITE_DATA, JSON.parse(stored));
+      }
+    } catch (e) {
+      console.warn("Using default site data", e);
+    }
+    return JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+  }
+
+  function saveSiteData(data) {
+    try {
+      localStorage.setItem('portfolio_site_custom', JSON.stringify(data));
+    } catch (e) {
+      console.error("Failed to save site data to localStorage", e);
+    }
+  }
+
+  function getProjectsData() {
+    try {
+      const stored = localStorage.getItem('portfolio_projects_custom');
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.warn("Using default projects data", e);
+    }
+    return projectsData;
+  }
+
+  function saveProjectsData(data) {
+    try {
+      localStorage.setItem('portfolio_projects_custom', JSON.stringify(data));
+    } catch (e) {
+      console.error("Failed to save projects data", e);
+    }
+  }
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // 2. DOM Hydration & Live Application
+  function applySiteDataToDOM() {
+    const data = getSiteData();
+
+    // Hero
+    const heroName = document.getElementById('hero-display-name');
+    if (heroName) {
+      heroName.innerHTML = `${data.hero.firstName || 'Riski'} <span class="gradient-text">${data.hero.lastName || 'Ardiansyah'}</span>`;
+    }
+    const heroRole = document.getElementById('hero-display-role');
+    if (heroRole) heroRole.textContent = data.hero.role;
+
+    const heroQuote = document.getElementById('hero-display-quote');
+    if (heroQuote) heroQuote.textContent = data.hero.quote;
+
+    const heroAiTitle = document.getElementById('hero-display-ai-title');
+    if (heroAiTitle) heroAiTitle.textContent = data.hero.aiTitle;
+
+    const heroAiDesc = document.getElementById('hero-display-ai-desc');
+    if (heroAiDesc) heroAiDesc.textContent = data.hero.aiDesc;
+
+    const heroBio = document.getElementById('hero-display-bio');
+    if (heroBio) heroBio.innerHTML = data.hero.bio;
+
+    const heroAvatar = document.getElementById('hero-avatar-img');
+    if (heroAvatar && data.hero.photoUrl) heroAvatar.src = data.hero.photoUrl;
+
+    const heroDegree = document.getElementById('hero-badge-degree');
+    if (heroDegree) heroDegree.textContent = data.hero.degreeBadge;
+
+    const heroCampus = document.getElementById('hero-badge-campus');
+    if (heroCampus) heroCampus.textContent = data.hero.campusBadge;
+
+    const heroWaBtn = document.getElementById('hero-wa-btn');
+    if (heroWaBtn && data.contact.whatsapp) {
+      heroWaBtn.href = `https://wa.me/${data.contact.whatsapp}`;
+    }
+
+    // About
+    const aboutBio1 = document.getElementById('about-bio1-text');
+    if (aboutBio1) aboutBio1.textContent = data.about.bio1;
+
+    const aboutBio2 = document.getElementById('about-bio2-text');
+    if (aboutBio2) aboutBio2.textContent = data.about.bio2;
+
+    const aboutQuote = document.getElementById('about-quote-text');
+    if (aboutQuote) aboutQuote.textContent = data.about.quote;
+
+    const aboutInst = document.getElementById('about-edu-inst');
+    if (aboutInst) aboutInst.textContent = data.about.institution;
+
+    const aboutDegree = document.getElementById('about-edu-degree');
+    if (aboutDegree) aboutDegree.textContent = data.about.degree;
+
+    const aboutStatus = document.getElementById('about-edu-status');
+    if (aboutStatus) aboutStatus.textContent = data.about.status;
+
+    const aboutFocus = document.getElementById('about-edu-focus');
+    if (aboutFocus) aboutFocus.textContent = data.about.focus;
+
+    const aboutEduDesc = document.getElementById('about-edu-desc');
+    if (aboutEduDesc) aboutEduDesc.textContent = data.about.eduDesc;
+
+    // Contact
+    const contactWa = document.getElementById('contact-display-wa');
+    if (contactWa && data.contact.whatsapp) {
+      contactWa.href = `https://wa.me/${data.contact.whatsapp}`;
+    }
+    const contactWaText = document.getElementById('contact-display-wa-text');
+    if (contactWaText) {
+      contactWaText.textContent = data.contact.whatsappDisplay || data.contact.whatsapp;
+    }
+
+    const contactEmail = document.getElementById('contact-display-email');
+    if (contactEmail && data.contact.email) {
+      contactEmail.href = `mailto:${data.contact.email}`;
+    }
+    const contactEmailText = document.getElementById('contact-display-email-text');
+    if (contactEmailText) contactEmailText.textContent = data.contact.email;
+
+    const contactGh = document.getElementById('contact-display-github');
+    if (contactGh && data.contact.github) {
+      contactGh.href = data.contact.github;
+    }
+    const contactGhText = document.getElementById('contact-display-github-text');
+    if (contactGhText) contactGhText.textContent = data.contact.githubDisplay || data.contact.github;
+
+    const contactLi = document.getElementById('contact-display-linkedin');
+    if (contactLi && data.contact.linkedin) {
+      contactLi.href = data.contact.linkedin;
+    }
+    const contactLiText = document.getElementById('contact-display-linkedin-text');
+    if (contactLiText) contactLiText.textContent = data.contact.linkedinDisplay || data.contact.linkedin;
+
+    const contactLoc = document.getElementById('contact-display-location');
+    if (contactLoc) contactLoc.textContent = data.contact.location;
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 3. Dynamic Projects List Renderer
+  function renderProjectsList() {
+    const container = document.getElementById('projects-list-container');
+    if (!container) return;
+
+    const projects = getProjectsData();
+    const keys = Object.keys(projects);
+
+    if (keys.length === 0) {
+      container.innerHTML = `
+        <div class="glass-panel p-8 text-center text-slate-400 rounded-2xl border border-slate-800">
+          <p class="text-sm">Belum ada proyek yang ditampilkan.</p>
+        </div>`;
+      return;
+    }
+
+    const iconsMap = {
+      exambro: 'shield-check',
+      koprasi: 'wallet',
+      tokoonline: 'shopping-bag',
+      bbndigital: 'layers',
+      wazuh: 'server',
+      loganalysis: 'terminal'
+    };
+
+    const colorsMap = {
+      exambro: 'cyan',
+      koprasi: 'emerald',
+      tokoonline: 'purple',
+      bbndigital: 'blue',
+      wazuh: 'amber',
+      loganalysis: 'rose'
+    };
+
+    container.innerHTML = keys.map((key, index) => {
+      const p = projects[key];
+      const icon = iconsMap[key] || 'folder';
+      const color = colorsMap[key] || 'cyan';
+      const orderNum = String(index + 1).padStart(2, '0');
+      const stackList = Array.isArray(p.stack) ? p.stack : (p.stack || '').split(',').map(s => s.trim()).filter(Boolean);
+
+      return `
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-${color}-500/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-${color}-500/40 flex items-center justify-center text-${color}-400 shrink-0 group-hover:scale-105 group-hover:border-${color}-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition">
+              <i data-lucide="${icon}" class="w-6 h-6"></i>
+            </div>
+            <div class="space-y-1 overflow-hidden">
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#0A1222] text-${color}-300 border border-${color}-800/80">
+                <span class="w-1.5 h-1.5 rounded-full bg-${color}-400"></span>
+                #${orderNum} • ${escapeHTML(p.category || 'Featured Project')}
+              </span>
+              <h3 class="font-bold text-white font-heading text-lg group-hover:text-${color}-300 transition truncate">
+                ${escapeHTML(p.title || key)}
+              </h3>
+              <p class="text-xs text-slate-400 font-mono truncate">
+                ${escapeHTML(p.subtitle || p.category || '')}
+              </p>
+            </div>
+          </div>
+
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              ${escapeHTML(p.description || '')}
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              ${stackList.map(st => `
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-${color}-300 border border-${color}-900/60">${escapeHTML(st)}</span>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <button onclick="openProjectModal('${key}')" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
+              <i data-lucide="info" class="w-4 h-4"></i>
+              <span>Detail Teknis &amp; Spesifikasi</span>
+            </button>
+            <a href="${p.link || 'https://github.com/ard34'}" target="_blank" rel="noreferrer" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Buka Repository GitHub">
+              <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i>
+              <span class="hidden sm:inline">GitHub</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 4. Master Admin Modal Tabs & Handlers
+  window.openMasterAdminModal = function(initialTab = 'hero') {
+    if (!isOwnerLoggedIn()) {
+      window.openAdminLoginModal();
+      return;
+    }
+
+    const modal = document.getElementById('master-admin-panel-modal');
+    if (!modal) return;
+
+    // Populate Hero Pane
+    const siteData = getSiteData();
+    const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+
+    setVal('adm-hero-first-name', siteData.hero.firstName);
+    setVal('adm-hero-last-name', siteData.hero.lastName);
+    setVal('adm-hero-role', siteData.hero.role);
+    setVal('adm-hero-quote', siteData.hero.quote);
+    setVal('adm-hero-ai-title', siteData.hero.aiTitle);
+    setVal('adm-hero-ai-desc', siteData.hero.aiDesc);
+    setVal('adm-hero-bio', siteData.hero.bio);
+    setVal('adm-hero-photo', siteData.hero.photoUrl);
+    setVal('adm-hero-location', siteData.hero.location);
+    setVal('adm-hero-degree', siteData.hero.degreeBadge);
+    setVal('adm-hero-campus', siteData.hero.campusBadge);
+
+    // Populate About Pane
+    setVal('adm-about-bio1', siteData.about.bio1);
+    setVal('adm-about-bio2', siteData.about.bio2);
+    setVal('adm-about-quote', siteData.about.quote);
+    setVal('adm-about-institution', siteData.about.institution);
+    setVal('adm-about-degree', siteData.about.degree);
+    setVal('adm-about-status', siteData.about.status);
+    setVal('adm-about-focus', siteData.about.focus);
+    setVal('adm-about-edudesc', siteData.about.eduDesc);
+
+    // Populate Skills Pane
+    setVal('adm-skill-p1-title', siteData.skills.p1Title);
+    setVal('adm-skill-p1-desc', siteData.skills.p1Desc);
+    setVal('adm-skill-p2-title', siteData.skills.p2Title);
+    setVal('adm-skill-p2-desc', siteData.skills.p2Desc);
+    setVal('adm-skill-p3-title', siteData.skills.p3Title);
+    setVal('adm-skill-p3-desc', siteData.skills.p3Desc);
+
+    // Populate Contact Pane
+    setVal('adm-contact-wa', siteData.contact.whatsapp);
+    setVal('adm-contact-wa-display', siteData.contact.whatsappDisplay);
+    setVal('adm-contact-email', siteData.contact.email);
+    setVal('adm-contact-github', siteData.contact.github);
+    setVal('adm-contact-github-display', siteData.contact.githubDisplay);
+    setVal('adm-contact-linkedin', siteData.contact.linkedin);
+    setVal('adm-contact-linkedin-display', siteData.contact.linkedinDisplay);
+    setVal('adm-contact-location', siteData.contact.location);
+
+    // Populate Projects Dropdown
+    populateProjectSelector();
+
+    // Populate Certs List in Pane 6
+    populateAdminCertsList();
+
+    // Show modal & switch to initial tab
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+    switchAdminTab(initialTab);
+
+    if (window.lucide) lucide.createIcons();
+  };
+
+  window.closeMasterAdminModal = function() {
+    const modal = document.getElementById('master-admin-panel-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
+  window.switchAdminTab = function(tabName) {
+    const panes = ['hero', 'about', 'projects', 'skills', 'contact', 'certs', 'backup'];
+    panes.forEach(p => {
+      const paneEl = document.getElementById(`pane-${p}`);
+      const btnEl = document.getElementById(`tab-btn-${p}`);
+      if (paneEl) {
+        if (p === tabName) {
+          paneEl.classList.remove('hidden');
+        } else {
+          paneEl.classList.add('hidden');
+        }
+      }
+      if (btnEl) {
+        if (p === tabName) {
+          btnEl.className = 'admin-tab-btn active-tab w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-bold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap bg-cyan-950/80 text-cyan-300 border border-cyan-500/50 shadow-sm';
+        } else {
+          btnEl.className = 'admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50';
+        }
+      }
+    });
+    if (window.lucide) lucide.createIcons();
+  };
+
+  // 5. Projects Sub-Editor
+  function populateProjectSelector(selectKey) {
+    const selector = document.getElementById('adm-project-selector');
+    if (!selector) return;
+
+    const projects = getProjectsData();
+    const keys = Object.keys(projects);
+    selector.innerHTML = keys.map(k => {
+      const p = projects[k];
+      return `<option value="${k}" ${k === selectKey ? 'selected' : ''}>${escapeHTML(p.title || k)} (${k})</option>`;
+    }).join('');
+
+    loadSelectedProjectForm();
+  }
+
+  window.loadSelectedProjectForm = function() {
+    const selector = document.getElementById('adm-project-selector');
+    if (!selector) return;
+    const key = selector.value;
+    const projects = getProjectsData();
+    const p = projects[key];
+    if (!p) return;
+
+    const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+    setVal('adm-proj-title', p.title);
+    setVal('adm-proj-subtitle', p.subtitle);
+    setVal('adm-proj-category', p.category);
+    setVal('adm-proj-stack', Array.isArray(p.stack) ? p.stack.join(', ') : p.stack);
+    setVal('adm-proj-desc', p.description);
+    setVal('adm-proj-link', p.link);
+    setVal('adm-proj-features', Array.isArray(p.features) ? p.features.join('\n') : (p.features || ''));
+  };
+
+  window.saveCurrentProjectDraft = function() {
+    const selector = document.getElementById('adm-project-selector');
+    if (!selector || !selector.value) return;
+    const key = selector.value;
+    const projects = Object.assign({}, getProjectsData());
+
+    const getVal = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    const stackRaw = getVal('adm-proj-stack');
+    const featuresRaw = getVal('adm-proj-features');
+
+    projects[key] = {
+      title: getVal('adm-proj-title') || key,
+      subtitle: getVal('adm-proj-subtitle'),
+      category: getVal('adm-proj-category'),
+      stack: stackRaw.split(',').map(s => s.trim()).filter(Boolean),
+      description: getVal('adm-proj-desc'),
+      link: getVal('adm-proj-link') || 'https://github.com/ard34',
+      features: featuresRaw.split('\n').map(s => s.trim()).filter(Boolean),
+      metrics: (projects[key] && projects[key].metrics) || 'Optimal response time & verified security architecture.',
+      image: (projects[key] && projects[key].image) || 'assets/img/projects/bbndigital.jpg'
+    };
+
+    saveProjectsData(projects);
+    renderProjectsList();
+    showToast(`Data proyek "${projects[key].title}" berhasil diperbarui!`, 'success');
+  };
+
+  window.addNewProjectPrompt = function() {
+    const projName = prompt("Masukkan ID unik untuk proyek baru (contoh: pentest-audit atau mobile-app):");
+    if (!projName) return;
+    const key = projName.toLowerCase().replace(/[^a-z0-9_-]/g, '');
+    if (!key) {
+      alert("ID proyek tidak valid!");
+      return;
+    }
+
+    const projects = Object.assign({}, getProjectsData());
+    if (projects[key]) {
+      alert("Proyek dengan ID ini sudah ada!");
+      return;
+    }
+
+    projects[key] = {
+      title: projName,
+      subtitle: "Web Application & Security System",
+      category: "Cyber Defense & Web Development",
+      stack: ["Next.js", "Tailwind CSS", "PostgreSQL"],
+      description: "Deskripsi ringkas sistem baru yang telah selesai dibangun dan teruji keamanannya.",
+      features: ["Sistem Autentikasi Modern", "Proteksi OWASP Top 10", "Database Query Optimized"],
+      metrics: "Stabilitas tinggi dengan response time optimal.",
+      link: "https://github.com/ard34",
+      image: "assets/img/projects/bbndigital.jpg"
+    };
+
+    saveProjectsData(projects);
+    populateProjectSelector(key);
+    renderProjectsList();
+    showToast(`Proyek baru "${key}" berhasil ditambahkan! Silakan lengkapi detailnya.`, 'success');
+  };
+
+  window.deleteCurrentProject = function() {
+    const selector = document.getElementById('adm-project-selector');
+    if (!selector || !selector.value) return;
+    const key = selector.value;
+    if (confirm(`Apakah Anda yakin ingin menghapus proyek "${key}" dari daftar portofolio?`)) {
+      const projects = Object.assign({}, getProjectsData());
+      delete projects[key];
+      saveProjectsData(projects);
+      populateProjectSelector();
+      renderProjectsList();
+      showToast(`Proyek "${key}" telah dihapus.`, 'info');
+    }
+  };
+
+  // 6. Certs Sub-List in Admin Panel
+  function populateAdminCertsList() {
+    const listEl = document.getElementById('adm-certs-list');
+    const countEl = document.getElementById('adm-certs-count');
+    if (!listEl) return;
+
+    const certs = getCertificates();
+    if (countEl) countEl.textContent = `Total Terpasang: ${certs.length} Sertifikat`;
+
+    listEl.innerHTML = certs.map(c => `
+      <div class="p-3 rounded-xl bg-[#0A1222] border border-slate-800 flex items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-3 overflow-hidden">
+          <img src="${c.image || 'https://drive.google.com/thumbnail?id=1WcczkN4HTN5qz5AVP-gTPsqUIGGAO_wI&sz=w800'}" alt="${escapeHTML(c.title)}" class="w-10 h-10 rounded-lg object-cover bg-slate-900 shrink-0 border border-slate-700">
+          <div class="overflow-hidden">
+            <h5 class="text-white font-semibold truncate">${escapeHTML(c.title)}</h5>
+            <p class="text-[11px] text-slate-400 font-mono truncate">${escapeHTML(c.issuer || 'Official')} • ${c.date || '2026'}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <a href="${c.gdriveUrl || c.verifyUrl}" target="_blank" rel="noreferrer" class="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 hover:text-white" title="Buka Dokumen Google Drive">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+          <button type="button" onclick="deleteCertificateFromAdmin('${c.id}')" class="p-1.5 rounded-lg bg-red-950/60 border border-red-500/30 text-red-400 hover:text-white" title="Hapus Sertifikat Ini">
+            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  window.deleteCertificateFromAdmin = function(certId) {
+    if (confirm("Hapus sertifikat ini dari tampilan website?")) {
+      const allCerts = getCertificates().filter(c => c.id !== certId);
+      // Save
+      localStorage.setItem('portfolio_user_certificates', JSON.stringify(allCerts));
+      renderCertificates();
+      populateAdminCertsList();
+      showToast("Sertifikat berhasil dihapus dari website.", "info");
+    }
+  };
+
+  // 7. Master Admin Save All Handler
+  window.handleMasterAdminSave = function() {
+    const getVal = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+    const siteData = {
+      hero: {
+        firstName: getVal('adm-hero-first-name') || 'Riski',
+        lastName: getVal('adm-hero-last-name') || 'Ardiansyah',
+        role: getVal('adm-hero-role') || 'Cybersecurity Enthusiast & AI-Assisted Software Developer',
+        quote: getVal('adm-hero-quote'),
+        aiTitle: getVal('adm-hero-ai-title'),
+        aiDesc: getVal('adm-hero-ai-desc'),
+        bio: getVal('adm-hero-bio'),
+        photoUrl: getVal('adm-hero-photo') || 'assets/img/riski_hero.jpg?v=16',
+        location: getVal('adm-hero-location'),
+        degreeBadge: getVal('adm-hero-degree') || 'D4 Rekayasa Keamanan Siber',
+        campusBadge: getVal('adm-hero-campus') || 'Piksi Input Serang (Sem. 7)'
+      },
+      about: {
+        bio1: getVal('adm-about-bio1'),
+        bio2: getVal('adm-about-bio2'),
+        quote: getVal('adm-about-quote'),
+        institution: getVal('adm-about-institution'),
+        degree: getVal('adm-about-degree'),
+        status: getVal('adm-about-status'),
+        focus: getVal('adm-about-focus'),
+        eduDesc: getVal('adm-about-edudesc')
+      },
+      skills: {
+        p1Title: getVal('adm-skill-p1-title'),
+        p1Desc: getVal('adm-skill-p1-desc'),
+        p2Title: getVal('adm-skill-p2-title'),
+        p2Desc: getVal('adm-skill-p2-desc'),
+        p3Title: getVal('adm-skill-p3-title'),
+        p3Desc: getVal('adm-skill-p3-desc')
+      },
+      contact: {
+        whatsapp: getVal('adm-contact-wa') || '6283875644210',
+        whatsappDisplay: getVal('adm-contact-wa-display') || '0838 7564 4210',
+        email: getVal('adm-contact-email') || 'riskiardiansyah51938@gmail.com',
+        github: getVal('adm-contact-github') || 'https://github.com/ard34',
+        githubDisplay: getVal('adm-contact-github-display') || 'github.com/ard34',
+        linkedin: getVal('adm-contact-linkedin') || 'https://www.linkedin.com/in/riski-ardiansyah-468626338/',
+        linkedinDisplay: getVal('adm-contact-linkedin-display') || 'linkedin.com/in/riski-ardiansyah',
+        location: getVal('adm-contact-location') || 'Kab. Tangerang, Banten • Politeknik Piksi Input Serang'
+      }
+    };
+
+    // Save project draft currently open
+    saveCurrentProjectDraft();
+
+    // Save site data
+    saveSiteData(siteData);
+
+    // Apply live to DOM
+    applySiteDataToDOM();
+    renderProjectsList();
+
+    showToast("✅ Berhasil! Seluruh isi website telah diperbarui secara langsung.", "success");
+    setTimeout(() => {
+      closeMasterAdminModal();
+    }, 600);
+  };
+
+  // 8. Export, Import & Reset
+  window.exportSiteDataJSON = function() {
+    const fullBackup = {
+      siteData: getSiteData(),
+      projects: getProjectsData(),
+      certificates: getCertificates(),
+      exportedAt: new Date().toISOString(),
+      owner: "Riski Ardiansyah"
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(fullBackup, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `riski_portfolio_backup_${new Date().toISOString().slice(0,10)}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+
+    showToast("File cadangan JSON berhasil diunduh!", "success");
+  };
+
+  window.importSiteDataJSON = function(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const parsed = JSON.parse(e.target.result);
+        if (parsed.siteData) {
+          saveSiteData(parsed.siteData);
+        }
+        if (parsed.projects) {
+          saveProjectsData(parsed.projects);
+        }
+        if (parsed.certificates && Array.isArray(parsed.certificates)) {
+          localStorage.setItem('portfolio_user_certificates', JSON.stringify(parsed.certificates));
+        }
+
+        applySiteDataToDOM();
+        renderProjectsList();
+        renderCertificates();
+        openMasterAdminModal('hero');
+        showToast("Data cadangan berhasil dipulihkan secara penuh!", "success");
+      } catch (err) {
+        alert("Gagal membaca file JSON cadangan: Format file tidak valid.");
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  window.resetSiteDataDefault = function() {
+    if (confirm("PERINGATAN: Apakah Anda yakin ingin menghapus semua kustomisasi lokal dan kembali ke setelan default awal?")) {
+      localStorage.removeItem('portfolio_site_custom');
+      localStorage.removeItem('portfolio_projects_custom');
+      applySiteDataToDOM();
+      renderProjectsList();
+      openMasterAdminModal('hero');
+      showToast("Seluruh pengaturan telah dikembalikan ke kondisi default awal.", "info");
+    }
+  };
+
+  // Hook into updateAdminUI to manage floating bar visibility
+  const oldUpdateAdminUI = updateAdminUI;
+  updateAdminUI = function() {
+    if (typeof oldUpdateAdminUI === 'function') oldUpdateAdminUI();
+    const floatingBar = document.getElementById('owner-floating-bar');
+    const loggedIn = isOwnerLoggedIn();
+    if (floatingBar) {
+      if (loggedIn) {
+        floatingBar.classList.remove('hidden');
+        floatingBar.classList.add('flex');
+      } else {
+        floatingBar.classList.add('hidden');
+        floatingBar.classList.remove('flex');
+      }
+    }
+    if (window.lucide) lucide.createIcons();
+  };
+
+  // Modify admin login success to open master admin panel directly
+  if (adminLoginForm) {
+    // Already has submit listener, let's make sure updateAdminUI is triggered and openMasterAdminModal is called
+  }
+
+  // Initial boots
+  applySiteDataToDOM();
+  renderProjectsList();
+
+  // Expose globally for external modules (i18n, etc.)
+  window.applySiteDataToDOM = applySiteDataToDOM;
+  window.renderProjectsList = renderProjectsList;
+  window.getSiteData = getSiteData;
+  window.saveSiteData = saveSiteData;
+  window.getProjectsData = getProjectsData;
+  window.saveProjectsData = saveProjectsData;
+  window.escapeHTML = escapeHTML;
 
   // Initial render of certificates
   renderCertificates();

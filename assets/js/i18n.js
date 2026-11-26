@@ -667,6 +667,11 @@ function setLanguage(lang) {
   // If project modal is currently open, refresh its content in the active language
   refreshOpenModals(lang);
 
+  // If Indonesian and custom site data exists, apply it
+  if (lang === 'id' && typeof window.applySiteDataToDOM === 'function') {
+    window.applySiteDataToDOM();
+  }
+
   // Re-run Lucide icons
   if (window.lucide) {
     lucide.createIcons();

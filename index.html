@@ -191,10 +191,10 @@
 
           <div class="space-y-2">
             <p data-i18n="hero.greeting" class="text-base sm:text-lg font-medium text-slate-400">Hello, I'm</p>
-            <h1 class="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight">
+            <h1 id="hero-display-name" class="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight font-heading leading-tight">
               Riski <span class="gradient-text">Ardiansyah</span>
             </h1>
-            <p data-i18n="hero.role" class="text-lg sm:text-xl font-semibold text-cyan-300 font-mono pt-1">
+            <p id="hero-display-role" data-i18n="hero.role" class="text-lg sm:text-xl font-semibold text-cyan-300 font-mono pt-1">
               Cybersecurity Enthusiast &amp; AI-Assisted Software Developer
             </p>
           </div>
@@ -202,21 +202,21 @@
           <!-- Official CV Quote -->
           <div class="relative p-4 rounded-xl bg-[#0A1222]/80 border-l-4 border-cyan-400 border-y border-r border-slate-800/80 text-sm italic text-slate-200">
             <i data-lucide="quote" class="w-4 h-4 text-cyan-400 inline-block mr-1 opacity-70"></i>
-            <span data-i18n="hero.quote">“Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”</span>
+            <span id="hero-display-quote" data-i18n="hero.quote">“Belajar, Menguji, Melindungi, Menjadi bagian dari masa depan keamanan siber Indonesia.”</span>
           </div>
 
           <!-- AI-Assisted Software Development Highlight Box -->
           <div class="p-4 rounded-2xl bg-[#0A1222]/95 border border-cyan-500/40 space-y-2 relative overflow-hidden shadow-lg shadow-cyan-500/10">
             <div class="flex items-center gap-2 text-cyan-300 text-xs font-mono font-bold tracking-wide">
               <i data-lucide="bot" class="w-4 h-4 text-cyan-400"></i>
-              <span data-i18n="hero.ai_title">AI-Assisted Software Development with AI Coding Agents</span>
+              <span id="hero-display-ai-title" data-i18n="hero.ai_title">AI-Assisted Software Development with AI Coding Agents</span>
             </div>
-            <p data-i18n="hero.ai_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <p id="hero-display-ai-desc" data-i18n="hero.ai_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Pengembangan aplikasi dengan memanfaatkan AI Agent, di mana manusia berperan dalam perancangan ide, requirement, arsitektur, dan business logic, sedangkan AI Agent membantu implementasi teknis, coding, debugging, serta testing.
             </p>
           </div>
 
-          <p data-i18n-html="hero.bio" class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+          <p id="hero-display-bio" data-i18n-html="hero.bio" class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
             Mahasiswa aktif semester 7 Jurusan <strong>D4 Rekayasa Keamanan Siber</strong> di Politeknik Piksi Input Serang. Berfokus pada keamanan aplikasi web, penetration testing, serta perancangan perangkat lunak modern berbasis arsitektur AI coding agent.
           </p>
 
@@ -227,7 +227,7 @@
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
 
-            <a href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-900/60 text-sm font-semibold flex items-center justify-center gap-2 transition hover:scale-105">
+            <a id="hero-wa-btn" href="https://wa.me/6283875644210" target="_blank" rel="noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-900/60 text-sm font-semibold flex items-center justify-center gap-2 transition hover:scale-105">
               <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
               <span data-i18n="hero.btn_wa">WhatsApp Me</span>
             </a>
@@ -284,7 +284,7 @@
               <div class="w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-b from-[#0A1222] via-[#101B2D] to-[#050914] relative flex items-center justify-center">
                 
                 <!-- Portrait Image: Real Riski Hero Image -->
-                <img src="assets/img/riski_hero.jpg?v=16" alt="Riski Ardiansyah - Cybersecurity & Web Developer" class="w-full h-full object-cover object-top filter contrast-105">
+                <img id="hero-avatar-img" src="assets/img/riski_hero.jpg?v=16" alt="Riski Ardiansyah - Cybersecurity & Web Developer" class="w-full h-full object-cover object-top filter contrast-105">
 
                 <!-- Inner Gradient Shade for integration -->
                 <div class="absolute inset-0 bg-gradient-to-t from-[#050914] via-transparent to-transparent opacity-80 pointer-events-none"></div>
@@ -295,8 +295,8 @@
                     <i data-lucide="shield-check" class="w-5 h-5"></i>
                   </div>
                   <div class="overflow-hidden">
-                    <p data-i18n="hero.badge_degree" class="text-xs font-bold text-white truncate">D4 Rekayasa Keamanan Siber</p>
-                    <p data-i18n="hero.badge_campus" class="text-[10px] font-mono text-cyan-300">Piksi Input Serang (Sem. 7)</p>
+                    <p id="hero-badge-degree" data-i18n="hero.badge_degree" class="text-xs font-bold text-white truncate">D4 Rekayasa Keamanan Siber</p>
+                    <p id="hero-badge-campus" data-i18n="hero.badge_campus" class="text-[10px] font-mono text-cyan-300">Piksi Input Serang (Sem. 7)</p>
                   </div>
                   <div class="ml-auto w-2 h-2 rounded-full bg-emerald-400" title="Active Student"></div>
                 </div>
@@ -717,7 +717,7 @@
       </div>
 
       <!-- Project Cards Grid: Modern Sleek Image-Free List -->
-      <div class="space-y-4">
+      <div id="projects-list-container" class="space-y-4">
 
         <!-- 1. ExamBro CBT -->
         <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700">
@@ -1643,13 +1643,523 @@
     </div>
   </div>
 
+  
+  <!-- ======================================================== -->
+  <!-- MASTER OWNER ADMIN FLOATING BAR & COMPREHENSIVE CMS MODAL -->
+  <!-- ======================================================== -->
+
+  <!-- Floating Owner Control Bar (Appears when logged in) -->
+  <div id="owner-floating-bar" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-2xl bg-[#070D1A]/95 border border-cyan-500/50 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.3)] items-center gap-3 animate-fadeIn">
+    <div class="flex items-center gap-2 pr-3 border-r border-slate-700/80 text-xs font-mono text-cyan-300 shrink-0">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-bold hidden sm:inline">OWNER ACCESS</span>
+      <span class="font-bold sm:hidden">OWNER</span>
+    </div>
+    <button onclick="openMasterAdminModal('hero')" class="px-3.5 py-1.5 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition shadow-sm">
+      <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+      <span>⚙️ Edit Isi Web</span>
+    </button>
+    <button onclick="openAddCertModal()" class="px-3 py-1.5 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
+      <i data-lucide="award" class="w-3.5 h-3.5"></i>
+      <span class="hidden sm:inline">+ Sertifikat</span>
+    </button>
+    <button onclick="logoutAdmin()" class="p-1.5 rounded-xl bg-red-950/60 border border-red-500/40 text-red-400 hover:text-white text-xs font-mono transition" title="Logout Sesi Owner">
+      <i data-lucide="log-out" class="w-4 h-4"></i>
+    </button>
+  </div>
+
+  <!-- Master Content Management & Admin Panel Modal -->
+  <div id="master-admin-panel-modal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden">
+    <div class="glass-panel w-full max-w-5xl rounded-2xl border border-cyan-500/60 bg-[#070D1A] flex flex-col h-[94vh] max-h-[880px] shadow-[0_0_60px_rgba(34,211,238,0.25)] relative overflow-hidden animate-fadeIn">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between shrink-0 bg-[#0A1222]/80">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-500/50 text-cyan-300">
+                MASTER ADMIN PANEL • OWNER MODE
+              </span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold font-heading text-white">Kelola &amp; Edit Seluruh Konten Website</h3>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="handleMasterAdminSave()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-cyan-500/25 hover:brightness-110 transition">
+            <i data-lucide="save" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">Simpan Semua Perubahan</span>
+            <span class="sm:hidden">Simpan</span>
+          </button>
+          <button type="button" onclick="closeMasterAdminModal()" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Sidebar + Content) -->
+      <div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+        
+        <!-- Sidebar Navigation Tabs -->
+        <div class="w-full md:w-60 border-b md:border-b-0 md:border-r border-slate-800 bg-[#0A1222]/50 p-2 sm:p-3 flex md:flex-col gap-1.5 overflow-x-auto md:overflow-y-auto shrink-0">
+          <button type="button" onclick="switchAdminTab('hero')" id="tab-btn-hero" class="admin-tab-btn active-tab w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap">
+            <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+            <span>1. Profil &amp; Hero</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('about')" id="tab-btn-about" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+            <span>2. Tentang Saya</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('projects')" id="tab-btn-projects" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="folder-git-2" class="w-4 h-4 text-emerald-400"></i>
+            <span>3. Proyek &amp; Portofolio</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('skills')" id="tab-btn-skills" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
+            <span>4. Keahlian &amp; Pilar</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('contact')" id="tab-btn-contact" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+            <span>5. Kontak &amp; Medsos</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('certs')" id="tab-btn-certs" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="award" class="w-4 h-4 text-pink-400"></i>
+            <span>6. Sertifikasi (31+)</span>
+          </button>
+          <button type="button" onclick="switchAdminTab('backup')" id="tab-btn-backup" class="admin-tab-btn w-full px-3.5 py-2.5 rounded-xl text-left text-xs font-semibold flex items-center gap-2.5 transition shrink-0 whitespace-nowrap text-slate-400 hover:text-white hover:bg-slate-900/50">
+            <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i>
+            <span>7. Backup &amp; Reset</span>
+          </button>
+        </div>
+
+        <!-- Tab Content Panes -->
+        <div class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-6 bg-[#070D1A]/95 text-slate-300">
+          
+          <!-- PANE 1: HERO & PROFILE -->
+          <div id="pane-hero" class="admin-pane space-y-5">
+            <div class="border-b border-slate-800/80 pb-3">
+              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i data-lucide="user" class="w-4 h-4 text-cyan-400"></i>
+                <span>Pengaturan Profil Utama &amp; Tampilan Hero</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1">Ubah nama, peran, quote, bio singkat, dan foto header di halaman paling atas website.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Nama Depan *</label>
+                <input type="text" id="adm-hero-first-name" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Nama Belakang (Gradient Text) *</label>
+                <input type="text" id="adm-hero-last-name" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Headline / Role Utama *</label>
+              <input type="text" id="adm-hero-role" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Kutipan Utama (Hero Quote) *</label>
+              <textarea id="adm-hero-quote" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-cyan-500/20 space-y-3">
+              <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold">
+                <i data-lucide="bot" class="w-4 h-4"></i>
+                <span>Kotak Sorotan: AI-Assisted Software Development</span>
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Kotak AI</label>
+                <input type="text" id="adm-hero-ai-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Kotak AI</label>
+                <textarea id="adm-hero-ai-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-cyan-300 mb-1">Deskripsi Paragraf Bio Hero *</label>
+              <textarea id="adm-hero-bio" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Path / URL Foto Hero</label>
+                <input type="text" id="adm-hero-photo" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-cyan-400">
+                <p class="text-[10px] text-slate-500 mt-1">Bisa gunakan path lokal seperti <code>assets/img/riski_hero.jpg</code> atau URL gambar online.</p>
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Domisili Singkat</label>
+                <input type="text" id="adm-hero-location" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Badge Program Studi (di Foto)</label>
+                <input type="text" id="adm-hero-degree" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-cyan-300 mb-1">Badge Kampus &amp; Semester (di Foto)</label>
+                <input type="text" id="adm-hero-campus" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-cyan-400">
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 2: ABOUT ME & EDUCATION -->
+          <div id="pane-about" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3">
+              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+                <span>Pengaturan Bagian Tentang Saya &amp; Pendidikan</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1">Ubah narasi profil diri, etos kerja, serta detail riwayat perguruan tinggi.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-purple-300 mb-1">Bio Paragraf 1 (Fokus Keamanan &amp; Analisis) *</label>
+              <textarea id="adm-about-bio1" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400 resize-none"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-purple-300 mb-1">Bio Paragraf 2 (Offensive Security &amp; AI Engineering) *</label>
+              <textarea id="adm-about-bio2" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400 resize-none"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-purple-300 mb-1">Quote Etos Belajar</label>
+              <input type="text" id="adm-about-quote" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-sans focus:outline-none focus:border-purple-400">
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-purple-500/20 space-y-3">
+              <div class="text-purple-300 text-xs font-mono font-bold">Detail Pendidikan Formal (Perguruan Tinggi)</div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Nama Perguruan Tinggi</label>
+                  <input type="text" id="adm-about-institution" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Program Studi &amp; Jenjang</label>
+                  <input type="text" id="adm-about-degree" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Status / Semester Aktif</label>
+                  <input type="text" id="adm-about-status" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-slate-400 mb-1">Fokus Studi Akademik</label>
+                  <input type="text" id="adm-about-focus" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Ringkasan Kurikulum &amp; Studi</label>
+                <textarea id="adm-about-edudesc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 3: PROJECTS -->
+          <div id="pane-projects" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                  <i data-lucide="folder-git-2" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Pengaturan Proyek &amp; Portofolio Karya</span>
+                </h4>
+                <p class="text-xs text-slate-400 mt-1">Pilih proyek untuk di-edit, tambahkan proyek baru, atau sesuaikan data teknis.</p>
+              </div>
+              <button type="button" onclick="addNewProjectPrompt()" class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-1.5 hover:bg-emerald-900 transition self-start sm:self-auto">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                <span>Tambah Proyek Baru</span>
+              </button>
+            </div>
+
+            <!-- Project Selector Dropdown -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-3 rounded-xl bg-[#0A1222] border border-slate-800">
+              <label class="text-xs font-mono text-emerald-400 shrink-0">Pilih Proyek:</label>
+              <select id="adm-project-selector" onchange="loadSelectedProjectForm()" class="flex-1 px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs focus:outline-none focus:border-emerald-400">
+                <!-- Populated dynamically via JS -->
+              </select>
+              <button type="button" onclick="deleteCurrentProject()" class="px-3 py-2 rounded-lg bg-red-950/80 border border-red-500/40 text-red-400 text-xs font-semibold hover:bg-red-900 transition flex items-center justify-center gap-1" title="Hapus proyek terpilih">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                <span>Hapus</span>
+              </button>
+            </div>
+
+            <!-- Selected Project Edit Form -->
+            <div id="adm-project-fields" class="space-y-4 p-4 rounded-xl bg-[#0A1222]/80 border border-emerald-500/20">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Judul Proyek *</label>
+                  <input type="text" id="adm-proj-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Kategori / Badge Ringkas</label>
+                  <input type="text" id="adm-proj-category" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Subjudul / Spesifikasi Singkat</label>
+                <input type="text" id="adm-proj-subtitle" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Tech Stack (pisahkan dengan koma) *</label>
+                <input type="text" id="adm-proj-stack" placeholder="Laravel, MySQL, Tailwind CSS..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Deskripsi Proyek *</label>
+                <textarea id="adm-proj-desc" rows="3" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Tautan Repository GitHub / Live Demo</label>
+                <input type="url" id="adm-proj-link" placeholder="https://github.com/ard34..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs font-mono">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Fitur Utama Teknis (Satu per baris)</label>
+                <textarea id="adm-proj-features" rows="3" placeholder="Anti-Cheating Lock Browser&#10;RBAC Multi-Role&#10;Real-time Token Validation" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+
+              <div class="flex justify-end pt-2">
+                <button type="button" onclick="saveCurrentProjectDraft()" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  <span>Terapkan pada Proyek Ini</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 4: SKILLS & PILLARS -->
+          <div id="pane-skills" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3">
+              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
+                <span>Pengaturan Pilar Keahlian (Skills)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1">Ubah judul dan ringkasan 3 pilar kapabilitas utama Anda.</p>
+            </div>
+
+            <!-- Pillar 1 -->
+            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
+              <span class="text-xs font-mono text-cyan-400 font-bold block">Pilar 1: Web Application Testing</span>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 1</label>
+                <input type="text" id="adm-skill-p1-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 1</label>
+                <textarea id="adm-skill-p1-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
+              <span class="text-xs font-mono text-purple-400 font-bold block">Pilar 2: Tools, Linux &amp; SIEM</span>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 2</label>
+                <input type="text" id="adm-skill-p2-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 2</label>
+                <textarea id="adm-skill-p2-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-4 rounded-xl bg-[#0A1222]/80 border border-slate-800 space-y-3">
+              <span class="text-xs font-mono text-emerald-400 font-bold block">Pilar 3: AI-Assisted Dev &amp; Frameworks</span>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Judul Pilar 3</label>
+                <input type="text" id="adm-skill-p3-title" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs">
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-400 mb-1">Deskripsi Pilar 3</label>
+                <textarea id="adm-skill-p3-desc" rows="2" class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white text-xs resize-none"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 5: CONTACT & SOCIALS -->
+          <div id="pane-contact" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3">
+              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                <span>Pengaturan Kontak &amp; Tautan Sosial Media</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1">Ubah nomor WhatsApp, email, link GitHub, dan link profil LinkedIn resmi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">Nomor WhatsApp (Kode Negara 62...) *</label>
+                <input type="text" id="adm-contact-wa" placeholder="6283875644210" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">Format Teks WhatsApp yang Tampil</label>
+                <input type="text" id="adm-contact-wa-display" placeholder="0838 7564 4210" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-amber-300 mb-1">Email Resmi *</label>
+              <input type="email" id="adm-contact-email" placeholder="riskiardiansyah51938@gmail.com" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">URL GitHub Profile *</label>
+                <input type="url" id="adm-contact-github" placeholder="https://github.com/ard34" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">Teks Tampilan GitHub</label>
+                <input type="text" id="adm-contact-github-display" placeholder="github.com/ard34" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">URL LinkedIn Profile *</label>
+                <input type="url" id="adm-contact-linkedin" placeholder="https://www.linkedin.com/in/..." class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs font-mono focus:outline-none focus:border-amber-400">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-amber-300 mb-1">Teks Tampilan LinkedIn</label>
+                <input type="text" id="adm-contact-linkedin-display" placeholder="linkedin.com/in/riski-ardiansyah" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-amber-300 mb-1">Alamat / Domisili Kontak</label>
+              <input type="text" id="adm-contact-location" placeholder="Kab. Tangerang, Banten • Politeknik Piksi Input Serang" class="w-full px-3.5 py-2.5 rounded-xl bg-[#0A1222] border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400">
+            </div>
+          </div>
+
+          <!-- PANE 6: CERTIFICATES -->
+          <div id="pane-certs" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-pink-400"></i>
+                  <span>Manajemen Sertifikasi &amp; Penghargaan</span>
+                </h4>
+                <p class="text-xs text-slate-400 mt-1">Kelola 31+ sertifikat resmi dari Google Drive atau tambahkan sertifikat baru.</p>
+              </div>
+              <button type="button" onclick="closeMasterAdminModal(); openAddCertModal();" class="px-3 py-1.5 rounded-lg bg-pink-950 border border-pink-500/40 text-pink-300 text-xs font-bold flex items-center gap-1.5 hover:bg-pink-900 transition self-start sm:self-auto">
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                <span>Tambah Sertifikat Baru</span>
+              </button>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                <span id="adm-certs-count">Total Sertifikat: 31</span>
+                <span>Tindakan Cepat</span>
+              </div>
+              <div id="adm-certs-list" class="max-h-96 overflow-y-auto space-y-2 pr-1">
+                <!-- Dynamically populated via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- PANE 7: BACKUP, RESTORE & RESET -->
+          <div id="pane-backup" class="admin-pane hidden space-y-5">
+            <div class="border-b border-slate-800/80 pb-3">
+              <h4 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i>
+                <span>Backup, Export &amp; Reset Data Website</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1">Unduh seluruh konfigurasi dan editan Anda sebagai file JSON atau pulihkan dari cadangan.</p>
+            </div>
+
+            <!-- Export -->
+            <div class="p-4 rounded-xl bg-[#0A1222] border border-cyan-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <div class="text-xs font-bold text-white font-mono flex items-center gap-1.5">
+                  <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+                  <span>Unduh File Cadangan Lengkap (.json)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">Ekspor seluruh data profil, proyek, keahlian, dan 31+ sertifikat ke komputer Anda.</p>
+              </div>
+              <button type="button" onclick="exportSiteDataJSON()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold shrink-0 flex items-center gap-1.5 shadow">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Export JSON</span>
+              </button>
+            </div>
+
+            <!-- Import -->
+            <div class="p-4 rounded-xl bg-[#0A1222] border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <div class="text-xs font-bold text-white font-mono flex items-center gap-1.5">
+                  <i data-lucide="upload" class="w-4 h-4 text-purple-400"></i>
+                  <span>Pulihkan / Import dari File Cadangan (.json)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">Muat kembali editan sebelumnya dari file backup JSON.</p>
+              </div>
+              <div class="shrink-0 flex items-center gap-2">
+                <input type="file" id="adm-import-file" accept=".json" class="hidden" onchange="importSiteDataJSON(this.files[0])">
+                <button type="button" onclick="document.getElementById('adm-import-file').click()" class="px-4 py-2 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 hover:text-white text-xs font-bold flex items-center gap-1.5 transition">
+                  <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                  <span>Upload JSON</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Reset to Default -->
+            <div class="p-4 rounded-xl bg-red-950/20 border border-red-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <div class="text-xs font-bold text-red-400 font-mono flex items-center gap-1.5">
+                  <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                  <span>Reset ke Pengaturan Awal Pabrik (Default)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">Menghapus semua perubahan lokal di browser ini dan mengembalikan ke teks awal asli.</p>
+              </div>
+              <button type="button" onclick="resetSiteDataDefault()" class="px-4 py-2 rounded-xl bg-red-950/80 border border-red-500/50 text-red-300 hover:text-white hover:bg-red-900 text-xs font-bold shrink-0 flex items-center gap-1.5 transition">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                <span>Reset Default</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="p-3 sm:p-4 border-t border-slate-800 bg-[#0A1222]/80 flex items-center justify-between text-xs font-mono text-slate-400">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Perubahan disimpan secara lokal dan langsung tampil real-time di website.</span>
+        </span>
+        <button type="button" onclick="handleMasterAdminSave()" class="px-4 py-2 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i>
+          <span>Simpan Perubahan</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="assets/js/cyber-background.js"></script>
   <!-- AOS (Animate On Scroll) & Vanilla Tilt Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="assets/js/i18n.js?v=1"></script>
-  <script src="assets/js/main.js?v=21"></script>
+  <script src="assets/js/main.js?v=25"></script>
   <!-- Floating Classy Back to Top Button -->
   <button id="back-to-top-btn" class="w-12 h-12 rounded-2xl gradient-btn text-white flex items-center justify-center shadow-xl shadow-cyan-500/30 border border-cyan-400/50 cursor-pointer" title="Kembali ke Atas" aria-label="Back to top">
     <i data-lucide="arrow-up" class="w-5 h-5"></i>
