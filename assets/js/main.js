@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // HIDDEN OWNER / ADMIN AUTHENTICATION ENGINE
   // ==========================================
-  const validPasskeys = ['riski34', 'riskiardiansyah', 'admincyber', 'cybersecurity2026'];
+  const validPasskeys = ['@Babon231103'];
 
   function isOwnerLoggedIn() {
     return sessionStorage.getItem('portfolio_owner_auth') === 'true' || 
@@ -812,7 +812,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const enteredPass = passInput ? passInput.value.trim() : '';
 
       const customPwd = localStorage.getItem('portfolio_admin_custom_pwd');
-      const isMatch = validPasskeys.includes(enteredPass.toLowerCase()) || (customPwd && enteredPass === customPwd);
+      const isMatch = validPasskeys.includes(enteredPass) || (customPwd && enteredPass === customPwd);
 
       if (isMatch) {
         sessionStorage.setItem('portfolio_owner_auth', 'true');
@@ -856,24 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCertificates();
   updateAdminUI();
 
-  // CV Preview Modal Function
-  window.openCVPreview = function() {
-    const cvModal = document.getElementById('cv-modal');
-    if (cvModal) {
-      cvModal.classList.remove('hidden');
-      cvModal.classList.add('flex');
-      document.body.classList.add('overflow-hidden');
-    }
-  };
-
-  window.closeCVPreview = function() {
-    const cvModal = document.getElementById('cv-modal');
-    if (cvModal) {
-      cvModal.classList.add('hidden');
-      cvModal.classList.remove('flex');
-      document.body.classList.remove('overflow-hidden');
-    }
-  };
+// CV Preview features removed per request
 
   // Contact Form Handling
   const contactForm = document.getElementById('contact-form');
