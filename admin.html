@@ -625,11 +625,12 @@
   <div id="modal-cert" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md items-center justify-center p-4">
     <div class="glass-panel w-full max-w-lg rounded-2xl p-6 sm:p-7 space-y-4 border border-pink-500/50 relative">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-        <h4 class="text-base font-bold text-white font-heading">Tambah Sertifikat Google Drive</h4>
+        <h4 id="modal-cert-heading" class="text-base font-bold text-white font-heading">Tambah Sertifikat Google Drive</h4>
         <button onclick="closeModal('modal-cert')" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
 
       <form id="form-cert" class="space-y-3 text-xs">
+        <input type="hidden" id="cert-edit-id">
         <div>
           <label class="block font-mono text-slate-300 mb-1">Judul Sertifikat *</label>
           <input type="text" id="input-cert-title" required placeholder="cth. Certified Red Team Operations..." class="w-full px-3 py-2 rounded-lg bg-[#070D1A] border border-slate-700 text-white">
@@ -659,7 +660,7 @@
         </div>
         <div class="flex justify-end gap-2 pt-2 border-t border-slate-800">
           <button type="button" onclick="closeModal('modal-cert')" class="px-4 py-2 rounded-lg bg-slate-900 text-slate-400 text-xs">Batal</button>
-          <button type="submit" class="px-5 py-2 rounded-lg gradient-btn text-white text-xs font-bold">Simpan Sertifikat</button>
+          <button type="submit" id="btn-cert-submit" class="px-5 py-2 rounded-lg gradient-btn text-white text-xs font-bold">Simpan Sertifikat</button>
         </div>
       </form>
     </div>
@@ -1586,7 +1587,11 @@
               <h4 class="text-xs font-bold text-white font-heading truncate" title="${escapeHtml(c.title)}">${escapeHtml(c.title)}</h4>
               <p class="text-[11px] text-slate-400 truncate">${escapeHtml(c.issuer || 'Official')}</p>
               
-              <div class="flex items-center gap-2 pt-1.5">
+              <div class="flex items-center gap-1.5 pt-1.5">
+                <button onclick="editCert('${c.id}')" class="px-2.5 py-1 rounded-lg bg-pink-950/80 border border-pink-500/40 text-pink-300 hover:text-white text-[10px] font-mono flex items-center gap-1 transition">
+                  <i data-lucide="edit-2" class="w-3 h-3"></i>
+                  <span>Edit</span>
+                </button>
                 <a href="${driveLink}" target="_blank" class="px-2.5 py-1 rounded-lg bg-[#0A1222] border border-cyan-500/40 text-cyan-300 hover:text-white text-[10px] font-mono flex items-center gap-1 transition">
                   <i data-lucide="external-link" class="w-3 h-3"></i>
                   <span>Buka GDrive</span>
@@ -1610,12 +1615,34 @@
     }
 
     function openNewCertModal() {
+      document.getElementById('modal-cert-heading').textContent = "Tambah Sertifikat Google Drive";
+      document.getElementById('btn-cert-submit').textContent = "Simpan Sertifikat";
+      document.getElementById('cert-edit-id').value = "";
       document.getElementById('form-cert').reset();
+      openModal('modal-cert');
+    }
+
+    function editCert(id) {
+      const certs = getCerts();
+      const c = certs.find(x => x.id === id);
+      if (!c) return;
+
+      document.getElementById('modal-cert-heading').textContent = "Edit Sertifikat";
+      document.getElementById('btn-cert-submit').textContent = "Perbarui Sertifikat";
+      document.getElementById('cert-edit-id').value = c.id;
+      document.getElementById('input-cert-title').value = c.title || '';
+      document.getElementById('input-cert-issuer').value = c.issuer || '';
+      document.getElementById('input-cert-date').value = c.date || '';
+      document.getElementById('input-cert-category').value = c.category || '';
+      document.getElementById('input-cert-gdrive').value = c.gdriveUrl || c.verifyUrl || '';
+      document.getElementById('input-cert-desc').value = c.desc || '';
+
       openModal('modal-cert');
     }
 
     document.getElementById('form-cert').addEventListener('submit', (e) => {
       e.preventDefault();
+      const editId = document.getElementById('cert-edit-id').value;
       const title = document.getElementById('input-cert-title').value.trim();
       const issuer = document.getElementById('input-cert-issuer').value.trim();
       const date = document.getElementById('input-cert-date').value.trim();
@@ -1633,20 +1660,37 @@
         : 'https://drive.google.com/thumbnail?id=1WcczkN4HTN5qz5AVP-gTPsqUIGGAO_wI&sz=w800';
 
       const certs = getCerts();
-      certs.unshift({
-        id: 'cert-' + Date.now(),
-        title, issuer, date, category, desc,
-        credId: 'VERIFIED-' + Date.now().toString().slice(-6),
-        gdriveUrl: gdrive,
-        verifyUrl: gdrive,
-        image: thumbUrl,
-        color: 'pink'
-      });
+      if (editId) {
+        // Edit existing certificate
+        const target = certs.find(x => x.id === editId);
+        if (target) {
+          target.title = title;
+          target.issuer = issuer;
+          target.date = date;
+          target.category = category;
+          target.gdriveUrl = gdrive;
+          target.verifyUrl = gdrive;
+          target.desc = desc;
+          if (fileId) target.image = thumbUrl;
+        }
+        showToast("Sertifikat berhasil diperbarui!", "success");
+      } else {
+        // Add new certificate
+        certs.unshift({
+          id: 'cert-' + Date.now(),
+          title, issuer, date, category, desc,
+          credId: 'VERIFIED-' + Date.now().toString().slice(-6),
+          gdriveUrl: gdrive,
+          verifyUrl: gdrive,
+          image: thumbUrl,
+          color: 'pink'
+        });
+        showToast("Sertifikat baru berhasil ditambahkan!", "success");
+      }
 
       setCerts(certs);
       renderCerts();
       closeModal('modal-cert');
-      showToast("Sertifikat baru berhasil ditambahkan!", "success");
     });
 
     function deleteCert(id) {

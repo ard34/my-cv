@@ -956,25 +956,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      const newCert = {
-        id: 'cert_' + Date.now(),
-        title,
-        issuer,
-        category,
-        date,
-        credId,
-        verifyUrl,
-        gdriveUrl,
-        desc,
-        color,
-        image: certImage,
-        isDefault: false
-      };
+      const editCertId = addCertForm.getAttribute('data-edit-cert-id');
 
       try {
-        let stored = JSON.parse(localStorage.getItem('riski_user_certificates') || '[]');
-        stored.push(newCert);
-        localStorage.setItem('riski_user_certificates', JSON.stringify(stored));
+        let allCerts = getCertificates();
+        if (editCertId) {
+          // Edit existing certificate
+          const target = allCerts.find(c => c.id === editCertId);
+          if (target) {
+            target.title = title;
+            target.issuer = issuer;
+            target.category = category;
+            target.date = date;
+            target.credId = credId;
+            target.verifyUrl = verifyUrl;
+            target.gdriveUrl = gdriveUrl;
+            target.desc = desc;
+            target.color = color;
+            if (certImage) target.image = certImage;
+          }
+          localStorage.setItem('portfolio_user_certificates', JSON.stringify(allCerts));
+          addCertForm.removeAttribute('data-edit-cert-id');
+          showToast("Sertifikat Berhasil Diperbarui!");
+        } else {
+          // Add new certificate
+          const newCert = {
+            id: 'cert_' + Date.now(),
+            title,
+            issuer,
+            category,
+            date,
+            credId,
+            verifyUrl,
+            gdriveUrl,
+            desc,
+            color,
+            image: certImage,
+            isDefault: false
+          };
+          allCerts.unshift(newCert);
+          localStorage.setItem('portfolio_user_certificates', JSON.stringify(allCerts));
+          showToast("Sertifikat Berhasil Ditambahkan!");
+        }
         
         addCertForm.reset();
         uploadedCertBase64 = '';
@@ -982,7 +1005,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         window.closeAddCertModal();
         renderCertificates();
-        showToast("Sertifikat Berhasil Ditambahkan dengan Link Google Drive!");
       } catch (err) {
         alert("Gagal menyimpan sertifikat. Jika menggunakan upload file, pastikan ukuran gambar di bawah 2MB atau gunakan Link Google Drive.");
         console.error(err);
@@ -1644,6 +1666,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div class="flex items-center gap-1.5 shrink-0">
+          <button type="button" onclick="editCertificateFromAdmin('${c.id}')" class="p-1.5 rounded-lg bg-pink-950/80 border border-pink-500/40 text-pink-300 hover:text-white" title="Edit Sertifikat Ini">
+            <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
+          </button>
           <a href="${c.gdriveUrl || c.verifyUrl}" target="_blank" rel="noreferrer" class="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 hover:text-white" title="Buka Dokumen Google Drive">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           </a>
@@ -1657,7 +1682,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   }
 
-  window.deleteCertificateFromAdmin = function(certId) {
+  window.editCertificateFromAdmin = function(certId) {
+    const certs = getCertificates();
+    const c = certs.find(x => x.id === certId);
+    if (!c) return;
+
+    window.closeMasterAdminModal();
+    window.openAddCertModal();
+
+    const titleEl = document.getElementById('new-cert-title');
+    const issuerEl = document.getElementById('new-cert-issuer');
+    const dateEl = document.getElementById('new-cert-date');
+    const catEl = document.getElementById('new-cert-category');
+    const credEl = document.getElementById('new-cert-credid');
+    const urlEl = document.getElementById('new-cert-url');
+    const gdriveEl = document.getElementById('new-cert-gdrive');
+    const descEl = document.getElementById('new-cert-desc');
+    const form = document.getElementById('add-cert-form');
+
+    if (titleEl) titleEl.value = c.title || '';
+    if (issuerEl) issuerEl.value = c.issuer || '';
+    if (dateEl) dateEl.value = c.date || '';
+    if (catEl) catEl.value = c.category || '';
+    if (credEl) credEl.value = c.credId || '';
+    if (urlEl) urlEl.value = c.verifyUrl || '';
+    if (gdriveEl) gdriveEl.value = c.gdriveUrl || c.verifyUrl || '';
+    if (descEl) descEl.value = c.desc || '';
+    if (form) form.setAttribute('data-edit-cert-id', c.id);
+  };
+
+    window.deleteCertificateFromAdmin = function(certId) {
     if (confirm("Hapus sertifikat ini dari tampilan website?")) {
       const allCerts = getCertificates().filter(c => c.id !== certId);
       localStorage.setItem('portfolio_user_certificates', JSON.stringify(allCerts));
