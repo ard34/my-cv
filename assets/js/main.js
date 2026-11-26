@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="glass-panel rounded-2xl p-6 border border-slate-800 flex flex-col justify-between space-y-4 ${borderGlow} transition relative group">
           
           ${!c.isDefault ? `
-            <button onclick="deleteUserCert('${c.id}')" title="Hapus Sertifikat Ini" class="absolute top-4 right-4 z-20 p-1.5 rounded-lg bg-red-950/80 border border-red-500/40 text-red-400 hover:text-white hover:bg-red-800 transition">
+            <button onclick="deleteUserCert('${c.id}')" title="Hapus Sertifikat Ini" class="user-cert-delete-btn absolute top-4 right-4 z-20 p-1.5 rounded-lg bg-red-950/80 border border-red-500/40 text-red-400 hover:text-white hover:bg-red-800 transition ${isOwnerLoggedIn() ? '' : 'hidden'}">
               <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
             </button>
           ` : ''}
@@ -706,8 +706,155 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.remove(), 4000);
   }
 
+
+  // ==========================================
+  // HIDDEN OWNER / ADMIN AUTHENTICATION ENGINE
+  // ==========================================
+  const validPasskeys = ['riski34', 'riskiardiansyah', 'admincyber', 'cybersecurity2026'];
+
+  function isOwnerLoggedIn() {
+    return sessionStorage.getItem('portfolio_owner_auth') === 'true' || 
+           localStorage.getItem('portfolio_owner_auth') === 'true';
+  }
+
+  function updateAdminUI() {
+    const controls = document.getElementById('admin-cert-controls');
+    const secretTrigger = document.getElementById('secret-admin-trigger');
+    const loggedIn = isOwnerLoggedIn();
+
+    if (controls) {
+      if (loggedIn) {
+        controls.classList.remove('hidden');
+        controls.classList.add('flex');
+      } else {
+        controls.classList.add('hidden');
+        controls.classList.remove('flex');
+      }
+    }
+
+    if (secretTrigger) {
+      if (loggedIn) {
+        secretTrigger.classList.add('hidden');
+      } else {
+        secretTrigger.classList.remove('hidden');
+      }
+    }
+
+    // Toggle delete buttons on user certificates
+    const deleteBtns = document.querySelectorAll('.user-cert-delete-btn');
+    deleteBtns.forEach(btn => {
+      if (loggedIn) {
+        btn.classList.remove('hidden');
+      } else {
+        btn.classList.add('hidden');
+      }
+    });
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  window.openAdminLoginModal = function() {
+    if (isOwnerLoggedIn()) {
+      window.openAddCertModal();
+      return;
+    }
+    const modal = document.getElementById('admin-login-modal');
+    const errorEl = document.getElementById('admin-login-error');
+    const passInput = document.getElementById('admin-password-input');
+    if (errorEl) errorEl.classList.add('hidden');
+    if (passInput) passInput.value = '';
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+      setTimeout(() => { if (passInput) passInput.focus(); }, 150);
+    }
+  };
+
+  window.closeAdminLoginModal = function() {
+    const modal = document.getElementById('admin-login-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
+  window.togglePasswordVisibility = function() {
+    const passInput = document.getElementById('admin-password-input');
+    const eyeIcon = document.getElementById('eye-icon');
+    if (!passInput || !eyeIcon) return;
+    if (passInput.type === 'password') {
+      passInput.type = 'text';
+      eyeIcon.setAttribute('data-lucide', 'eye-off');
+    } else {
+      passInput.type = 'password';
+      eyeIcon.setAttribute('data-lucide', 'eye');
+    }
+    if (window.lucide) lucide.createIcons();
+  };
+
+  window.logoutAdmin = function() {
+    sessionStorage.removeItem('portfolio_owner_auth');
+    localStorage.removeItem('portfolio_owner_auth');
+    updateAdminUI();
+    showToast("Sesi Owner telah ditutup. Mode publik aktif.");
+  };
+
+  // Admin login form submission
+  const adminLoginForm = document.getElementById('admin-login-form');
+  if (adminLoginForm) {
+    adminLoginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const passInput = document.getElementById('admin-password-input');
+      const rememberMe = document.getElementById('admin-remember-me');
+      const errorEl = document.getElementById('admin-login-error');
+      const enteredPass = passInput ? passInput.value.trim() : '';
+
+      const customPwd = localStorage.getItem('portfolio_admin_custom_pwd');
+      const isMatch = validPasskeys.includes(enteredPass.toLowerCase()) || (customPwd && enteredPass === customPwd);
+
+      if (isMatch) {
+        sessionStorage.setItem('portfolio_owner_auth', 'true');
+        if (rememberMe && rememberMe.checked) {
+          localStorage.setItem('portfolio_owner_auth', 'true');
+        }
+        window.closeAdminLoginModal();
+        updateAdminUI();
+        showToast("Akses Diberikan: Selamat datang Riski! Mode Kelola Sertifikat Aktif.", "success");
+        setTimeout(() => {
+          window.openAddCertModal();
+        }, 300);
+      } else {
+        if (errorEl) errorEl.classList.remove('hidden');
+        if (passInput) {
+          passInput.classList.add('border-red-500', 'animate-shake');
+          setTimeout(() => passInput.classList.remove('animate-shake'), 600);
+          passInput.focus();
+        }
+      }
+    });
+  }
+
+  // Global Keyboard Shortcut: Ctrl + Shift + A to open Hidden Admin Gate
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a' || e.key === 'L' || e.key === 'l')) {
+      e.preventDefault();
+      window.openAdminLoginModal();
+    }
+  });
+
+  // URL Query detection: ?admin or ?login
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('admin') || urlParams.has('login')) {
+    setTimeout(() => {
+      window.openAdminLoginModal();
+    }, 600);
+  }
+
   // Initial render of certificates
   renderCertificates();
+  updateAdminUI();
 
   // CV Preview Modal Function
   window.openCVPreview = function() {
