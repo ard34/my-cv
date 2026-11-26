@@ -1651,19 +1651,19 @@
   <!-- ======================================================== -->
 
   <!-- Floating Owner Control Bar (Appears when logged in) -->
-  <div id="owner-floating-bar" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-2xl bg-[#070D1A]/95 border border-cyan-500/50 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.3)] items-center gap-3 animate-fadeIn">
-    <div class="flex items-center gap-2 pr-3 border-r border-slate-700/80 text-xs font-mono text-cyan-300 shrink-0">
+  <div id="owner-floating-bar" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-2xl bg-[#070D1A]/95 border border-cyan-500/50 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.3)] items-center gap-2.5 sm:gap-3 animate-fadeIn">
+    <div class="flex items-center gap-2 pr-2.5 sm:pr-3 border-r border-slate-700/80 text-xs font-mono text-cyan-300 shrink-0">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
       <span class="font-bold hidden sm:inline">OWNER ACCESS</span>
       <span class="font-bold sm:hidden">OWNER</span>
     </div>
-    <button onclick="openMasterAdminModal('hero')" class="px-3.5 py-1.5 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition shadow-sm">
+    <a href="admin.html" class="px-3.5 py-1.5 rounded-xl gradient-btn text-white text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition shadow-sm">
+      <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i>
+      <span>🚀 Dashboard Admin</span>
+    </a>
+    <button onclick="openMasterAdminModal('about')" class="px-3 py-1.5 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
       <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
-      <span>⚙️ Edit Isi Web</span>
-    </button>
-    <button onclick="openAddCertModal()" class="px-3 py-1.5 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition">
-      <i data-lucide="award" class="w-3.5 h-3.5"></i>
-      <span class="hidden sm:inline">+ Sertifikat</span>
+      <span class="hidden sm:inline">Edit Cepat</span>
     </button>
     <button onclick="logoutAdmin()" class="p-1.5 rounded-xl bg-red-950/60 border border-red-500/40 text-red-400 hover:text-white text-xs font-mono transition" title="Logout Sesi Owner">
       <i data-lucide="log-out" class="w-4 h-4"></i>

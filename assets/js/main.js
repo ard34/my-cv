@@ -1115,10 +1115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         window.closeAdminLoginModal();
         updateAdminUI();
-        showToast("Akses Owner Terverifikasi: Selamat datang Riski! Membuka Panel Admin...", "success");
+        showToast("Akses Owner Terverifikasi: Selamat datang Riski! Membuka Dashboard Admin...", "success");
         setTimeout(() => {
-          window.openMasterAdminModal('hero');
-        }, 300);
+          window.location.href = 'admin.html';
+        }, 400);
       } else {
         if (errorEl) errorEl.classList.remove('hidden');
         if (passInput) {
