@@ -93,6 +93,35 @@ const translations = {
     "projects.btn_details": "Detail Teknis",
     "projects.cta_box_title": "Kunjungi Etalase Portofolio Lengkap",
     "projects.cta_box_desc": "Seluruh hasil karya sistem digital, aplikasi web production, dan rilis proyek terbaru saya dirangkum secara lengkap di portal BBN Digital Forge.",
+    "projects.p1_badge": "#01 • CBT & Lock Screen",
+    "projects.p1_title": "ExamBro CBT System",
+    "projects.p1_cat": "Web & Mobile App • Cyber Defense",
+    "projects.p1_desc": "Platform Computer-Based Test terintegrasi dengan ExamBro Android Client anti-curang untuk Madrasah Aliyah Al Jauharatunnaqiyah.",
+
+    "projects.p2_badge": "#02 • Cashless & POS",
+    "projects.p2_title": "Koperasi Santri (SantriWallet)",
+    "projects.p2_cat": "Fintech & Security Operations",
+    "projects.p2_desc": "Ekosistem transaksi nirsentuh (cashless) pesantren dengan POS Kasir, top-up saldo, audit mutasi keuangan, dan SOP penanganan insiden.",
+
+    "projects.p3_badge": "#03 • E-Commerce & Stock",
+    "projects.p3_title": "BBn Muslim (Toko Online)",
+    "projects.p3_cat": "Web Development & E-Commerce",
+    "projects.p3_desc": "Platform e-commerce dengan sistem mutasi stok otomatis, varian produk, keranjang belanja interaktif, dan panel manajemen admin.",
+
+    "projects.p4_badge": "#04 • Web Service & Agency",
+    "projects.p4_title": "BBN Digital Forge",
+    "projects.p4_cat": "Web Development & Production",
+    "projects.p4_desc": "Platform layanan digital terpadu yang berfokus pada pembuatan website, aplikasi kustom, dan sistem portal manajemen bisnis.",
+
+    "projects.p5_badge": "#05 • SIEM Telemetry",
+    "projects.p5_title": "Wazuh Monitoring & SIEM",
+    "projects.p5_cat": "SOC & Security Operations",
+    "projects.p5_desc": "Implementasi monitoring keamanan menggunakan Wazuh SIEM untuk analisis log, audit integritas file, dan deteksi ancaman real-time.",
+
+    "projects.p6_badge": "#06 • Forensics & Hunt",
+    "projects.p6_title": "Multi-Source Log Analysis",
+    "projects.p6_cat": "Security Investigation & Logs",
+    "projects.p6_desc": "Proyek analisis log lintas sumber untuk mengidentifikasi aktivitas mencurigakan, serangan brute-force, dan rekonstruksi rantai serangan investigasi insiden.",
     "projects.cta_box_btn": "Buka Semua Portofolio di BBN Digital Forge",
 
     // Experience Section
@@ -290,6 +319,35 @@ const translations = {
     "projects.btn_details": "Technical Specs",
     "projects.cta_box_title": "Explore Full Portfolio Showcase",
     "projects.cta_box_desc": "All my completed digital systems, production web applications, and newest software releases are hosted live on the BBN Digital Forge portal.",
+    "projects.p1_badge": "#01 • CBT & Lock Screen",
+    "projects.p1_title": "ExamBro CBT System",
+    "projects.p1_cat": "Web & Mobile App • Cyber Defense",
+    "projects.p1_desc": "A secure web-based testing platform integrated with an anti-cheating Android Client for Madrasah Aliyah Al Jauharatunnaqiyah.",
+
+    "projects.p2_badge": "#02 • Cashless & POS",
+    "projects.p2_title": "Santri Cooperative (SantriWallet)",
+    "projects.p2_cat": "Fintech & Security Operations",
+    "projects.p2_desc": "Digital financial and cashless contactless payment ecosystem for pesantren with POS terminals, audit trails, and security incident SOPs.",
+
+    "projects.p3_badge": "#03 • E-Commerce & Stock",
+    "projects.p3_title": "BBn Muslim (Online Store)",
+    "projects.p3_cat": "Web Development & E-Commerce",
+    "projects.p3_desc": "E-commerce platform featuring automated stock hold mutations, multi-variant products, dynamic reactive carts, and admin operations.",
+
+    "projects.p4_badge": "#04 • Web Service & Agency",
+    "projects.p4_title": "BBN Digital Forge",
+    "projects.p4_cat": "Web Development & Production",
+    "projects.p4_desc": "Integrated digital agency platform for custom web applications, client onboarding, and secure backend operations.",
+
+    "projects.p5_badge": "#05 • SIEM Telemetry",
+    "projects.p5_title": "Wazuh Monitoring & SIEM",
+    "projects.p5_cat": "SOC & Security Operations",
+    "projects.p5_desc": "Security operations monitoring implementation using Wazuh SIEM for log analysis, file integrity audits, and real-time threat triage.",
+
+    "projects.p6_badge": "#06 • Forensics & Hunt",
+    "projects.p6_title": "Multi-Source Log Analysis",
+    "projects.p6_cat": "Security Investigation & Logs",
+    "projects.p6_desc": "Cross-platform forensic log investigation project to identify anomalous brute-force probes and reconstruct adversary kill-chains.",
     "projects.cta_box_btn": "Open All Projects on BBN Digital Forge",
 
     // Experience Section
@@ -668,3 +726,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   setLanguage(savedLang);
 });
+

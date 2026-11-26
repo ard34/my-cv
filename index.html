@@ -732,317 +732,291 @@
         </div>
       </div>
 
-      <!-- Project Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project Cards Grid: Modern Sleek Image-Free List -->
+      <div class="space-y-4">
+
         <!-- 1. ExamBro CBT -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-category="app">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/exambro.jpg" alt="ExamBro CBT System" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-cyan-500/40 text-cyan-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> CBT &amp; Lock Screen
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-cyan-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="shield-check" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Next.js + PostgreSQL</span>
-                <span class="px-2 py-0.5 rounded bg-cyan-950/80 backdrop-blur-sm border border-cyan-500/40 text-cyan-400 font-semibold">Android Client</span>
-              </div>
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">ExamBro CBT System</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Platform Computer-Based Test terintegrasi dengan ExamBro Android Client anti-curang untuk Madrasah Aliyah Al Jauharatunnaqiyah.
+            <div class="space-y-1">
+              <span data-i18n="projects.p1_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                #01 • CBT &amp; Lock Screen
+              </span>
+              <h3 data-i18n="projects.p1_title" class="font-bold text-white font-heading text-lg group-hover:text-cyan-300 transition">
+                ExamBro CBT System
+              </h3>
+              <p data-i18n="projects.p1_cat" class="text-xs text-slate-400 font-mono">
+                Web &amp; Mobile App • Cyber Defense
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Next.js</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">PostgreSQL</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Android APK</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">Anti-Cheating</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p1_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Platform Computer-Based Test terintegrasi dengan ExamBro Android Client anti-curang untuk Madrasah Aliyah Al Jauharatunnaqiyah.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Next.js</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-blue-300 border border-blue-900/60">PostgreSQL</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-emerald-300 border border-emerald-900/60">Android APK</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-purple-300 border border-purple-900/60">Anti-Cheating</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('exambro')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('exambro')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
 
         <!-- 2. Koperasi Santri (SantriWallet) -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100" data-category="app">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/koprasi.jpg" alt="Koperasi Santri Cashless System" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-emerald-500/40 text-emerald-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Cashless &amp; POS
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-emerald-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="wallet" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">SantriWallet</span>
-                <span class="px-2 py-0.5 rounded bg-emerald-950/80 backdrop-blur-sm border border-emerald-500/40 text-emerald-400 font-semibold">Threat Model Certified</span>
-              </div>
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:border-emerald-400 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition">
+              <i data-lucide="wallet" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">Koperasi Santri (SantriWallet)</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Ekosistem transaksi nirsentuh (cashless) pesantren dengan POS Kasir, top-up saldo, audit mutasi keuangan, dan SOP penanganan insiden.
+            <div class="space-y-1">
+              <span data-i18n="projects.p2_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                #02 • Cashless &amp; POS
+              </span>
+              <h3 data-i18n="projects.p2_title" class="font-bold text-white font-heading text-lg group-hover:text-emerald-300 transition">
+                Koperasi Santri (SantriWallet)
+              </h3>
+              <p data-i18n="projects.p2_cat" class="text-xs text-slate-400 font-mono">
+                Fintech &amp; Security Operations
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">POS Admin</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Android APK</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">REST API</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Financial Audit</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p2_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Ekosistem transaksi nirsentuh (cashless) pesantren dengan POS Kasir, top-up saldo, audit mutasi keuangan, dan SOP penanganan insiden.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-emerald-300 border border-emerald-900/60">POS Admin</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Android APK</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-purple-300 border border-purple-900/60">REST API</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-slate-300 border border-slate-800">Financial Audit</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('koprasi')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('koprasi')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
 
         <!-- 3. Toko Online BBn Muslim -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200" data-category="app">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/tokoonline.jpg" alt="BBn Muslim Store" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-indigo-500/40 text-indigo-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-indigo-400"></span> E-Commerce &amp; Stock
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-indigo-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Laravel + Alpine.js</span>
-                <span class="px-2 py-0.5 rounded bg-indigo-950/80 backdrop-blur-sm border border-indigo-500/40 text-indigo-300 font-semibold">Auto Stock Hold</span>
-              </div>
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-indigo-500/50 hover:shadow-[0_0_25px_rgba(99,102,241,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-indigo-500/40 flex items-center justify-center text-indigo-400 shrink-0 group-hover:scale-105 group-hover:border-indigo-400 group-hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] transition">
+              <i data-lucide="shopping-bag" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">BBn Muslim (Toko Online)</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Platform e-commerce dengan sistem mutasi stok otomatis, varian produk, keranjang belanja interaktif, dan panel manajemen admin.
+            <div class="space-y-1">
+              <span data-i18n="projects.p3_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-indigo-950 text-indigo-300 border border-indigo-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                #03 • E-Commerce &amp; Stock
+              </span>
+              <h3 data-i18n="projects.p3_title" class="font-bold text-white font-heading text-lg group-hover:text-indigo-300 transition">
+                BBn Muslim (Toko Online)
+              </h3>
+              <p data-i18n="projects.p3_cat" class="text-xs text-slate-400 font-mono">
+                Web Development &amp; E-Commerce
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-red-950 text-red-300 border border-red-800">Laravel</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Alpine.js</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">Tailwind CSS</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Inventory Engine</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p3_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Platform e-commerce dengan sistem mutasi stok otomatis, varian produk, keranjang belanja interaktif, dan panel manajemen admin.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-red-300 border border-red-900/60">Laravel</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Alpine.js</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-blue-300 border border-blue-900/60">Tailwind CSS</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-slate-300 border border-slate-800">Inventory Engine</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('tokoonline')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('tokoonline')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
 
         <!-- 4. BBN Digital Forge -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50" data-category="app">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/bbndigital.jpg" alt="BBN Digital Forge Platform" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-purple-500/40 text-purple-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-purple-400"></span> Web Service
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-purple-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="globe" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Full-Stack Laravel</span>
-                <span class="px-2 py-0.5 rounded bg-purple-950/80 backdrop-blur-sm border border-purple-500/40 text-purple-300 font-semibold">Live Production</span>
-              </div>
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-purple-500/40 flex items-center justify-center text-purple-400 shrink-0 group-hover:scale-105 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition">
+              <i data-lucide="globe" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">BBN Digital Forge</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Platform layanan digital terintegrasi yang berfokus pada pembuatan website, aplikasi kustom, dan sistem portal manajemen bisnis.
+            <div class="space-y-1">
+              <span data-i18n="projects.p4_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                #04 • Web Service &amp; Agency
+              </span>
+              <h3 data-i18n="projects.p4_title" class="font-bold text-white font-heading text-lg group-hover:text-purple-300 transition">
+                BBN Digital Forge
+              </h3>
+              <p data-i18n="projects.p4_cat" class="text-xs text-slate-400 font-mono">
+                Web Development &amp; Production
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-red-950 text-red-300 border border-red-800">Laravel 11</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Tailwind CSS</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-800">Filament 3</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p4_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Platform layanan digital terpadu yang berfokus pada pembuatan website, aplikasi kustom, dan sistem portal manajemen bisnis.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-red-300 border border-red-900/60">Laravel 11</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Tailwind CSS</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-amber-300 border border-amber-900/60">Filament 3</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-purple-300 border border-purple-900/60">Live Production</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('bbndigital')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('bbndigital')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
 
-        <!-- 5. Wazuh Monitoring -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150" data-category="cyber">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/wazuh.jpg" alt="Wazuh SIEM Monitoring" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-blue-500/40 text-blue-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> SIEM Active
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-blue-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="activity" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Docker Containers</span>
-                <span class="px-2 py-0.5 rounded bg-emerald-950/80 backdrop-blur-sm border border-emerald-500/40 text-emerald-400 font-semibold">Real-time Telemetry</span>
-              </div>
+        <!-- 5. Wazuh Monitoring & SIEM -->
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(14,165,233,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0 group-hover:scale-105 group-hover:border-blue-400 group-hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] transition">
+              <i data-lucide="activity" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">Wazuh Monitoring &amp; SIEM</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Implementasi monitoring keamanan menggunakan Wazuh SIEM untuk analisis log, audit integritas file, dan deteksi ancaman real-time.
+            <div class="space-y-1">
+              <span data-i18n="projects.p5_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-950 text-blue-300 border border-blue-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                #05 • SIEM Active
+              </span>
+              <h3 data-i18n="projects.p5_title" class="font-bold text-white font-heading text-lg group-hover:text-blue-300 transition">
+                Wazuh Monitoring &amp; SIEM
+              </h3>
+              <p data-i18n="projects.p5_cat" class="text-xs text-slate-400 font-mono">
+                SOC &amp; Security Operations
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">Docker</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Wazuh</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Ubuntu Linux</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p5_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Implementasi monitoring keamanan menggunakan Wazuh SIEM untuk analisis log, audit integritas file, dan deteksi ancaman real-time.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-blue-300 border border-blue-900/60">Docker</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Wazuh</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-slate-300 border border-slate-800">Ubuntu Linux</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-emerald-300 border border-emerald-900/60">Real-time Telemetry</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('wazuh')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('wazuh')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
 
         <!-- 6. Multi-Source Log Analysis -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200" data-category="cyber">
-          <div>
-            <div class="h-48 relative overflow-hidden group/img bg-slate-950">
-              <img src="assets/img/projects/loganalysis.jpg" alt="Log Analysis Pipeline" class="w-full h-full object-cover object-center transform group-hover:scale-110 transition duration-700 ease-out brightness-90 group-hover:brightness-100" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A1222] via-[#0A1222]/30 to-transparent"></div>
-              
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-[#050914]/85 border border-emerald-500/40 text-emerald-300 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Threat Hunt
-                </span>
-                <span class="p-1.5 rounded-lg bg-[#050914]/80 border border-slate-700/60 text-emerald-400 backdrop-blur-md shadow-lg">
-                  <i data-lucide="file-search" class="w-4 h-4"></i>
-                </span>
-              </div>
-
-              <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-slate-800 text-slate-300">Apache • Auth • Firewall</span>
-                <span class="px-2 py-0.5 rounded bg-cyan-950/80 backdrop-blur-sm border border-cyan-500/40 text-cyan-400 font-semibold">Automated Pipeline</span>
-              </div>
+        <div class="project-list-card glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800 hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative group" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">
+          <!-- Left: Icon & Title info -->
+          <div class="flex items-start gap-4 lg:w-[320px] shrink-0">
+            <div class="w-12 h-12 rounded-xl bg-[#0A1222] border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:border-emerald-400 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition">
+              <i data-lucide="file-search" class="w-6 h-6"></i>
             </div>
-
-            <div class="p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <h3 class="font-bold text-white font-heading text-lg">Multi-Source Log Analysis</h3>
-                <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition" title="Buka Hasil Karya di BBN Digital Forge">
-                  <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <p class="text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                Proyek analisis log lintas sumber untuk mengidentifikasi aktivitas mencurigakan, serangan brute-force, dan melakukan rekonstruksi rantai serangan investigasi insiden.
+            <div class="space-y-1">
+              <span data-i18n="projects.p6_badge" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                #06 • Threat Hunt
+              </span>
+              <h3 data-i18n="projects.p6_title" class="font-bold text-white font-heading text-lg group-hover:text-emerald-300 transition">
+                Multi-Source Log Analysis
+              </h3>
+              <p data-i18n="projects.p6_cat" class="text-xs text-slate-400 font-mono">
+                Security Investigation &amp; Logs
               </p>
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Linux</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Log Analysis</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Security Investigation</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950 text-purple-300 border border-purple-800">Bash / Regex</span>
-              </div>
             </div>
           </div>
 
-          <div class="p-6 pt-0 flex items-center gap-2.5">
-            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-md shadow-cyan-500/20">
+          <!-- Middle: Description & Tech Stack -->
+          <div class="flex-1 space-y-3 lg:px-5 lg:border-l lg:border-r border-slate-800/80">
+            <p data-i18n="projects.p6_desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Proyek analisis log lintas sumber untuk mengidentifikasi aktivitas mencurigakan, serangan brute-force, dan melakukan rekonstruksi rantai serangan investigasi insiden.
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-slate-300 border border-slate-800">Linux</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-emerald-300 border border-emerald-900/60">Log Analysis</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-cyan-300 border border-cyan-900/60">Security Investigation</span>
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-mono bg-[#0A1222] text-purple-300 border border-purple-900/60">Bash / Regex</span>
+            </div>
+          </div>
+
+          <!-- Right: Action Buttons -->
+          <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto justify-end pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800/60">
+            <a href="https://www.bbndigitalforge.web.id/portofolio" target="_blank" rel="noreferrer" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl gradient-btn text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-cyan-500/20 hover:brightness-110 transition">
               <span data-i18n="projects.btn_view_live">Buka Hasil Karya</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
-            <button onclick="openProjectModal('loganalysis')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Lihat Detail &amp; Spesifikasi Teknis">
+            <button onclick="openProjectModal('loganalysis')" class="px-3.5 py-2.5 rounded-xl outline-btn text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-cyan-400 transition text-slate-300" title="Detail Teknis &amp; Spesifikasi">
               <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+              <span data-i18n="projects.btn_details" class="hidden sm:inline">Detail Teknis</span>
             </button>
           </div>
         </div>
+
       </div>
     </div>
     </section>
